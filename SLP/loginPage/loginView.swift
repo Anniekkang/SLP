@@ -28,7 +28,7 @@ class loginView: BaseView {
         label.textColor = colorCustom.shared.blackColor
         label.textAlignment = .center
         label.numberOfLines = 2
-        label.font = UIFont(name: FontName.fontName.rawValue, size: FontSize.large.rawValue)
+        label.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.large.rawValue)
         return label
     }()
     

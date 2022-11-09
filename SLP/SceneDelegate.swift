@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,12 +19,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
         
+        window = UIWindow(frame: scene.coordinateSpace.bounds)
         window?.windowScene = scene
+    
         window?.makeKeyAndVisible()
+        
+        let onboardingVC = OnboardingViewController()
         
         let mainVC = loginViewController()
         let nav = UINavigationController(rootViewController: mainVC)
-        self.window?.rootViewController = nav
+        let authVC = AuthorizationViewController()
+        let nav2 = UINavigationController(rootViewController: authVC)
+        self.window?.rootViewController = onboardingVC
        
         
     }

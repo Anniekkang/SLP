@@ -25,7 +25,7 @@ class AuthorizationView: BaseView {
     let label : UILabel = {
         let label = UILabel()
         label.text = "인증번호가 문자로 전송되었어요"
-        label.font = UIFont(name: FontName.fontName.rawValue, size: FontSize.large.rawValue)
+        label.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.large.rawValue)
         return label
         
     }()
