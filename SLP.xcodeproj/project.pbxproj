@@ -9,8 +9,14 @@
 /* Begin PBXBuildFile section */
 		9E29D9C1291F9FB200BBE368 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D9C0291F9FB200BBE368 /* OnboardingData.swift */; };
 		9E29D9C7291FBCDD00BBE368 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29D9C6291FBCDD00BBE368 /* BaseCollectionViewCell.swift */; };
-		9E876DB72920B8E600BEBAE8 /* Dongle in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DB62920B8E600BEBAE8 /* Dongle */; };
 		9E876DB92920B8FC00BEBAE8 /* Noto_Sans_KR in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */; };
+		9E876DBB2920D70300BEBAE8 /* Dongle in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DBA2920D70300BEBAE8 /* Dongle */; };
+		9E876DBD2920E06000BEBAE8 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DBC2920E06000BEBAE8 /* Splash.storyboard */; };
+		9E876DC02920E1DF00BEBAE8 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */; };
+		9E876DC22920E1FC00BEBAE8 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E876DC12920E1FC00BEBAE8 /* OnboardView.swift */; };
+		9E876DC62920E5BB00BEBAE8 /* OnboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E876DC52920E5BB00BEBAE8 /* OnboardCollectionViewCell.swift */; };
+		9E876DCA2920EC2D00BEBAE8 /* ScrollExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E876DC92920EC2D00BEBAE8 /* ScrollExtension.swift */; };
+		9E876DCC2920EF3F00BEBAE8 /* collectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E876DCB2920EF3F00BEBAE8 /* collectionViewExtension.swift */; };
 		9EC35921291AA64D001E69A4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9EC35920291AA64D001E69A4 /* SnapKit */; };
 		9EC35923291AC49E001E69A4 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC35922291AC49E001E69A4 /* Font.swift */; };
 		9EC35926291AE10E001E69A4 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC35925291AE10E001E69A4 /* AuthorizationView.swift */; };
@@ -39,8 +45,14 @@
 /* Begin PBXFileReference section */
 		9E29D9C0291F9FB200BBE368 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
 		9E29D9C6291FBCDD00BBE368 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		9E876DB62920B8E600BEBAE8 /* Dongle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dongle; sourceTree = "<group>"; };
 		9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Noto_Sans_KR; sourceTree = "<group>"; };
+		9E876DBA2920D70300BEBAE8 /* Dongle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dongle; sourceTree = "<group>"; };
+		9E876DBC2920E06000BEBAE8 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
+		9E876DC12920E1FC00BEBAE8 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		9E876DC52920E5BB00BEBAE8 /* OnboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E876DC92920EC2D00BEBAE8 /* ScrollExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollExtension.swift; sourceTree = "<group>"; };
+		9E876DCB2920EF3F00BEBAE8 /* collectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionViewExtension.swift; sourceTree = "<group>"; };
 		9EC35922291AC49E001E69A4 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		9EC35925291AE10E001E69A4 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		9EC35927291AE11D001E69A4 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +93,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E876DBE2920E1BB00BEBAE8 /* Onboarding - collectionView + pageControl */ = {
+			isa = PBXGroup;
+			children = (
+				9E29D9C0291F9FB200BBE368 /* OnboardingData.swift */,
+				9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */,
+				9E876DC12920E1FC00BEBAE8 /* OnboardView.swift */,
+				9E876DC52920E5BB00BEBAE8 /* OnboardCollectionViewCell.swift */,
+				9E876DC92920EC2D00BEBAE8 /* ScrollExtension.swift */,
+				9E876DCB2920EF3F00BEBAE8 /* collectionViewExtension.swift */,
+			);
+			path = "Onboarding - collectionView + pageControl";
+			sourceTree = "<group>";
+		};
 		9EC35924291AE0F1001E69A4 /* AuthorizationPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +120,7 @@
 			children = (
 				9EC3594A291E5256001E69A4 /* SplashViewController.swift */,
 				9EC3594D291E526C001E69A4 /* SplashView.swift */,
+				9E876DBC2920E06000BEBAE8 /* Splash.storyboard */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -118,15 +144,16 @@
 		9EFDEB9129190566007743CE /* SLP */ = {
 			isa = PBXGroup;
 			children = (
+				9E876DBA2920D70300BEBAE8 /* Dongle */,
 				9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */,
-				9E876DB62920B8E600BEBAE8 /* Dongle */,
 				9EC35949291E30D7001E69A4 /* SLP.entitlements */,
 				9EC35939291B5203001E69A4 /* .gitignore.md */,
 				9EC3593A291B53CC001E69A4 /* GoogleService-Info.plist */,
 				9EC35924291AE0F1001E69A4 /* AuthorizationPage */,
 				9EFDEBB5291AA0BF007743CE /* loginPage */,
 				9EFDEBAE29192A09007743CE /* Base */,
-				9EFDEBAB291929F1007743CE /* Onboarding */,
+				9EFDEBAB291929F1007743CE /* Onboarding - compositional */,
+				9E876DBE2920E1BB00BEBAE8 /* Onboarding - collectionView + pageControl */,
 				9EC3594C291E525B001E69A4 /* Splash */,
 				9EFDEBA8291928DB007743CE /* Constant */,
 				9EFDEB9229190566007743CE /* AppDelegate.swift */,
@@ -147,15 +174,14 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
-		9EFDEBAB291929F1007743CE /* Onboarding */ = {
+		9EFDEBAB291929F1007743CE /* Onboarding - compositional */ = {
 			isa = PBXGroup;
 			children = (
 				9EFDEBA629192606007743CE /* OnboardingViewController.swift */,
 				9EFDEBAC29192A03007743CE /* OnboardingView.swift */,
 				9EC3593F291CDCF5001E69A4 /* OnboardingCollectionViewCell.swift */,
-				9E29D9C0291F9FB200BBE368 /* OnboardingData.swift */,
 			);
-			path = Onboarding;
+			path = "Onboarding - compositional";
 			sourceTree = "<group>";
 		};
 		9EFDEBAE29192A09007743CE /* Base */ = {
@@ -248,11 +274,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E876DBB2920D70300BEBAE8 /* Dongle in Resources */,
 				9E876DB92920B8FC00BEBAE8 /* Noto_Sans_KR in Resources */,
-				9E876DB72920B8E600BEBAE8 /* Dongle in Resources */,
 				9EFDEB9F29190567007743CE /* LaunchScreen.storyboard in Resources */,
 				9EC3593B291B53CC001E69A4 /* GoogleService-Info.plist in Resources */,
 				9EFDEB9C29190567007743CE /* Assets.xcassets in Resources */,
+				9E876DBD2920E06000BEBAE8 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,11 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E876DCC2920EF3F00BEBAE8 /* collectionViewExtension.swift in Sources */,
 				9EFDEBAD29192A03007743CE /* OnboardingView.swift in Sources */,
 				9EC3594E291E526C001E69A4 /* SplashView.swift in Sources */,
 				9EC35923291AC49E001E69A4 /* Font.swift in Sources */,
 				9EC35926291AE10E001E69A4 /* AuthorizationView.swift in Sources */,
 				9EFDEBB7291AA0D2007743CE /* loginView.swift in Sources */,
+				9E876DCA2920EC2D00BEBAE8 /* ScrollExtension.swift in Sources */,
 				9EC35940291CDCF5001E69A4 /* OnboardingCollectionViewCell.swift in Sources */,
 				9EC35928291AE11D001E69A4 /* AuthorizationViewController.swift in Sources */,
 				9E29D9C7291FBCDD00BBE368 /* BaseCollectionViewCell.swift in Sources */,
@@ -276,9 +305,12 @@
 				9EC3594B291E5256001E69A4 /* SplashViewController.swift in Sources */,
 				9EFDEBB029192A11007743CE /* BaseView.swift in Sources */,
 				9EFDEBB229192A66007743CE /* BaseViewController.swift in Sources */,
+				9E876DC22920E1FC00BEBAE8 /* OnboardView.swift in Sources */,
 				9E29D9C1291F9FB200BBE368 /* OnboardingData.swift in Sources */,
+				9E876DC02920E1DF00BEBAE8 /* OnboardViewController.swift in Sources */,
 				9EFDEBAA291928F9007743CE /* Color.swift in Sources */,
 				9EFDEBA729192606007743CE /* OnboardingViewController.swift in Sources */,
+				9E876DC62920E5BB00BEBAE8 /* OnboardCollectionViewCell.swift in Sources */,
 				9EFDEBB4291AA0BB007743CE /* loginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
