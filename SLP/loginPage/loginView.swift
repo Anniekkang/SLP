@@ -46,10 +46,6 @@ class loginView: BaseView {
         text.placeholder = "휴대폰 번호(-없이 숫자만 입력)"
         text.minimumFontSize = FontSize.small.rawValue
         text.keyboardType = .asciiCapableNumberPad
-        
-
-        
-        
         return text
     }()
     
@@ -81,7 +77,7 @@ class loginView: BaseView {
     override func setConstraints() {
         label.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(safeAreaLayoutGuide).offset(125)
+            make.top.equalTo(safeAreaLayoutGuide).offset(169)
             make.leading.trailing.equalToSuperview().inset(73)
             make.height.equalTo(65)
         }
@@ -89,7 +85,7 @@ class loginView: BaseView {
         stackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(label.snp.bottom).offset(77)
-            make.leading.trailing.equalToSuperview().inset(28)
+            make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(40)
             
             

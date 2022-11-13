@@ -18,6 +18,7 @@ class AuthorizationViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        mainView.backgroundColor = .white
         
     }
     

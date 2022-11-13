@@ -34,7 +34,8 @@ class OnboardViewController : BaseViewController {
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
         let vc = loginViewController()
-        sceneDelegate?.window?.rootViewController = vc
+        let nav = UINavigationController(rootViewController: vc)
+        sceneDelegate?.window?.rootViewController = nav
     }
     
     
