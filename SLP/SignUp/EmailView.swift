@@ -1,34 +1,42 @@
 //
-//  AuthorizationView.swift
+//  EmailView.swift
 //  SLP
 //
-//  Created by 나리강 on 2022/11/09.
+//  Created by 나리강 on 2022/11/15.
 //
 
 import UIKit
 
-class AuthorizationView: BaseView {
+class EmailView: BaseView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        configuration()
-        setConstraints()
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-  
+    
+   
     
     let label : UILabel = {
         let label = UILabel()
-        label.text = "인증번호가 문자로 전송되었어요"
+        label.text = "이메일을 입력해 주세요"
+        label.textColor = colorCustom.shared.blackColor
         label.textAlignment = .center
+        label.numberOfLines = 1
+        label.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.extraLarge.rawValue)
+        return label
+    }()
+    
+    let secondLabel : UILabel = {
+        let label = UILabel()
+        label.text = "휴대폰 번호 변경 시 인증을 위해 사용해요"
+        label.textColor = colorCustom.shared.gray7
+        label.textAlignment = .center
+        label.numberOfLines = 1
         label.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.large.rawValue)
         return label
-        
     }()
     
     let stackView : UIStackView = {
@@ -42,9 +50,9 @@ class AuthorizationView: BaseView {
     
     let textField : UITextField = {
         let text = UITextField()
-        text.placeholder = "인증번호 입력"
-        text.textColor = colorCustom.shared.gray7
-        text.keyboardType = .numberPad
+        text.placeholder = "SeSAC@email.com"
+        text.minimumFontSize = FontSize.medium.rawValue
+        text.keyboardType = .default
         return text
     }()
     
@@ -54,73 +62,51 @@ class AuthorizationView: BaseView {
         return view
     }()
     
-//    let timerLabel : UILabel = {
-//        let label = UILabel()
-//        let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(startTimer), userInfo: nil, repeats: false)
-//
-//        label.textColor = colorCustom.shared.greenBrandColor
-//
-//        return label
-//    }()
-//
-//    @objc func startTimer() {
-//
-//
-//
-//    }
-
-   
-    
-    let sendButton : UIButton = {
-        let button = UIButton()
-        button.setTitle("재전송", for: .normal)
-        button.setTitleColor(colorCustom.shared.whiteColor, for: .normal)
-        button.backgroundColor = colorCustom.shared.greenBrandColor
-        button.layer.cornerRadius = 8
-        return button
-    }()
-    
-   
-    
-    
     let button : UIButton = {
         let button = UIButton()
         button.backgroundColor = colorCustom.shared.gray6
         button.layer.cornerRadius = 8
-        button.setTitle("인증하고 시작하기", for: .normal)
+        button.setTitle("다음", for: .normal)
         button.setTitleColor(colorCustom.shared.gray3, for: .normal)
         return button
     }()
     
-    
     override func configuration() {
-        [label,stackView,sendButton,button].forEach {
+        [label,secondLabel,stackView,button].forEach {
             self.addSubview($0)
         }
-        [textField, view].forEach {
+        
+       
+        
+        [textField,view].forEach {
             stackView.addArrangedSubview($0)
         }
-
     }
     
     override func setConstraints() {
+       
         label.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(safeAreaLayoutGuide).offset(169)
-            make.leading.trailing.equalToSuperview().inset(57.5)
+            make.centerY.equalToSuperview().multipliedBy(0.45)
+            make.width.equalToSuperview()
             make.height.equalTo(32)
+        }
+        secondLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview()
+            make.top.equalTo(label.snp.bottom).offset(8)
+            make.height.equalTo(25)
         }
         
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom).offset(110)
-            make.leading.equalToSuperview().inset(16)
-            make.width.equalTo(263)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().multipliedBy(0.8)
+            make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(40)
             
             
         }
         
-       
         textField.snp.makeConstraints { make in
         
         }
@@ -130,27 +116,17 @@ class AuthorizationView: BaseView {
         
         }
         
-        sendButton.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom).offset(110)
-            make.leading.equalTo(stackView.snp.trailing).offset(8)
-            make.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(40)
-            
-            
-        }
-        
         button.snp.makeConstraints { make in
-            make.top.equalTo(stackView.snp.bottom).offset(77)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().multipliedBy(1.1)
             make.height.equalTo(48)
             make.leading.trailing.equalToSuperview().inset(16)
         }
         
         
-        
-        
-        
-        
     }
+    
+    
     
 
 }

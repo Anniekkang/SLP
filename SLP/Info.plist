@@ -13,6 +13,8 @@
 			</array>
 		</dict>
 	</array>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>.Dongle-Bold.ttf.</string>
@@ -36,11 +38,8 @@
 	</dict>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>fetch</string>
 		<string>remote-notification</string>
 	</array>
-	<key>item0</key>
-	<string>NotoSansKR-Medium</string>
-	<key>item1</key>
-	<string>NotoSansKR-Regular</string>
 </dict>
 </plist>

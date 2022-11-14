@@ -19,10 +19,13 @@ class AuthorizationViewController: BaseViewController {
         super.viewDidLoad()
 
         mainView.backgroundColor = .white
-        
+        mainView.button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
-
+    @objc func buttonTapped() {
+       
+        
+    }
    
 
 }

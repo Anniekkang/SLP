@@ -26,13 +26,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let onboardingVC = OnboardViewController()
         
-//        let mainVC = loginViewController()
-//        let nav = UINavigationController(rootViewController: mainVC)
+        let mainVC = GenderViewController()
+        let nav = UINavigationController(rootViewController: mainVC)
 //        let loginVC = loginViewController()
 //        let nav2 = UINavigationController(rootViewController: loginVC)
 //        let authVC = AuthorizationViewController()
 //        let nav3 = UINavigationController(rootViewController: authVC)
-        self.window?.rootViewController = onboardingVC
+        self.window?.rootViewController = nav
        
         
     }

@@ -26,10 +26,11 @@ class loginViewController: BaseViewController {
         mainView.backgroundColor = colorCustom.shared.whiteColor
         mainView.textField.delegate = self
         mainView.button.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
-       
         
-        
-        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.mainView.endEditing(true)
     }
     
     
@@ -45,7 +46,7 @@ class loginViewController: BaseViewController {
                 return
               }
               // Sign in using the verificationID and the code sent to the user
-              
+              print("verify phone")
               UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
               
           }
