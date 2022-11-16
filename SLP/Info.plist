@@ -9,12 +9,10 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.1073527335820-df9v95ci4b721ikf8ullgldckovin2k1</string>
+				<string>com.googleusercontent.apps.74226942860-ot1ctq2dh4hunvtsoi0qf3hbnagj9tgv</string>
 			</array>
 		</dict>
 	</array>
-	<key>FirebaseAppDelegateProxyEnabled</key>
-	<false/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>.Dongle-Bold.ttf.</string>
@@ -38,7 +36,7 @@
 	</dict>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>fetch</string>
+		<string></string>
 		<string>remote-notification</string>
 	</array>
 </dict>

@@ -106,21 +106,20 @@ class AuthorizationView: BaseView {
     override func setConstraints() {
         label.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(safeAreaLayoutGuide).offset(169)
-            make.leading.trailing.equalToSuperview().inset(57.5)
+            make.centerY.equalToSuperview().multipliedBy(0.5)
+            make.width.equalToSuperview()
             make.height.equalTo(32)
         }
         
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom).offset(110)
+            make.centerY.equalToSuperview().multipliedBy(0.8)
             make.leading.equalToSuperview().inset(16)
-            make.width.equalTo(263)
             make.height.equalTo(40)
+            make.width.equalToSuperview().multipliedBy(0.63)
             
             
         }
         
-       
         textField.snp.makeConstraints { make in
         
         }
@@ -131,24 +130,23 @@ class AuthorizationView: BaseView {
         }
         
         sendButton.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom).offset(110)
-            make.leading.equalTo(stackView.snp.trailing).offset(8)
+
+            make.centerY.equalToSuperview().multipliedBy(0.8)
             make.trailing.equalToSuperview().inset(16)
             make.height.equalTo(40)
+            make.width.equalTo(textField.snp.width).multipliedBy(0.35)
             
             
         }
         
         button.snp.makeConstraints { make in
-            make.top.equalTo(stackView.snp.bottom).offset(77)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().multipliedBy(1.1)
             make.height.equalTo(48)
             make.leading.trailing.equalToSuperview().inset(16)
         }
         
-        
-        
-        
-        
+      
         
     }
     

@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1073527335820-df9v95ci4b721ikf8ullgldckovin2k1.apps.googleusercontent.com</string>
+	<string>74226942860-ot1ctq2dh4hunvtsoi0qf3hbnagj9tgv.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1073527335820-df9v95ci4b721ikf8ullgldckovin2k1</string>
+	<string>com.googleusercontent.apps.74226942860-ot1ctq2dh4hunvtsoi0qf3hbnagj9tgv</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCKdSOb8dmm9XQObp2Tf4QY4ettjP9wVtA</string>
+	<string>AIzaSyDqOH5Oib6cNXAiJgopOn_5DfAgOrCM4vQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1073527335820</string>
+	<string>74226942860</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.Anniekang.SLP</string>
 	<key>PROJECT_ID</key>
-	<string>sesac2-165b3</string>
+	<string>slp-sesac</string>
 	<key>STORAGE_BUCKET</key>
-	<string>sesac2-165b3.appspot.com</string>
+	<string>slp-sesac.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1073527335820:ios:cffede7429c2a75c2d44a9</string>
+	<string>1:74226942860:ios:626e0e60dc77fcd751cca9</string>
 </dict>
 </plist>

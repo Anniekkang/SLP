@@ -12,6 +12,7 @@ import FirebaseMessaging
 
 
 
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
        
@@ -91,26 +92,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-    // Receive displayed notifications for iOS 10 devices.
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification) async
-    -> UNNotificationPresentationOptions {
-        let userInfo = notification.request.content.userInfo
-        
-        // With swizzling disabled you must let Messaging know about the message, for Analytics
-        // Messaging.messaging().appDidReceiveMessage(userInfo)
-        
-        // ...
-        
-        // Print full message.
-        print(userInfo)
-        
-        // Change this to your preferred presentation option
-        return [[.badge,.banner, .sound]]
+    
+    func application(application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+      Messaging.messaging().apnsToken = deviceToken
     }
+    
+    //포그라운드 알림 수신, 화면마다 푸시마다 설정할 수도 있음(카카오톡처럼)
+       func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+           completionHandler([.sound, .list, .banner])
+       }
+
+       
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse) async {
+        print("사용자가 푸시를 클릭함")
+        print(response.notification.request.content.body) // 바디는 알림메세지의 내용
+        print(response.notification.request.content.userInfo)// 파이어베이스에서 등록했던 키 밸류
+        
         let userInfo = response.notification.request.content.userInfo
         
         // ...
@@ -122,4 +122,15 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         print(userInfo)
     }
     
+ 
+   
+    
 }
+
+
+    
+    
+    
+
+
+

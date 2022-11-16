@@ -25,7 +25,6 @@
 		9EC35923291AC49E001E69A4 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC35922291AC49E001E69A4 /* Font.swift */; };
 		9EC35926291AE10E001E69A4 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC35925291AE10E001E69A4 /* AuthorizationView.swift */; };
 		9EC35928291AE11D001E69A4 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC35927291AE11D001E69A4 /* AuthorizationViewController.swift */; };
-		9EC3593B291B53CC001E69A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EC3593A291B53CC001E69A4 /* GoogleService-Info.plist */; };
 		9EC3593E291B9825001E69A4 /* AnyFormatKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9EC3593D291B9825001E69A4 /* AnyFormatKit */; };
 		9EC35940291CDCF5001E69A4 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC3593F291CDCF5001E69A4 /* OnboardingCollectionViewCell.swift */; };
 		9EC3594B291E5256001E69A4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC3594A291E5256001E69A4 /* SplashViewController.swift */; };
@@ -39,6 +38,11 @@
 		9ECC7C882922AF3000B3DC25 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C872922AF3000B3DC25 /* EmailView.swift */; };
 		9ECC7C8A2922AF5600B3DC25 /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C892922AF5600B3DC25 /* GenderView.swift */; };
 		9ECC7C8C2922B21200B3DC25 /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C8B2922B21200B3DC25 /* Func.swift */; };
+		9ECC7C8F2923057200B3DC25 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 9ECC7C8E2923057200B3DC25 /* Toast */; };
+		9ECC7C9329230FDB00B3DC25 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C9229230FDB00B3DC25 /* textField.swift */; };
+		9ECC7C9529230FE300B3DC25 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C9429230FE300B3DC25 /* Button.swift */; };
+		9ECC7C972924E81F00B3DC25 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9ECC7C962924E81F00B3DC25 /* .gitignore */; };
+		9ECC7C992924E83800B3DC25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9ECC7C982924E83800B3DC25 /* GoogleService-Info.plist */; };
 		9EFDEB9329190566007743CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9229190566007743CE /* AppDelegate.swift */; };
 		9EFDEB9529190566007743CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9429190566007743CE /* SceneDelegate.swift */; };
 		9EFDEB9C29190567007743CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9B29190567007743CE /* Assets.xcassets */; };
@@ -67,8 +71,6 @@
 		9EC35922291AC49E001E69A4 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		9EC35925291AE10E001E69A4 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		9EC35927291AE11D001E69A4 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
-		9EC35939291B5203001E69A4 /* .gitignore.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
-		9EC3593A291B53CC001E69A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9EC3593F291CDCF5001E69A4 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		9EC35949291E30D7001E69A4 /* SLP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SLP.entitlements; sourceTree = "<group>"; };
 		9EC3594A291E5256001E69A4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,10 @@
 		9ECC7C872922AF3000B3DC25 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		9ECC7C892922AF5600B3DC25 /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		9ECC7C8B2922B21200B3DC25 /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
+		9ECC7C9229230FDB00B3DC25 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
+		9ECC7C9429230FE300B3DC25 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		9ECC7C962924E81F00B3DC25 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9ECC7C982924E83800B3DC25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9EFDEB8F29190566007743CE /* SLP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EFDEB9229190566007743CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EFDEB9429190566007743CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ECC7C8F2923057200B3DC25 /* Toast in Frameworks */,
 				9EC3593E291B9825001E69A4 /* AnyFormatKit in Frameworks */,
 				9E876DD129220E3E00BEBAE8 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				9E876DD529220E3E00BEBAE8 /* FirebaseMessaging in Frameworks */,
@@ -163,6 +170,8 @@
 		9EFDEB8629190566007743CE = {
 			isa = PBXGroup;
 			children = (
+				9ECC7C962924E81F00B3DC25 /* .gitignore */,
+				9ECC7C982924E83800B3DC25 /* GoogleService-Info.plist */,
 				9EFDEB9129190566007743CE /* SLP */,
 				9EFDEB9029190566007743CE /* Products */,
 			);
@@ -182,8 +191,6 @@
 				9E876DBA2920D70300BEBAE8 /* Dongle */,
 				9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */,
 				9EC35949291E30D7001E69A4 /* SLP.entitlements */,
-				9EC35939291B5203001E69A4 /* .gitignore.md */,
-				9EC3593A291B53CC001E69A4 /* GoogleService-Info.plist */,
 				9ECC7C7A2922A9FF00B3DC25 /* SignUp */,
 				9EC35924291AE0F1001E69A4 /* AuthorizationPage */,
 				9EFDEBB5291AA0BF007743CE /* loginPage */,
@@ -207,6 +214,8 @@
 				9EFDEBA9291928F9007743CE /* Color.swift */,
 				9EC35922291AC49E001E69A4 /* Font.swift */,
 				9ECC7C8B2922B21200B3DC25 /* Func.swift */,
+				9ECC7C9229230FDB00B3DC25 /* textField.swift */,
+				9ECC7C9429230FE300B3DC25 /* Button.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -263,6 +272,7 @@
 				9E876DD029220E3E00BEBAE8 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				9E876DD229220E3E00BEBAE8 /* FirebaseAuth */,
 				9E876DD429220E3E00BEBAE8 /* FirebaseMessaging */,
+				9ECC7C8E2923057200B3DC25 /* Toast */,
 			);
 			productName = SLP;
 			productReference = 9EFDEB8F29190566007743CE /* SLP.app */;
@@ -296,6 +306,7 @@
 				9EC3591F291AA64D001E69A4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				9EC3593C291B9824001E69A4 /* XCRemoteSwiftPackageReference "AnyFormatKit" */,
 				9E876DCF29220E3E00BEBAE8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9ECC7C8D2923057200B3DC25 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 9EFDEB9029190566007743CE /* Products */;
 			projectDirPath = "";
@@ -314,8 +325,9 @@
 				9E876DBB2920D70300BEBAE8 /* Dongle in Resources */,
 				9E876DB92920B8FC00BEBAE8 /* Noto_Sans_KR in Resources */,
 				9EFDEB9F29190567007743CE /* LaunchScreen.storyboard in Resources */,
-				9EC3593B291B53CC001E69A4 /* GoogleService-Info.plist in Resources */,
 				9EFDEB9C29190567007743CE /* Assets.xcassets in Resources */,
+				9ECC7C992924E83800B3DC25 /* GoogleService-Info.plist in Resources */,
+				9ECC7C972924E81F00B3DC25 /* .gitignore in Resources */,
 				9E876DBD2920E06000BEBAE8 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +354,7 @@
 				9EFDEB9329190566007743CE /* AppDelegate.swift in Sources */,
 				9EFDEB9529190566007743CE /* SceneDelegate.swift in Sources */,
 				9EC3594B291E5256001E69A4 /* SplashViewController.swift in Sources */,
+				9ECC7C9329230FDB00B3DC25 /* textField.swift in Sources */,
 				9EFDEBB029192A11007743CE /* BaseView.swift in Sources */,
 				9EFDEBB229192A66007743CE /* BaseViewController.swift in Sources */,
 				9ECC7C8C2922B21200B3DC25 /* Func.swift in Sources */,
@@ -359,6 +372,7 @@
 				9E876DCE292134E000BEBAE8 /* textFieldExtension.swift in Sources */,
 				9EFDEBB4291AA0BB007743CE /* loginViewController.swift in Sources */,
 				9ECC7C882922AF3000B3DC25 /* EmailView.swift in Sources */,
+				9ECC7C9529230FE300B3DC25 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +612,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		9ECC7C8D2923057200B3DC25 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -625,6 +647,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9EC3593C291B9824001E69A4 /* XCRemoteSwiftPackageReference "AnyFormatKit" */;
 			productName = AnyFormatKit;
+		};
+		9ECC7C8E2923057200B3DC25 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9ECC7C8D2923057200B3DC25 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

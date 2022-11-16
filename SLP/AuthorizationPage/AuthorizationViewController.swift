@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 class AuthorizationViewController: BaseViewController {
 
@@ -24,6 +26,31 @@ class AuthorizationViewController: BaseViewController {
     
     @objc func buttonTapped() {
        
+        guard let verificationCode = mainView.textField.text else {
+            print("verificationCode error")
+            return }
+        guard let verificationID = UserDefaults.standard.string(forKey: "authVerificationID") else { print("credential error")
+            return }
+        
+        let credential = PhoneAuthProvider.provider().credential(
+          withVerificationID: verificationID,
+          verificationCode: verificationCode
+        )
+        
+        
+        Auth.auth().signIn(with: credential) { authResult, error in
+            if let error = error {
+                print("Unable to login with Phone : error:\(error)")
+                return
+            }
+            // User is signed in
+            // ...
+            
+            print("Able to login with Phone")
+        }
+        
+        
+        
         
     }
    

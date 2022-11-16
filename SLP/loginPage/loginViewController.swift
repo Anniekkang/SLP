@@ -42,7 +42,7 @@ class loginViewController: BaseViewController {
         PhoneAuthProvider.provider()
           .verifyPhoneNumber(text, uiDelegate: nil) { verificationID, error in
               if let error = error {
-               print("error")
+               print("phoneAuth error : \(error)")
                 return
               }
               // Sign in using the verificationID and the code sent to the user

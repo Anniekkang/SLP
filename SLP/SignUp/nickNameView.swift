@@ -41,6 +41,8 @@ class nickNameView: BaseView {
         text.placeholder = "10자 이내로 입력"
         text.minimumFontSize = FontSize.medium.rawValue
         text.keyboardType = .default
+        text.keyboardType = .emailAddress
+        text.becomeFirstResponder()
         return text
     }()
     
@@ -82,8 +84,7 @@ class nickNameView: BaseView {
             make.centerY.equalToSuperview().multipliedBy(0.8)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(40)
-            
-            
+     
         }
         
         textField.snp.makeConstraints { make in

@@ -77,31 +77,31 @@ class loginView: BaseView {
     override func setConstraints() {
         label.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(safeAreaLayoutGuide).offset(169)
-            make.leading.trailing.equalToSuperview().inset(73)
+            make.centerY.equalToSuperview().multipliedBy(0.5)
+            make.width.equalToSuperview()
             make.height.equalTo(65)
         }
         
         stackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(label.snp.bottom).offset(77)
+            make.centerY.equalToSuperview().multipliedBy(0.8)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(40)
-            
             
         }
         
         textField.snp.makeConstraints { make in
-        
+            
         }
         
         view.snp.makeConstraints { make in
             make.height.equalTo(1)
-        
+            
         }
         
         button.snp.makeConstraints { make in
-            make.top.equalTo(stackView.snp.bottom).offset(77)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().multipliedBy(1.1)
             make.height.equalTo(48)
             make.leading.trailing.equalToSuperview().inset(16)
         }
