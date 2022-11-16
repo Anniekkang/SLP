@@ -29,6 +29,8 @@ class loginViewController: BaseViewController {
         
     }
     
+
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.mainView.endEditing(true)
     }
@@ -40,7 +42,7 @@ class loginViewController: BaseViewController {
         guard let text = mainView.textField.text else { return }
        
         PhoneAuthProvider.provider()
-          .verifyPhoneNumber(text, uiDelegate: nil) { verificationID, error in
+          .verifyPhoneNumber("+82" + text, uiDelegate: nil) { verificationID, error in
               if let error = error {
                print("phoneAuth error : \(error)")
                 return

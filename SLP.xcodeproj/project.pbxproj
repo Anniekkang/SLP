@@ -43,6 +43,7 @@
 		9ECC7C9529230FE300B3DC25 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C9429230FE300B3DC25 /* Button.swift */; };
 		9ECC7C972924E81F00B3DC25 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9ECC7C962924E81F00B3DC25 /* .gitignore */; };
 		9ECC7C992924E83800B3DC25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9ECC7C982924E83800B3DC25 /* GoogleService-Info.plist */; };
+		9ECC7C9B292536DC00B3DC25 /* SwizzlingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C9A292536DC00B3DC25 /* SwizzlingExtension.swift */; };
 		9EFDEB9329190566007743CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9229190566007743CE /* AppDelegate.swift */; };
 		9EFDEB9529190566007743CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9429190566007743CE /* SceneDelegate.swift */; };
 		9EFDEB9C29190567007743CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9B29190567007743CE /* Assets.xcassets */; };
@@ -88,6 +89,7 @@
 		9ECC7C9429230FE300B3DC25 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		9ECC7C962924E81F00B3DC25 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9ECC7C982924E83800B3DC25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9ECC7C9A292536DC00B3DC25 /* SwizzlingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwizzlingExtension.swift; sourceTree = "<group>"; };
 		9EFDEB8F29190566007743CE /* SLP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EFDEB9229190566007743CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EFDEB9429190566007743CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				9EFDEBB3291AA0BB007743CE /* loginViewController.swift */,
 				9EFDEBB6291AA0D2007743CE /* loginView.swift */,
 				9E876DCD292134DF00BEBAE8 /* textFieldExtension.swift */,
+				9ECC7C9A292536DC00B3DC25 /* SwizzlingExtension.swift */,
 			);
 			path = loginPage;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				9ECC7C7C2922AA5800B3DC25 /* nickNameViewController.swift in Sources */,
 				9E876DC62920E5BB00BEBAE8 /* OnboardCollectionViewCell.swift in Sources */,
 				9E876DCE292134E000BEBAE8 /* textFieldExtension.swift in Sources */,
+				9ECC7C9B292536DC00B3DC25 /* SwizzlingExtension.swift in Sources */,
 				9EFDEBB4291AA0BB007743CE /* loginViewController.swift in Sources */,
 				9ECC7C882922AF3000B3DC25 /* EmailView.swift in Sources */,
 				9ECC7C9529230FE300B3DC25 /* Button.swift in Sources */,

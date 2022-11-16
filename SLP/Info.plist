@@ -36,7 +36,6 @@
 	</dict>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string></string>
 		<string>remote-notification</string>
 	</array>
 </dict>

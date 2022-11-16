@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseCore
 import FirebaseAuth
 import FirebaseMessaging
@@ -19,12 +20,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
       
-        
+        UIViewController.swizzleMethod()
         FirebaseApp.configure()
+        
+        
+        //원격알림시스템에 앱을 등록
+         if #available(iOS 10.0, *) {
+           // For iOS 10 display notification (sent via APNS)
+           UNUserNotificationCenter.current().delegate = self
+
+           let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+           UNUserNotificationCenter.current().requestAuthorization(
+             options: authOptions,
+             completionHandler: { _, _ in }
+           )
+         } else {
+           let settings: UIUserNotificationSettings =
+             UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+           application.registerUserNotificationSettings(settings)
+         }
+
+         application.registerForRemoteNotifications()
+        
         //메세지대리자 설정
         Messaging.messaging().delegate = self
         
-        //등록 토큰 가져오기
+        //등록 토큰 가져오기 -> 회원탈퇴했을 때
         Messaging.messaging().token { token, error in
           if let error = error {
             print("Error fetching FCM registration token: \(error)")
@@ -33,42 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             
           }
         }
-        //토큰이 업데이트 될 때마다 알림
-        func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-          print("Firebase registration token: \(String(describing: fcmToken))")
-
-          let dataDict: [String: String] = ["token": fcmToken ?? ""]
-          NotificationCenter.default.post(
-            name: Notification.Name("FCMToken"),
-            object: nil,
-            userInfo: dataDict
-          )
-          // TODO: If necessary send token to application server.
-          // Note: This callback is fired at each app startup and whenever a new token is generated.
-        }
-
         
-        
-        if #available(iOS 10.0, *) {
-          // For iOS 10 display notification (sent via APNS)
-          UNUserNotificationCenter.current().delegate = self
-
-          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-          UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: { _, _ in }
-          )
-        } else {
-          let settings: UIUserNotificationSettings =
-            UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-          application.registerUserNotificationSettings(settings)
-        }
-
-        application.registerForRemoteNotifications()
-
-        
-        
-        
+      
         return true
     }
     
@@ -88,15 +75,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     
     
 }
+extension AppDelegate {
+    //토큰이 업데이트 될 때마다 알림
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+      print("Firebase registration token: \(String(describing: fcmToken))")
 
+      let dataDict: [String: String] = ["token": fcmToken ?? ""]
+      NotificationCenter.default.post(
+        name: Notification.Name("FCMToken"),
+        object: nil,
+        userInfo: dataDict
+      )
+      // TODO: If necessary send token to application server.
+      // Note: This callback is fired at each app startup and whenever a new token is generated.
+    }
+    
+    
+}
 
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
-    func application(application: UIApplication,
-                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-      Messaging.messaging().apnsToken = deviceToken
-    }
     
     //포그라운드 알림 수신, 화면마다 푸시마다 설정할 수도 있음(카카오톡처럼)
        func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
