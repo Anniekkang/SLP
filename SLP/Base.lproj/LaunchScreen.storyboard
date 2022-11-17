@@ -18,23 +18,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Exclude" translatesAutoresizingMaskIntoConstraints="NO" id="rdV-B7-9c8">
-                                <rect key="frame" x="87" y="260" width="240" height="286.5"/>
+                                <rect key="frame" x="87" y="215" width="240" height="286.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rdV-B7-9c8" secondAttribute="height" multiplier="218:260" id="lpk-9a-w6j"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sesac_face_1" translatesAutoresizingMaskIntoConstraints="NO" id="ghm-4n-y29">
-                                <rect key="frame" x="123" y="283.5" width="168" height="168"/>
+                                <rect key="frame" x="123" y="238.5" width="168" height="168"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ghm-4n-y29" secondAttribute="height" multiplier="1:1" id="Vep-SZ-bRJ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ks-WV-4bE">
-                                <rect key="frame" x="-12.5" y="585" width="439" height="84"/>
+                                <rect key="frame" x="-12.5" y="541.5" width="439" height="171.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="SeSAC Study">
                                         <attributes>
-                                            <color key="NSColor" red="0.28627450980392155" green="0.86274509803921573" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.28627450980392155" green="0.86274509803921573" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="72" name="Dongle-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -47,12 +47,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ghm-4n-y29" firstAttribute="width" secondItem="rdV-B7-9c8" secondAttribute="width" multiplier="0.7" id="Iul-FK-uH4"/>
-                            <constraint firstItem="rdV-B7-9c8" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.9" id="Jie-vN-bTh"/>
+                            <constraint firstItem="rdV-B7-9c8" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.8" id="Jie-vN-bTh"/>
                             <constraint firstItem="7ks-WV-4bE" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="1.4" id="SoP-lB-dA5"/>
                             <constraint firstItem="7ks-WV-4bE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YBs-tL-qC8"/>
                             <constraint firstItem="ghm-4n-y29" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aCz-nw-vSx"/>
-                            <constraint firstItem="ghm-4n-y29" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.82" id="aoO-oE-9Ge"/>
-                            <constraint firstItem="rdV-B7-9c8" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.58" id="rrb-Sh-whf"/>
+                            <constraint firstItem="ghm-4n-y29" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.72" id="aoO-oE-9Ge"/>
+                            <constraint firstItem="7ks-WV-4bE" firstAttribute="height" secondItem="rdV-B7-9c8" secondAttribute="height" multiplier="0.6" id="cSL-TI-0AC"/>
+                            <constraint firstItem="rdV-B7-9c8" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.319754" id="vtR-Kr-ghX"/>
                             <constraint firstItem="rdV-B7-9c8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zUO-FP-nSG"/>
                         </constraints>
                     </view>
@@ -63,7 +64,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Exclude" width="218" height="258.5"/>
+        <image name="Exclude" width="218" height="259"/>
         <image name="sesac_face_1" width="1006.5" height="957.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

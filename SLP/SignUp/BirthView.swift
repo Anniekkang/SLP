@@ -31,6 +31,7 @@ class BirthView: BaseView {
     
     let dateLabel : UILabel = {
         let label = UILabel()
+        
         return label
     }()
     

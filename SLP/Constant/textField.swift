@@ -8,8 +8,8 @@
 import UIKit
 
 class customTextField {
-    static func customTextFieldView(view : UIView) -> Bool {
+    static func customTextFieldView(view : UIView) {
         view.backgroundColor = colorCustom.shared.blackColor
-        return true
+     
     }
 }

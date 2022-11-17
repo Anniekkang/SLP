@@ -29,3 +29,25 @@ class BaseViewController: UIViewController {
    
 
 }
+
+extension BaseViewController : UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+        
+    }
+    
+    //textfield에서 text가 변화될 때
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        
+        return true
+     
+    }
+    
+    
+    
+    
+    
+    
+}
