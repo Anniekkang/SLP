@@ -44,7 +44,7 @@ class AuthorizationView: BaseView {
         let text = UITextField()
         text.placeholder = "인증번호 입력"
         text.textColor = colorCustom.shared.gray7
-        text.keyboardType = .numberPad
+        text.keyboardType = .asciiCapableNumberPad
         return text
     }()
     

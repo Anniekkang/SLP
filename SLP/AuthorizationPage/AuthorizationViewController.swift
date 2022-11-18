@@ -105,13 +105,18 @@ class AuthorizationViewController: BaseViewController {
         let textCount = text.count
         
         
-        if textCount >=  5 {
+        if textCount == 5 {
             
             customButton.changedButton(view: mainView.view, button: mainView.button)
             
+        } else {
+            
+            
+            
+            
         }
         
-        return false
+        return true
     }
     
 }
