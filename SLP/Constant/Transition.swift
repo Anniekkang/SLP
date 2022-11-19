@@ -11,7 +11,9 @@ class Transition {
     
     static func transitionVC(firstVC : UIViewController, secondVC : UIViewController) {
        
-        firstVC.navigationController?.pushViewController(secondVC, animated: true)
+        let nav = UINavigationController(rootViewController: firstVC)
+        nav.navigationController?.pushViewController(secondVC, animated: true)
+        
     }
  
 }

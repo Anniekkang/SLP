@@ -9,9 +9,10 @@ import UIKit
 
 class MyPageViewController: BaseViewController {
 
-    static var id = String(describing: MyPageTableViewCell.self)
+  
     
     let mainView = MyPageView()
+    
     override func loadView() {
         self.view = mainView
         
@@ -20,6 +21,7 @@ class MyPageViewController: BaseViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = "내정보"
+        configuration()
        
     }
  
@@ -27,9 +29,8 @@ class MyPageViewController: BaseViewController {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.register(MyPageTableViewCell.self, forCellReuseIdentifier: MyPageTableViewCell.id)
-        mainView.backgroundColor = .white
         mainView.tableView.register(NameTableViewCell.self, forCellReuseIdentifier: NameTableViewCell.id)
-        
+        mainView.backgroundColor = .white
     }
 }
 

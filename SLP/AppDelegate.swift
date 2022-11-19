@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         // Override point for customization after application launch.
       
         FirebaseApp.configure()
-        UIView.appearance().tintColor = colorCustom.shared.greenBrandColor
+        
         
         
         //원격알림시스템에 앱을 등록

@@ -10,7 +10,7 @@ import SnapKit
 
 class NameTableViewCell: BaseTableViewCell {
     
-    static var id = String(describing: NameTableViewCell.self)
+    static var id = Reusable.tableID(cell: NameTableViewCell())
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -86,7 +86,8 @@ class NameTableViewCell: BaseTableViewCell {
         button.snp.makeConstraints { make in
             make.height.equalTo(stackView)
             make.width.equalTo(button.snp.height)
-            make.trailing.bottom.top.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.centerY.equalToSuperview()
         }
     }
 }

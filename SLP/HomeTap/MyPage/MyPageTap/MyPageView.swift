@@ -21,6 +21,7 @@ class MyPageView: BaseView {
     let tableView : UITableView = {
         let view = UITableView(frame: .zero, style: .plain)
         view.rowHeight = 80
+        view.allowsMultipleSelection = false
         return view
     }()
     

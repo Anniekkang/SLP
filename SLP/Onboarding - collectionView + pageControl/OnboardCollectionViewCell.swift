@@ -10,7 +10,7 @@ import SnapKit
 
 class OnboardCollectionViewCell: BaseCollectionViewCell {
     
-    static var id = String(describing: OnboardCollectionViewCell.self)
+    static var id = Reusable.collectionID(cell: OnboardCollectionViewCell())
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -8,8 +8,9 @@
 import UIKit
 
 class MyPageTableViewCell: BaseTableViewCell {
+    
 
-    static var id = String(describing: MyPageTableViewCell.self)
+    static var id = Reusable.tableID(cell: MyPageTableViewCell())
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
