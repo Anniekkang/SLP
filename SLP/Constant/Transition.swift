@@ -7,9 +7,9 @@
 
 import UIKit
 
-class Func {
+class Transition {
     
-    static func buttonTapped(firstVC : UIViewController, secondVC : UIViewController) {
+    static func transitionVC(firstVC : UIViewController, secondVC : UIViewController) {
        
         firstVC.navigationController?.pushViewController(secondVC, animated: true)
     }

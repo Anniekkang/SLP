@@ -45,6 +45,7 @@ class AuthorizationView: BaseView {
         text.placeholder = "인증번호 입력"
         text.textColor = colorCustom.shared.gray7
         text.keyboardType = .asciiCapableNumberPad
+        text.textContentType = .oneTimeCode
         return text
     }()
     

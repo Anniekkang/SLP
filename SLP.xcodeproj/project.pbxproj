@@ -35,7 +35,7 @@
 		9ECC7C862922AF1D00B3DC25 /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C852922AF1D00B3DC25 /* GenderViewController.swift */; };
 		9ECC7C882922AF3000B3DC25 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C872922AF3000B3DC25 /* EmailView.swift */; };
 		9ECC7C8A2922AF5600B3DC25 /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C892922AF5600B3DC25 /* GenderView.swift */; };
-		9ECC7C8C2922B21200B3DC25 /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C8B2922B21200B3DC25 /* Func.swift */; };
+		9ECC7C8C2922B21200B3DC25 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C8B2922B21200B3DC25 /* Transition.swift */; };
 		9ECC7C8F2923057200B3DC25 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 9ECC7C8E2923057200B3DC25 /* Toast */; };
 		9ECC7C9329230FDB00B3DC25 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C9229230FDB00B3DC25 /* textField.swift */; };
 		9ECC7C9529230FE300B3DC25 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C9429230FE300B3DC25 /* Button.swift */; };
@@ -49,6 +49,19 @@
 		9ECC7CAA2925BAD000B3DC25 /* Dongle in Resources */ = {isa = PBXBuildFile; fileRef = 9ECC7CA92925BAD000B3DC25 /* Dongle */; };
 		9ECC7CB1292623AE00B3DC25 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CB0292623AE00B3DC25 /* HomeViewController.swift */; };
 		9ECC7CB32926247400B3DC25 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CB22926247400B3DC25 /* HomeView.swift */; };
+		9ECC7CB5292885C600B3DC25 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CB4292885C600B3DC25 /* ShopView.swift */; };
+		9ECC7CB7292885F500B3DC25 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CB6292885F500B3DC25 /* ShopViewController.swift */; };
+		9ECC7CB92928890F00B3DC25 /* LocationAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CB82928890F00B3DC25 /* LocationAuthorization.swift */; };
+		9ECC7CBB29288D4300B3DC25 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CBA29288D4300B3DC25 /* MyPageViewController.swift */; };
+		9ECC7CBD29288D5600B3DC25 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CBC29288D5600B3DC25 /* MyPageView.swift */; };
+		9ECC7CBF2928921000B3DC25 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CBE2928921000B3DC25 /* MyPageTableViewCell.swift */; };
+		9ECC7CC12928925C00B3DC25 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CC02928925C00B3DC25 /* BaseTableViewCell.swift */; };
+		9ECC7CC32928B53900B3DC25 /* MyPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CC22928B53900B3DC25 /* MyPageData.swift */; };
+		9ECC7CC62928B8E100B3DC25 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CC52928B8E100B3DC25 /* TableViewExtension.swift */; };
+		9ECC7CC82928BD9700B3DC25 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CC72928BD9700B3DC25 /* TabBarController.swift */; };
+		9ECC7CCB2928C5A100B3DC25 /* ManageMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CCA2928C5A100B3DC25 /* ManageMyPageViewController.swift */; };
+		9ECC7CCD2928C5B800B3DC25 /* ManageMyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CCC2928C5B800B3DC25 /* ManageMyPageView.swift */; };
+		9ECC7CCF2928CA7800B3DC25 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CCE2928CA7800B3DC25 /* NameTableViewCell.swift */; };
 		9EFDEB9329190566007743CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9229190566007743CE /* AppDelegate.swift */; };
 		9EFDEB9529190566007743CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9429190566007743CE /* SceneDelegate.swift */; };
 		9EFDEB9C29190567007743CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9B29190567007743CE /* Assets.xcassets */; };
@@ -87,7 +100,7 @@
 		9ECC7C852922AF1D00B3DC25 /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		9ECC7C872922AF3000B3DC25 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		9ECC7C892922AF5600B3DC25 /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
-		9ECC7C8B2922B21200B3DC25 /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
+		9ECC7C8B2922B21200B3DC25 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		9ECC7C9229230FDB00B3DC25 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		9ECC7C9429230FE300B3DC25 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		9ECC7C962924E81F00B3DC25 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -98,6 +111,19 @@
 		9ECC7CA92925BAD000B3DC25 /* Dongle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dongle; sourceTree = "<group>"; };
 		9ECC7CB0292623AE00B3DC25 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9ECC7CB22926247400B3DC25 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9ECC7CB4292885C600B3DC25 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
+		9ECC7CB6292885F500B3DC25 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		9ECC7CB82928890F00B3DC25 /* LocationAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorization.swift; sourceTree = "<group>"; };
+		9ECC7CBA29288D4300B3DC25 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		9ECC7CBC29288D5600B3DC25 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		9ECC7CBE2928921000B3DC25 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
+		9ECC7CC02928925C00B3DC25 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		9ECC7CC22928B53900B3DC25 /* MyPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageData.swift; sourceTree = "<group>"; };
+		9ECC7CC52928B8E100B3DC25 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		9ECC7CC72928BD9700B3DC25 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9ECC7CCA2928C5A100B3DC25 /* ManageMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyPageViewController.swift; sourceTree = "<group>"; };
+		9ECC7CCC2928C5B800B3DC25 /* ManageMyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyPageView.swift; sourceTree = "<group>"; };
+		9ECC7CCE2928CA7800B3DC25 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
 		9EFDEB8F29190566007743CE /* SLP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EFDEB9229190566007743CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EFDEB9429190566007743CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +218,7 @@
 		9ECC7CAB2926232400B3DC25 /* HomeTap */ = {
 			isa = PBXGroup;
 			children = (
+				9ECC7CC72928BD9700B3DC25 /* TabBarController.swift */,
 				9ECC7CAF2926238900B3DC25 /* MyPage */,
 				9ECC7CAE2926237C00B3DC25 /* SeSACFriend */,
 				9ECC7CAD2926237100B3DC25 /* SeSacShop */,
@@ -205,6 +232,7 @@
 			children = (
 				9ECC7CB0292623AE00B3DC25 /* HomeViewController.swift */,
 				9ECC7CB22926247400B3DC25 /* HomeView.swift */,
+				9ECC7CB82928890F00B3DC25 /* LocationAuthorization.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -212,6 +240,8 @@
 		9ECC7CAD2926237100B3DC25 /* SeSacShop */ = {
 			isa = PBXGroup;
 			children = (
+				9ECC7CB6292885F500B3DC25 /* ShopViewController.swift */,
+				9ECC7CB4292885C600B3DC25 /* ShopView.swift */,
 			);
 			path = SeSacShop;
 			sourceTree = "<group>";
@@ -226,8 +256,32 @@
 		9ECC7CAF2926238900B3DC25 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				9ECC7CC22928B53900B3DC25 /* MyPageData.swift */,
+				9ECC7CC92928C57400B3DC25 /* ManageMyPage */,
+				9ECC7CC42928B6B200B3DC25 /* MyPageTap */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		9ECC7CC42928B6B200B3DC25 /* MyPageTap */ = {
+			isa = PBXGroup;
+			children = (
+				9ECC7CBA29288D4300B3DC25 /* MyPageViewController.swift */,
+				9ECC7CBC29288D5600B3DC25 /* MyPageView.swift */,
+				9ECC7CBE2928921000B3DC25 /* MyPageTableViewCell.swift */,
+				9ECC7CCE2928CA7800B3DC25 /* NameTableViewCell.swift */,
+				9ECC7CC52928B8E100B3DC25 /* TableViewExtension.swift */,
+			);
+			path = MyPageTap;
+			sourceTree = "<group>";
+		};
+		9ECC7CC92928C57400B3DC25 /* ManageMyPage */ = {
+			isa = PBXGroup;
+			children = (
+				9ECC7CCA2928C5A100B3DC25 /* ManageMyPageViewController.swift */,
+				9ECC7CCC2928C5B800B3DC25 /* ManageMyPageView.swift */,
+			);
+			path = ManageMyPage;
 			sourceTree = "<group>";
 		};
 		9EFDEB8629190566007743CE = {
@@ -278,7 +332,7 @@
 			children = (
 				9EFDEBA9291928F9007743CE /* Color.swift */,
 				9EC35922291AC49E001E69A4 /* Font.swift */,
-				9ECC7C8B2922B21200B3DC25 /* Func.swift */,
+				9ECC7C8B2922B21200B3DC25 /* Transition.swift */,
 				9ECC7C9229230FDB00B3DC25 /* textField.swift */,
 				9ECC7C9429230FE300B3DC25 /* Button.swift */,
 			);
@@ -301,6 +355,7 @@
 				9EFDEBAF29192A11007743CE /* BaseView.swift */,
 				9EFDEBB129192A66007743CE /* BaseViewController.swift */,
 				9E29D9C6291FBCDD00BBE368 /* BaseCollectionViewCell.swift */,
+				9ECC7CC02928925C00B3DC25 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -413,11 +468,18 @@
 				9ECC7CB1292623AE00B3DC25 /* HomeViewController.swift in Sources */,
 				9EC35923291AC49E001E69A4 /* Font.swift in Sources */,
 				9EC35926291AE10E001E69A4 /* AuthorizationView.swift in Sources */,
+				9ECC7CBF2928921000B3DC25 /* MyPageTableViewCell.swift in Sources */,
 				9EFDEBB7291AA0D2007743CE /* loginView.swift in Sources */,
+				9ECC7CCD2928C5B800B3DC25 /* ManageMyPageView.swift in Sources */,
 				9E876DCA2920EC2D00BEBAE8 /* ScrollExtension.swift in Sources */,
 				9EC35940291CDCF5001E69A4 /* OnboardingCollectionViewCell.swift in Sources */,
+				9ECC7CB5292885C600B3DC25 /* ShopView.swift in Sources */,
 				9EC35928291AE11D001E69A4 /* AuthorizationViewController.swift in Sources */,
 				9E29D9C7291FBCDD00BBE368 /* BaseCollectionViewCell.swift in Sources */,
+				9ECC7CC32928B53900B3DC25 /* MyPageData.swift in Sources */,
+				9ECC7CC12928925C00B3DC25 /* BaseTableViewCell.swift in Sources */,
+				9ECC7CB7292885F500B3DC25 /* ShopViewController.swift in Sources */,
+				9ECC7CC82928BD9700B3DC25 /* TabBarController.swift in Sources */,
 				9ECC7C8A2922AF5600B3DC25 /* GenderView.swift in Sources */,
 				9ECC7C862922AF1D00B3DC25 /* GenderViewController.swift in Sources */,
 				9EFDEB9329190566007743CE /* AppDelegate.swift in Sources */,
@@ -425,11 +487,14 @@
 				9EC3594B291E5256001E69A4 /* SplashViewController.swift in Sources */,
 				9ECC7C9329230FDB00B3DC25 /* textField.swift in Sources */,
 				9EFDEBB029192A11007743CE /* BaseView.swift in Sources */,
+				9ECC7CBD29288D5600B3DC25 /* MyPageView.swift in Sources */,
 				9EFDEBB229192A66007743CE /* BaseViewController.swift in Sources */,
 				9ECC7CA6292571D700B3DC25 /* LoginAPIManager.swift in Sources */,
-				9ECC7C8C2922B21200B3DC25 /* Func.swift in Sources */,
+				9ECC7C8C2922B21200B3DC25 /* Transition.swift in Sources */,
+				9ECC7CB92928890F00B3DC25 /* LocationAuthorization.swift in Sources */,
 				9E876DC22920E1FC00BEBAE8 /* OnboardView.swift in Sources */,
 				9ECC7C802922AEF500B3DC25 /* BirthView.swift in Sources */,
+				9ECC7CCB2928C5A100B3DC25 /* ManageMyPageViewController.swift in Sources */,
 				9ECC7CA8292571E600B3DC25 /* SignInAPIManager.swift in Sources */,
 				9E29D9C1291F9FB200BBE368 /* OnboardingData.swift in Sources */,
 				9ECC7C7E2922AA6600B3DC25 /* nickNameView.swift in Sources */,
@@ -437,12 +502,15 @@
 				9E876DC02920E1DF00BEBAE8 /* OnboardViewController.swift in Sources */,
 				9ECC7C822922AF0200B3DC25 /* BirthViewController.swift in Sources */,
 				9EFDEBAA291928F9007743CE /* Color.swift in Sources */,
+				9ECC7CC62928B8E100B3DC25 /* TableViewExtension.swift in Sources */,
 				9EFDEBA729192606007743CE /* OnboardingViewController.swift in Sources */,
 				9ECC7C7C2922AA5800B3DC25 /* nickNameViewController.swift in Sources */,
 				9E876DC62920E5BB00BEBAE8 /* OnboardCollectionViewCell.swift in Sources */,
 				9ECC7CA1292566B000B3DC25 /* APIUrl.swift in Sources */,
+				9ECC7CBB29288D4300B3DC25 /* MyPageViewController.swift in Sources */,
 				9EFDEBB4291AA0BB007743CE /* loginViewController.swift in Sources */,
 				9ECC7C882922AF3000B3DC25 /* EmailView.swift in Sources */,
+				9ECC7CCF2928CA7800B3DC25 /* NameTableViewCell.swift in Sources */,
 				9ECC7C9529230FE300B3DC25 /* Button.swift in Sources */,
 				9ECC7CB32926247400B3DC25 /* HomeView.swift in Sources */,
 			);
