@@ -8,7 +8,11 @@
 import UIKit
 import SnapKit
 
-class SecondHeaderCell : BaseHeaderCell {
+protocol HeaderViewDelegate: AnyObject {
+    func didTouchSection(_ sectionIndex: Int)
+}
+
+class HeaderCell : BaseHeaderCell {
     
     var delegate : HeaderViewDelegate?
     var sectionIndex = 0
@@ -28,10 +32,16 @@ class SecondHeaderCell : BaseHeaderCell {
         delegate?.didTouchSection(self.sectionIndex)
 
     }
+    
+   
     let stackView : UIStackView = {
         let view = UIStackView()
         view.axis = .horizontal
         view.distribution = .fill
+        view.layer.cornerRadius = 8
+        view.layer.borderColor = colorCustom.shared.gray2.cgColor
+        view.layer.borderWidth = 1
+        view.clipsToBounds = true
         return view
     }()
     
@@ -51,7 +61,7 @@ class SecondHeaderCell : BaseHeaderCell {
     }()
     
     override func configuration() {
-        self.addSubview(stackView)
+        contentView.addSubview(stackView)
         [label, button].forEach {
             stackView.addSubview($0)
         }
@@ -59,22 +69,23 @@ class SecondHeaderCell : BaseHeaderCell {
     }
     
     override func setConstraints() {
+        
         stackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(stackView.snp.width).multipliedBy(0.17)
-            make.top.equalToSuperview()
+            make.leading.trailing.top.bottom.equalTo(contentView)
+            make.height.equalTo(contentView.snp.width).multipliedBy(0.17)
+          
         }
         
         label.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.4)
-            make.leading.equalToSuperview().inset(16)
+            make.centerY.equalTo(stackView)
+            make.height.equalTo(stackView).multipliedBy(0.4)
+            make.leading.equalTo(stackView).inset(16)
             make.width.equalTo(label.snp.height).multipliedBy(11)
         }
         
         button.snp.makeConstraints { make in
             make.leading.equalTo(label.snp.trailing).offset(10)
-            make.centerY.equalToSuperview()
+            make.centerY.equalTo(stackView)
             make.width.equalTo(12)
             make.height.equalTo(6)
         }

@@ -40,7 +40,6 @@
 		9ECC7C9329230FDB00B3DC25 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C9229230FDB00B3DC25 /* textField.swift */; };
 		9ECC7C9529230FE300B3DC25 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C9429230FE300B3DC25 /* Button.swift */; };
 		9ECC7C972924E81F00B3DC25 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9ECC7C962924E81F00B3DC25 /* .gitignore */; };
-		9ECC7C992924E83800B3DC25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9ECC7C982924E83800B3DC25 /* GoogleService-Info.plist */; };
 		9ECC7C9E292558A100B3DC25 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9ECC7C9D292558A100B3DC25 /* Alamofire */; };
 		9ECC7CA1292566B000B3DC25 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CA0292566B000B3DC25 /* APIUrl.swift */; };
 		9ECC7CA429256B7700B3DC25 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 9ECC7CA329256B7700B3DC25 /* SwiftyJSON */; };
@@ -62,13 +61,14 @@
 		9ECC7CCB2928C5A100B3DC25 /* ManageMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CCA2928C5A100B3DC25 /* ManageMyPageViewController.swift */; };
 		9ECC7CCD2928C5B800B3DC25 /* ManageMyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CCC2928C5B800B3DC25 /* ManageMyPageView.swift */; };
 		9ECC7CCF2928CA7800B3DC25 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CCE2928CA7800B3DC25 /* NameTableViewCell.swift */; };
-		9EE3C6AF2928F01A00124D61 /* ManagePage - TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6AE2928F01A00124D61 /* ManagePage - TableViewExtension.swift */; };
-		9EE3C6B12928F0F800124D61 /* ManageMyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6B02928F0F800124D61 /* ManageMyPageTableViewCell.swift */; };
+		9EE3C6AF2928F01A00124D61 /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6AE2928F01A00124D61 /* TableVC.swift */; };
 		9EE3C6B32928F12F00124D61 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6B22928F12F00124D61 /* Reusable.swift */; };
-		9EE3C6B52929066800124D61 /* cellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6B42929066800124D61 /* cellHeaderView.swift */; };
-		9EE3C6B729290F7600124D61 /* FirstHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6B629290F7600124D61 /* FirstHeaderCell.swift */; };
+		9EE3C6B52929066800124D61 /* ManageMyPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6B42929066800124D61 /* ManageMyPageCell.swift */; };
 		9EE3C6B929290FAE00124D61 /* BaseHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6B829290FAE00124D61 /* BaseHeaderCell.swift */; };
-		9EE3C6BB292913BF00124D61 /* SecondHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6BA292913BF00124D61 /* SecondHeaderCell.swift */; };
+		9EE3C6BB292913BF00124D61 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6BA292913BF00124D61 /* HeaderCell.swift */; };
+		9EE3C6BE2929559000124D61 /* ExpandableCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6BD2929559000124D61 /* ExpandableCardTableViewCell.swift */; };
+		9EE3C6C129295AB300124D61 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6C029295AB300124D61 /* ImageTableViewCell.swift */; };
+		9EE3C6C4292B17B900124D61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EE3C6C3292B17B900124D61 /* GoogleService-Info.plist */; };
 		9EFDEB9329190566007743CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9229190566007743CE /* AppDelegate.swift */; };
 		9EFDEB9529190566007743CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9429190566007743CE /* SceneDelegate.swift */; };
 		9EFDEB9C29190567007743CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9B29190567007743CE /* Assets.xcassets */; };
@@ -111,7 +111,6 @@
 		9ECC7C9229230FDB00B3DC25 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		9ECC7C9429230FE300B3DC25 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		9ECC7C962924E81F00B3DC25 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		9ECC7C982924E83800B3DC25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9ECC7CA0292566B000B3DC25 /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
 		9ECC7CA5292571D700B3DC25 /* LoginAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPIManager.swift; sourceTree = "<group>"; };
 		9ECC7CA7292571E600B3DC25 /* SignInAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAPIManager.swift; sourceTree = "<group>"; };
@@ -131,13 +130,14 @@
 		9ECC7CCA2928C5A100B3DC25 /* ManageMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyPageViewController.swift; sourceTree = "<group>"; };
 		9ECC7CCC2928C5B800B3DC25 /* ManageMyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyPageView.swift; sourceTree = "<group>"; };
 		9ECC7CCE2928CA7800B3DC25 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
-		9EE3C6AE2928F01A00124D61 /* ManagePage - TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagePage - TableViewExtension.swift"; sourceTree = "<group>"; };
-		9EE3C6B02928F0F800124D61 /* ManageMyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyPageTableViewCell.swift; sourceTree = "<group>"; };
+		9EE3C6AE2928F01A00124D61 /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
 		9EE3C6B22928F12F00124D61 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		9EE3C6B42929066800124D61 /* cellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellHeaderView.swift; sourceTree = "<group>"; };
-		9EE3C6B629290F7600124D61 /* FirstHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHeaderCell.swift; sourceTree = "<group>"; };
+		9EE3C6B42929066800124D61 /* ManageMyPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyPageCell.swift; sourceTree = "<group>"; };
 		9EE3C6B829290FAE00124D61 /* BaseHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderCell.swift; sourceTree = "<group>"; };
-		9EE3C6BA292913BF00124D61 /* SecondHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHeaderCell.swift; sourceTree = "<group>"; };
+		9EE3C6BA292913BF00124D61 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		9EE3C6BD2929559000124D61 /* ExpandableCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCardTableViewCell.swift; sourceTree = "<group>"; };
+		9EE3C6C029295AB300124D61 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		9EE3C6C3292B17B900124D61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9EFDEB8F29190566007743CE /* SLP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EFDEB9229190566007743CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EFDEB9429190566007743CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -292,22 +292,46 @@
 		9ECC7CC92928C57400B3DC25 /* ManageMyPage */ = {
 			isa = PBXGroup;
 			children = (
+				9EE3C6BF29295AA300124D61 /* ImageCell */,
+				9EE3C6BC2929556600124D61 /* ExpandableCard */,
 				9ECC7CCA2928C5A100B3DC25 /* ManageMyPageViewController.swift */,
 				9ECC7CCC2928C5B800B3DC25 /* ManageMyPageView.swift */,
-				9EE3C6B02928F0F800124D61 /* ManageMyPageTableViewCell.swift */,
-				9EE3C6AE2928F01A00124D61 /* ManagePage - TableViewExtension.swift */,
-				9EE3C6B629290F7600124D61 /* FirstHeaderCell.swift */,
-				9EE3C6BA292913BF00124D61 /* SecondHeaderCell.swift */,
-				9EE3C6B42929066800124D61 /* cellHeaderView.swift */,
+				9EE3C6AE2928F01A00124D61 /* TableVC.swift */,
 			);
 			path = ManageMyPage;
+			sourceTree = "<group>";
+		};
+		9EE3C6BC2929556600124D61 /* ExpandableCard */ = {
+			isa = PBXGroup;
+			children = (
+				9EE3C6BA292913BF00124D61 /* HeaderCell.swift */,
+				9EE3C6BD2929559000124D61 /* ExpandableCardTableViewCell.swift */,
+				9EE3C6C229295D5C00124D61 /* ListCell */,
+			);
+			path = ExpandableCard;
+			sourceTree = "<group>";
+		};
+		9EE3C6BF29295AA300124D61 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				9EE3C6C029295AB300124D61 /* ImageTableViewCell.swift */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		9EE3C6C229295D5C00124D61 /* ListCell */ = {
+			isa = PBXGroup;
+			children = (
+				9EE3C6B42929066800124D61 /* ManageMyPageCell.swift */,
+			);
+			path = ListCell;
 			sourceTree = "<group>";
 		};
 		9EFDEB8629190566007743CE = {
 			isa = PBXGroup;
 			children = (
 				9ECC7C962924E81F00B3DC25 /* .gitignore */,
-				9ECC7C982924E83800B3DC25 /* GoogleService-Info.plist */,
+				9EE3C6C3292B17B900124D61 /* GoogleService-Info.plist */,
 				9EFDEB9129190566007743CE /* SLP */,
 				9EFDEB9029190566007743CE /* Products */,
 			);
@@ -470,9 +494,9 @@
 				9EFDEB9F29190567007743CE /* LaunchScreen.storyboard in Resources */,
 				9EFDEB9C29190567007743CE /* Assets.xcassets in Resources */,
 				9ECC7CAA2925BAD000B3DC25 /* Dongle in Resources */,
-				9ECC7C992924E83800B3DC25 /* GoogleService-Info.plist in Resources */,
 				9ECC7C972924E81F00B3DC25 /* .gitignore in Resources */,
 				9E876DBD2920E06000BEBAE8 /* Splash.storyboard in Resources */,
+				9EE3C6C4292B17B900124D61 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EE3C6B52929066800124D61 /* cellHeaderView.swift in Sources */,
+				9EE3C6B52929066800124D61 /* ManageMyPageCell.swift in Sources */,
 				9E876DCC2920EF3F00BEBAE8 /* collectionViewExtension.swift in Sources */,
 				9EFDEBAD29192A03007743CE /* OnboardingView.swift in Sources */,
 				9EC3594E291E526C001E69A4 /* SplashView.swift in Sources */,
@@ -501,7 +525,7 @@
 				9E29D9C7291FBCDD00BBE368 /* BaseCollectionViewCell.swift in Sources */,
 				9ECC7CC32928B53900B3DC25 /* MyPageData.swift in Sources */,
 				9ECC7CC12928925C00B3DC25 /* BaseTableViewCell.swift in Sources */,
-				9EE3C6BB292913BF00124D61 /* SecondHeaderCell.swift in Sources */,
+				9EE3C6BB292913BF00124D61 /* HeaderCell.swift in Sources */,
 				9ECC7CB7292885F500B3DC25 /* ShopViewController.swift in Sources */,
 				9ECC7CC82928BD9700B3DC25 /* TabBarController.swift in Sources */,
 				9ECC7C8A2922AF5600B3DC25 /* GenderView.swift in Sources */,
@@ -513,6 +537,7 @@
 				9EFDEBB029192A11007743CE /* BaseView.swift in Sources */,
 				9ECC7CBD29288D5600B3DC25 /* MyPageView.swift in Sources */,
 				9EFDEBB229192A66007743CE /* BaseViewController.swift in Sources */,
+				9EE3C6BE2929559000124D61 /* ExpandableCardTableViewCell.swift in Sources */,
 				9ECC7CA6292571D700B3DC25 /* LoginAPIManager.swift in Sources */,
 				9ECC7C8C2922B21200B3DC25 /* Transition.swift in Sources */,
 				9ECC7CB92928890F00B3DC25 /* LocationAuthorization.swift in Sources */,
@@ -525,9 +550,9 @@
 				9ECC7C842922AF1300B3DC25 /* EmailViewController.swift in Sources */,
 				9E876DC02920E1DF00BEBAE8 /* OnboardViewController.swift in Sources */,
 				9ECC7C822922AF0200B3DC25 /* BirthViewController.swift in Sources */,
-				9EE3C6B729290F7600124D61 /* FirstHeaderCell.swift in Sources */,
 				9EFDEBAA291928F9007743CE /* Color.swift in Sources */,
 				9ECC7CC62928B8E100B3DC25 /* TableViewExtension.swift in Sources */,
+				9EE3C6C129295AB300124D61 /* ImageTableViewCell.swift in Sources */,
 				9EFDEBA729192606007743CE /* OnboardingViewController.swift in Sources */,
 				9ECC7C7C2922AA5800B3DC25 /* nickNameViewController.swift in Sources */,
 				9E876DC62920E5BB00BEBAE8 /* OnboardCollectionViewCell.swift in Sources */,
@@ -536,11 +561,10 @@
 				9EFDEBB4291AA0BB007743CE /* loginViewController.swift in Sources */,
 				9ECC7C882922AF3000B3DC25 /* EmailView.swift in Sources */,
 				9ECC7CCF2928CA7800B3DC25 /* NameTableViewCell.swift in Sources */,
-				9EE3C6B12928F0F800124D61 /* ManageMyPageTableViewCell.swift in Sources */,
 				9ECC7C9529230FE300B3DC25 /* Button.swift in Sources */,
 				9ECC7CB32926247400B3DC25 /* HomeView.swift in Sources */,
 				9EE3C6B929290FAE00124D61 /* BaseHeaderCell.swift in Sources */,
-				9EE3C6AF2928F01A00124D61 /* ManagePage - TableViewExtension.swift in Sources */,
+				9EE3C6AF2928F01A00124D61 /* TableVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +707,7 @@
 				DEVELOPMENT_TEAM = K27UK338MM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SLP/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This application requires location services to work";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -713,6 +738,7 @@
 				DEVELOPMENT_TEAM = K27UK338MM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SLP/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This application requires location services to work";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
