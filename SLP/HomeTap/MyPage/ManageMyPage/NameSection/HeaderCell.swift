@@ -9,13 +9,14 @@ import UIKit
 import SnapKit
 
 protocol HeaderViewDelegate: AnyObject {
-    func didTouchSection(_ sectionIndex: Int)
+    func didTouchSection()
 }
 
 class HeaderCell : BaseHeaderCell {
     
     var delegate : HeaderViewDelegate?
-    var sectionIndex = 0
+    var isOpened : Bool = false
+    
     let tapGestureRecognizer = UITapGestureRecognizer()
     
     override func draw(_ rect: CGRect) {
@@ -25,11 +26,12 @@ class HeaderCell : BaseHeaderCell {
         setConstraints()
         
         contentView.addGestureRecognizer(tapGestureRecognizer)
-        tapGestureRecognizer.addTarget(self, action: #selector(didSelectSection))
+        tapGestureRecognizer.addTarget(self, action: #selector(buttonTapped))
         
     }
-    @objc func didSelectSection() {
-        delegate?.didTouchSection(self.sectionIndex)
+    @objc func buttonTapped(_ sender : UIButton) {
+        delegate?.didTouchSection()
+        
 
     }
     

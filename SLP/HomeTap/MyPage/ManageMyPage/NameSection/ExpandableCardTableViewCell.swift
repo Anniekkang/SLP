@@ -32,7 +32,8 @@ class ExpandableCardTableViewCell: BaseTableViewCell {
        let view = UIStackView()
         view.axis = .horizontal
         view.spacing  = 7
-        view.distribution = .equalSpacing
+        view.distribution = .fillEqually
+        view.alignment = .fill
         return view
     }()
     
@@ -40,7 +41,8 @@ class ExpandableCardTableViewCell: BaseTableViewCell {
        let view = UIStackView()
         view.axis = .horizontal
         view.spacing  = 7
-        view.distribution = .equalSpacing
+        view.distribution = .fillEqually
+        view.alignment = .fill
         return view
     }()
     
@@ -48,61 +50,50 @@ class ExpandableCardTableViewCell: BaseTableViewCell {
        let view = UIStackView()
         view.axis = .horizontal
         view.spacing  = 7
-        view.distribution = .equalSpacing
+        view.distribution = .fillEqually
+        view.alignment = .fill
         return view
     }()
     
     let firstLabel : UILabel = {
         let label = UILabel()
-        label.layer.cornerRadius = 8
-        label.layer.borderWidth = 1
-        label.layer.borderColor = colorCustom.shared.gray2.cgColor
-        label.clipsToBounds = true
+        CustomButton.buttonCustom(label: label)
+        label.text = MyPageData.buttonArray[0]
         return label
     }()
     
     let secondLabel : UILabel = {
         let label = UILabel()
-        label.layer.cornerRadius = 8
-        label.layer.borderWidth = 1
-        label.layer.borderColor = colorCustom.shared.gray2.cgColor
-        label.clipsToBounds = true
+        CustomButton.buttonCustom(label: label)
+        label.text = MyPageData.buttonArray[1]
         return label
     }()
     
     let thirdLabel : UILabel = {
         let label = UILabel()
-        label.layer.cornerRadius = 8
-        label.layer.borderWidth = 1
-        label.layer.borderColor = colorCustom.shared.gray2.cgColor
-        label.clipsToBounds = true
+        CustomButton.buttonCustom(label: label)
+        label.text = MyPageData.buttonArray[2]
         return label
     }()
     
     let fourthLabel : UILabel = {
         let label = UILabel()
-        label.layer.cornerRadius = 8
-        label.layer.borderWidth = 1
-        label.layer.borderColor = colorCustom.shared.gray2.cgColor
-        label.clipsToBounds = true
+        CustomButton.buttonCustom(label: label)
+        label.text = MyPageData.buttonArray[3]
         return label
     }()
     
     let fifthLabel : UILabel = {
         let label = UILabel()
-        label.layer.cornerRadius = 8
-        label.layer.borderWidth = 1
-        label.layer.borderColor = colorCustom.shared.gray2.cgColor
-        label.clipsToBounds = true
+        CustomButton.buttonCustom(label: label)
+        label.text = MyPageData.buttonArray[4]
         return label
     }()
     
     let sixthLabel : UILabel = {
         let label = UILabel()
-        label.layer.cornerRadius = 8
-        label.layer.borderWidth = 1
-        label.layer.borderColor = colorCustom.shared.gray2.cgColor
-        label.clipsToBounds = true
+        CustomButton.buttonCustom(label: label)
+        label.text = MyPageData.buttonArray[5]
         return label
     }()
     
@@ -147,21 +138,55 @@ class ExpandableCardTableViewCell: BaseTableViewCell {
         
         firstStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(firstStackView.snp.width).multipliedBy(0.2)
+            make.height.equalTo(firstStackView.snp.width).multipliedBy(0.1)
             make.top.equalTo(titleLabel.snp.bottom).offset(30)
         }
         
         secondStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(secondStackView.snp.width).multipliedBy(0.2)
+            make.height.equalTo(secondStackView.snp.width).multipliedBy(0.1)
             make.top.equalTo(firstStackView.snp.bottom).offset(7)
         }
         
         thirdStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(thirdStackView.snp.width).multipliedBy(0.2)
+            make.height.equalTo(thirdStackView.snp.width).multipliedBy(0.1)
             make.top.equalTo(secondStackView.snp.bottom).offset(7)
         }
+        
+        
+        firstLabel.snp.makeConstraints { make in
+            make.leading.top.bottom.equalTo(firstStackView)
+        }
+
+        secondLabel.snp.makeConstraints { make in
+            make.leading.equalTo(firstLabel.snp.trailing).offset(7)
+            make.top.trailing.bottom.equalTo(firstStackView)
+            make.width.equalTo(firstLabel.snp.width)
+        }
+        
+        thirdLabel.snp.makeConstraints { make in
+            make.leading.top.bottom.equalTo(secondStackView)
+        }
+
+        fourthLabel.snp.makeConstraints { make in
+            make.leading.equalTo(thirdLabel.snp.trailing).offset(7)
+            make.top.trailing.bottom.equalTo(secondStackView)
+            make.width.equalTo(thirdLabel.snp.width)
+        }
+        
+        fifthLabel.snp.makeConstraints { make in
+            make.leading.top.bottom.equalTo(thirdStackView)
+        }
+
+        sixthLabel.snp.makeConstraints { make in
+            make.leading.equalTo(fifthLabel.snp.trailing).offset(7)
+            make.top.trailing.bottom.equalTo(thirdStackView)
+            make.width.equalTo(fifthLabel.snp.width)
+        }
+        
+        
+        
         
         reviewLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)

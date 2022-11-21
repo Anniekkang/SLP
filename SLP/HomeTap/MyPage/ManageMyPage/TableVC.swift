@@ -12,6 +12,7 @@ extension ManageMyPageViewController : UITableViewDelegate, UITableViewDataSourc
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
@@ -20,8 +21,8 @@ extension ManageMyPageViewController : UITableViewDelegate, UITableViewDataSourc
         } else {
             return 5
         }
-        
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -31,9 +32,17 @@ extension ManageMyPageViewController : UITableViewDelegate, UITableViewDataSourc
             return cell
         case 1 :
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ExpandableCardTableViewCell.id, for: indexPath) as? ExpandableCardTableViewCell else { return UITableViewCell() }
+            if isOpen == false {
+                cell.isHidden = true
+    
+            } else {
+                cell.isHidden = false
+            }
+            
             return cell
         case 2 :
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ManageMyPageCell.id, for: indexPath) as? ManageMyPageCell else { return UITableViewCell() }
+            cell.label.text = MyPageData.sectionThreeArray[indexPath.row]
             return cell
         default:
             return UITableViewCell()
@@ -45,7 +54,10 @@ extension ManageMyPageViewController : UITableViewDelegate, UITableViewDataSourc
            
         if section == 1 {
             guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderCell") as? HeaderCell else { return UIView() }
-            headerView.sectionIndex = section
+           
+            headerView.delegate = self
+            
+            
             return headerView
             
         } else {
@@ -53,8 +65,20 @@ extension ManageMyPageViewController : UITableViewDelegate, UITableViewDataSourc
         }
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 2 {
+            return 50
+        } else if indexPath.section == 1 {
+            if isOpen {
+                return UITableView.automaticDimension
+            } else {
+                return 0
+            }
+            
+        }
+        else {
+            return UITableView.automaticDimension
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

@@ -69,6 +69,7 @@
 		9EE3C6BE2929559000124D61 /* ExpandableCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6BD2929559000124D61 /* ExpandableCardTableViewCell.swift */; };
 		9EE3C6C129295AB300124D61 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6C029295AB300124D61 /* ImageTableViewCell.swift */; };
 		9EE3C6C4292B17B900124D61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EE3C6C3292B17B900124D61 /* GoogleService-Info.plist */; };
+		9EE3C6C7292B467400124D61 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6C6292B467400124D61 /* CustomButton.swift */; };
 		9EFDEB9329190566007743CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9229190566007743CE /* AppDelegate.swift */; };
 		9EFDEB9529190566007743CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9429190566007743CE /* SceneDelegate.swift */; };
 		9EFDEB9C29190567007743CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EFDEB9B29190567007743CE /* Assets.xcassets */; };
@@ -138,6 +139,7 @@
 		9EE3C6BD2929559000124D61 /* ExpandableCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCardTableViewCell.swift; sourceTree = "<group>"; };
 		9EE3C6C029295AB300124D61 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		9EE3C6C3292B17B900124D61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9EE3C6C6292B467400124D61 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		9EFDEB8F29190566007743CE /* SLP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EFDEB9229190566007743CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EFDEB9429190566007743CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -292,8 +294,9 @@
 		9ECC7CC92928C57400B3DC25 /* ManageMyPage */ = {
 			isa = PBXGroup;
 			children = (
-				9EE3C6BF29295AA300124D61 /* ImageCell */,
-				9EE3C6BC2929556600124D61 /* ExpandableCard */,
+				9EE3C6BF29295AA300124D61 /* ImageSection */,
+				9EE3C6BC2929556600124D61 /* NameSection */,
+				9EE3C6C229295D5C00124D61 /* ListSection */,
 				9ECC7CCA2928C5A100B3DC25 /* ManageMyPageViewController.swift */,
 				9ECC7CCC2928C5B800B3DC25 /* ManageMyPageView.swift */,
 				9EE3C6AE2928F01A00124D61 /* TableVC.swift */,
@@ -301,30 +304,39 @@
 			path = ManageMyPage;
 			sourceTree = "<group>";
 		};
-		9EE3C6BC2929556600124D61 /* ExpandableCard */ = {
+		9EE3C6BC2929556600124D61 /* NameSection */ = {
 			isa = PBXGroup;
 			children = (
 				9EE3C6BA292913BF00124D61 /* HeaderCell.swift */,
 				9EE3C6BD2929559000124D61 /* ExpandableCardTableViewCell.swift */,
-				9EE3C6C229295D5C00124D61 /* ListCell */,
+				9EE3C6C6292B467400124D61 /* CustomButton.swift */,
 			);
-			path = ExpandableCard;
+			path = NameSection;
 			sourceTree = "<group>";
 		};
-		9EE3C6BF29295AA300124D61 /* ImageCell */ = {
+		9EE3C6BF29295AA300124D61 /* ImageSection */ = {
 			isa = PBXGroup;
 			children = (
 				9EE3C6C029295AB300124D61 /* ImageTableViewCell.swift */,
 			);
-			path = ImageCell;
+			path = ImageSection;
 			sourceTree = "<group>";
 		};
-		9EE3C6C229295D5C00124D61 /* ListCell */ = {
+		9EE3C6C229295D5C00124D61 /* ListSection */ = {
 			isa = PBXGroup;
 			children = (
 				9EE3C6B42929066800124D61 /* ManageMyPageCell.swift */,
 			);
-			path = ListCell;
+			path = ListSection;
+			sourceTree = "<group>";
+		};
+		9EE3C6C5292B21D900124D61 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */,
+				9ECC7CA92925BAD000B3DC25 /* Dongle */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		9EFDEB8629190566007743CE = {
@@ -348,11 +360,10 @@
 		9EFDEB9129190566007743CE /* SLP */ = {
 			isa = PBXGroup;
 			children = (
-				9ECC7CAB2926232400B3DC25 /* HomeTap */,
-				9ECC7CA92925BAD000B3DC25 /* Dongle */,
-				9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */,
 				9EC35949291E30D7001E69A4 /* SLP.entitlements */,
 				9ECC7C9F292566A600B3DC25 /* API */,
+				9EE3C6C5292B21D900124D61 /* Font */,
+				9ECC7CAB2926232400B3DC25 /* HomeTap */,
 				9ECC7C7A2922A9FF00B3DC25 /* SignUp */,
 				9EC35924291AE0F1001E69A4 /* AuthorizationPage */,
 				9EFDEBB5291AA0BF007743CE /* loginPage */,
@@ -560,6 +571,7 @@
 				9ECC7CBB29288D4300B3DC25 /* MyPageViewController.swift in Sources */,
 				9EFDEBB4291AA0BB007743CE /* loginViewController.swift in Sources */,
 				9ECC7C882922AF3000B3DC25 /* EmailView.swift in Sources */,
+				9EE3C6C7292B467400124D61 /* CustomButton.swift in Sources */,
 				9ECC7CCF2928CA7800B3DC25 /* NameTableViewCell.swift in Sources */,
 				9ECC7C9529230FE300B3DC25 /* Button.swift in Sources */,
 				9ECC7CB32926247400B3DC25 /* HomeView.swift in Sources */,
@@ -733,6 +745,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SLP/SLP.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K27UK338MM;
@@ -752,6 +765,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Anniekang.SLP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

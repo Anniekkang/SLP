@@ -24,8 +24,6 @@ class ManageMyPageView: BaseView {
         view.estimatedRowHeight = 200
         view.translatesAutoresizingMaskIntoConstraints = false
         view.separatorEffect = .none
-        view.rowHeight = UITableView.automaticDimension
-        view.sectionHeaderHeight = UITableView.automaticDimension
         view.sectionHeaderTopPadding = 0
         return view
     }()

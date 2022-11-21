@@ -26,7 +26,6 @@ class ManageMyPageCell : BaseTableViewCell {
         let label = UILabel()
         label.textAlignment = .left
         label.textColor = colorCustom.shared.blackColor
-        label.text = "gender"
         return label
     }()
     
@@ -49,13 +48,13 @@ class ManageMyPageCell : BaseTableViewCell {
     override func setConstraints() {
         
         stackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.leading.trailing.equalToSuperview()
             make.top.bottom.equalToSuperview()
         }
         label.snp.makeConstraints { make in
-            make.leading.equalTo(stackView).inset(16)
+            make.leading.equalTo(stackView)
             make.centerY.equalTo(stackView)
-            make.width.equalTo(100)
+            make.width.equalTo(150)
             make.height.equalTo(22)
             
         }
