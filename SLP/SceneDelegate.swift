@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       
         
         
-        let mainVC = BirthViewController()
+        let mainVC = GenderViewController()
         let nav = UINavigationController(rootViewController: mainVC)
 
        

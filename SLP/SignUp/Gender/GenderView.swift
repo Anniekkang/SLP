@@ -42,6 +42,7 @@ class GenderView: BaseView {
         let view = UIStackView()
         view.axis = .horizontal
         view.spacing = 10
+        view.alignment = .fill
         view.distribution = .fillEqually
         return view
     }()
@@ -49,16 +50,16 @@ class GenderView: BaseView {
     let maleView : UIView = {
         let view = UIView()
         view.layer.cornerRadius = 8
-        view.layer.borderColor = colorCustom.shared.gray7.cgColor
-        view.layer.borderWidth = 2
+        view.layer.borderColor = colorCustom.shared.gray3.cgColor
+        view.layer.borderWidth = 1
         return view
     }()
     
     let femaleView : UIView = {
         let view = UIView()
         view.layer.cornerRadius = 8
-        view.layer.borderColor = colorCustom.shared.gray7.cgColor
-        view.layer.borderWidth = 2
+        view.layer.borderColor = colorCustom.shared.gray3.cgColor
+        view.layer.borderWidth = 1
         return view
     }()
     
@@ -77,6 +78,7 @@ class GenderView: BaseView {
     let maleLabel : UILabel = {
         let label = UILabel()
         label.text = "남자"
+        label.textAlignment = .center
         label.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.medium.rawValue)
         label.textColor = colorCustom.shared.blackColor
         return label
@@ -85,6 +87,7 @@ class GenderView: BaseView {
     let femaleLabel : UILabel = {
         let label = UILabel()
         label.text = "여자"
+        label.textAlignment = .center
         label.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.medium.rawValue)
         label.textColor = colorCustom.shared.blackColor
         return label
@@ -147,25 +150,47 @@ class GenderView: BaseView {
         stackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
             make.top.equalTo(secondLabel.snp.bottom).offset(32)
-            make.bottom.equalTo(button.snp.top).offset(32)
+            make.bottom.equalTo(button.snp.top).inset(-32)
         }
         
         maleView.snp.makeConstraints { make in
-            make.height.equalTo(stackView)
+            make.height.equalToSuperview()
+            make.leading.top.bottom.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.48)
+            
         }
         
         femaleView.snp.makeConstraints { make in
-            make.height.equalTo(stackView)
+            make.height.equalToSuperview()
+            make.trailing.top.bottom.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.48)
         }
         
         maleImage.snp.makeConstraints { make in
             make.centerX.equalTo(maleView)
             make.centerY.equalTo(maleView).multipliedBy(0.8)
-            make.height.equalTo(maleView).multipliedBy(0.4)
+            make.height.equalTo(maleView).multipliedBy(0.5)
         }
         
+        maleLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(maleView)
+            make.top.equalTo(maleImage.snp.bottom).offset(10)
+            make.height.equalTo(28)
+            make.leading.trailing.equalToSuperview()
+        }
         
+        femaleImage.snp.makeConstraints { make in
+            make.centerX.equalTo(femaleView)
+            make.centerY.equalTo(femaleView).multipliedBy(0.8)
+            make.height.equalTo(femaleView).multipliedBy(0.5)
+        }
         
+        femaleLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(femaleView)
+            make.top.equalTo(femaleImage.snp.bottom).offset(10)
+            make.height.equalTo(28)
+            make.leading.trailing.equalToSuperview()
+        }
         
         
         
