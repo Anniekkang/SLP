@@ -44,7 +44,7 @@ class BirthView: BaseView {
         picker.contentHorizontalAlignment = .center
         picker.datePickerMode = .date
         picker.locale = Locale(identifier: "ko_KR")
-        
+        picker.backgroundColor = .clear
         return picker
     }()
     
@@ -111,7 +111,7 @@ class BirthView: BaseView {
     }()
     
     override func configuration() {
-        [label,button,wholeStackView].forEach {
+        [datePicker,label,button,wholeStackView].forEach {
             self.addSubview($0)
         }
         [yearStackView, monthStackView, dayStackView].forEach {
@@ -131,6 +131,12 @@ class BirthView: BaseView {
     }
     
     override func setConstraints() {
+        datePicker.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.33)
+            
+        }
+        
         
         label.snp.makeConstraints { make in
             make.centerX.equalToSuperview()

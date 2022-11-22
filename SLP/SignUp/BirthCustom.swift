@@ -17,6 +17,9 @@ class BirthLabelCustom {
     static func textFieldCustom(textField : UITextField, placeholder : String) {
         textField.textAlignment = .left
         textField.placeholder = placeholder
+        textField.isEnabled = false
+        
+       
         
     }
 }
