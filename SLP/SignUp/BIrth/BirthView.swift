@@ -52,13 +52,13 @@ class BirthView: BaseView {
     
     let yearTextField : UITextField = {
        let text = UITextField()
-        BirthLabelCustom.textFieldCustom(textField: text, placeholder: "1990")
+        BirthCustomItem.textFieldCustom(textField: text, placeholder: "1990")
         return text
     }()
     
     let yearLabel : UILabel = {
         let label = UILabel()
-        BirthLabelCustom.labelCustom(label: label, content: "년")
+        BirthCustomItem.labelCustom(label: label, content: "년")
         return label
     }()
     
@@ -69,13 +69,13 @@ class BirthView: BaseView {
     
     let monthTextField : UITextField = {
        let text = UITextField()
-        BirthLabelCustom.textFieldCustom(textField: text, placeholder: "1")
+        BirthCustomItem.textFieldCustom(textField: text, placeholder: "1")
         return text
     }()
     
     let monthLabel : UILabel = {
         let label = UILabel()
-        BirthLabelCustom.labelCustom(label: label, content: "월")
+        BirthCustomItem.labelCustom(label: label, content: "월")
         return label
     }()
     
@@ -86,13 +86,13 @@ class BirthView: BaseView {
     
     let dayTextField : UITextField = {
        let text = UITextField()
-        BirthLabelCustom.textFieldCustom(textField: text, placeholder: "1")
+        BirthCustomItem.textFieldCustom(textField: text, placeholder: "1")
         return text
     }()
     
     let dayLabel : UILabel = {
         let label = UILabel()
-        BirthLabelCustom.labelCustom(label: label, content: "일")
+        BirthCustomItem.labelCustom(label: label, content: "일")
         return label
     }()
     

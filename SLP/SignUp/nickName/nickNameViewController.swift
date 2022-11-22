@@ -37,7 +37,7 @@ class nickNameViewController: BaseViewController {
             text = ""
         } else {
             
-            UserDefaults.standard.string(forKey: "NickName")
+            UserDefaults.standard.set(text, forKey: "nickName")
             let vc = BirthViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BirthLabelCustom {
+class BirthCustomItem {
     static func labelCustom(label : UILabel, content : String) {
         label.textColor = colorCustom.shared.blackColor
         label.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.large.rawValue)
