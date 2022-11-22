@@ -8,9 +8,10 @@
 import UIKit
 import SnapKit
 import MapKit
+import CoreLocation
 
 class HomeView: BaseView {
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -22,15 +23,30 @@ class HomeView: BaseView {
     
     let map : MKMapView = {
         let map = MKMapView()
+        
         map.showsUserLocation = true
         map.setUserTrackingMode(.follow, animated: true)
+        map.isZoomEnabled = true
         return map
     }()
     
     let button : UIButton = {
-       let button = UIButton()
+        let button = UIButton()
+        button.layer.cornerRadius = 8
+        button.setImage(UIImage(named: "place"), for: .normal)
+        button.backgroundColor = colorCustom.shared.whiteColor
         return button
     }()
+    
+    let matchingButton : UIButton = {
+       let button = UIButton()
+        button.setImage(UIImage(named: "search"), for: .normal)
+        
+        button.backgroundColor = colorCustom.shared.blackColor
+        button.layer.cornerRadius = 50
+        return button
+    }()
+    
     
     let segment : UISegmentedControl = {
         let segment = UISegmentedControl()
@@ -40,7 +56,7 @@ class HomeView: BaseView {
     
     override func configuration() {
         self.addSubview(map)
-        [button, segment].forEach {
+        [button, segment, matchingButton].forEach {
             map.addSubview($0)
         }
     }
@@ -50,11 +66,23 @@ class HomeView: BaseView {
             make.edges.equalToSuperview()
         }
         
-        segment.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
+//        segment.snp.makeConstraints { make in
+//            make.centerY.equalToSuperview()
+//            make.width.height.equalTo(48)
+//        }
+//
+        button.snp.makeConstraints { make in
             make.width.height.equalTo(48)
+            make.centerY.equalToSuperview().multipliedBy(0.7)
+            make.leading.equalToSuperview().inset(16)
         }
         
+        matchingButton.snp.makeConstraints { make in
+            make.width.height.equalTo(64)
+            make.centerY.equalToSuperview().multipliedBy(1.9)
+            make.trailing.equalToSuperview().inset(16)
+            
+        }
         
     }
 }

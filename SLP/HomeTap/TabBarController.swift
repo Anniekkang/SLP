@@ -13,7 +13,9 @@ class TabBarController : UITabBarController {
         super.viewDidLoad()
 
         configuration()
-        self.tabBar.unselectedItemTintColor = colorCustom.shared.blackColor
+    
+        self.tabBar.unselectedItemTintColor = colorCustom.shared.gray6
+        self.tabBar.selectedImageTintColor = colorCustom.shared.greenBrandColor
         self.tabBar.backgroundColor = .white
     }
 
@@ -24,18 +26,25 @@ class TabBarController : UITabBarController {
         let nav1 = UINavigationController(rootViewController: firstTap)
         let secondTap = ShopViewController()
         let nav2 = UINavigationController(rootViewController: secondTap)
+        let thirdTap = FriendViewController()
+        let nav3 = UINavigationController(rootViewController: thirdTap)
         let fourthTap = MyPageViewController()
         let nav4 = UINavigationController(rootViewController: fourthTap)
-        self.setViewControllers([nav1,nav2,nav4], animated: true)
+        self.setViewControllers([nav1,nav2,nav3,nav4], animated: true)
         
-        if let items = self.tabBar.items {
-            items[0].selectedImage = UIImage(named: "house")
-            items[0].image = UIImage(named: "house")
-            items[1].selectedImage = UIImage(named: "gift")
-            items[1].image = UIImage(named: "gift")
-            items[2].selectedImage = UIImage(named: "gift")
-            items[2].image = UIImage(named: "gift")
-        }
+        
+        let firstBarItem = UITabBarItem(title: "홈", image: UIImage(named: "home"), selectedImage: UIImage(named: "home"))
+        let secondBarItem = UITabBarItem(title: "새싹샵", image: UIImage(named: "shop"), selectedImage: UIImage(named: "shop"))
+        let thirdBarItem = UITabBarItem(title: "새싹친구", image: UIImage(named: "sesac"), selectedImage: UIImage(named: "sesac"))
+        let fourthBarItem = UITabBarItem(title: "내정보", image: UIImage(named: "mypage"), selectedImage: UIImage(named: "mypage"))
+    
+        firstTap.tabBarItem = firstBarItem
+        secondTap.tabBarItem = secondBarItem
+        thirdTap.tabBarItem = thirdBarItem
+        fourthTap.tabBarItem = fourthBarItem
+        
+        
+        self.viewControllers = [firstTap,secondTap,thirdTap,fourthTap]
     }
 
     

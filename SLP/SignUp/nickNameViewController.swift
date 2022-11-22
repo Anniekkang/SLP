@@ -36,6 +36,8 @@ class nickNameViewController: BaseViewController {
             self.view.makeToast("닉네임은 실명으로 부탁드려요.",duration: 1.0,position: .center)
             text = ""
         } else {
+            
+            UserDefaults.standard.string(forKey: "NickName")
             let vc = BirthViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -55,10 +57,8 @@ extension nickNameViewController {
     
     override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = mainView.textField.text else { return false }
-        let textCount = text.count
-        
-        
-        if textCount >=  1 {
+      
+        if !text.isEmpty {
             
             customButton.changedButton(view: mainView.view, button: mainView.button)
             

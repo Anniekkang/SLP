@@ -79,16 +79,18 @@ class AuthorizationViewController: BaseViewController {
                         return }
                     print("idToken : \(String(describing: idToken))")
                     
-                    LoginAPIManager.shared.fetchloginData(query: idToken) { int, string in
-                        print("api success")
+                    LoginAPIManager.shared.fetchloginData(query: idToken) { [weak self] success, error in
+                       
                         
+                        print("api success")
+                        self?.navigationController?.pushViewController(nickNameViewController(), animated: true)
                     }
                 }
                 
                 
             }
             
-            self.navigationController?.pushViewController(nickNameViewController(), animated: true)
+          
             
         }
     }

@@ -22,13 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       
         
         
-        let mainVC = loginViewController()
+        let mainVC = BirthViewController()
         let nav = UINavigationController(rootViewController: mainVC)
 
        
 
         
-        window?.rootViewController = TabBarController()
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
         
     }

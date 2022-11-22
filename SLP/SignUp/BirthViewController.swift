@@ -32,7 +32,7 @@ class BirthViewController: BaseViewController {
         let dateformatter = DateFormatter()
          dateformatter.dateStyle = .long
         let date = dateformatter.string(from: mainView.datePicker.date)
-        mainView.dateLabel.text = date
+    
       
     }
     

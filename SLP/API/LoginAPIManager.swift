@@ -19,17 +19,16 @@ class LoginAPIManager {
     func fetchloginData(query : String, completionHandler : @escaping completionHandler) {
         let url = APIUrl.baseURL + APIUrl.loginandSignUp
         
-        let headers : HTTPHeaders = ["idtoken" : query]
+        let headers : HTTPHeaders = ["idtoken" : "\(query)"]
         
-        AF.request(url, method: .get, headers: headers)
+        AF.request(url, method: .get, encoding: URLEncoding.default, headers: headers)
             .validate(statusCode: 200...501)
-            .responseData(queue: .global()) { response in
+            .responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 print("JSON: \(json)")
-                
-
+               
                 
             case .failure(let error):
                 print("errorcode : \(error)")
