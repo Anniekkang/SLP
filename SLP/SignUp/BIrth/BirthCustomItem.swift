@@ -19,7 +19,10 @@ class BirthCustomItem {
         textField.placeholder = placeholder
         textField.isEnabled = false
         
-       
+    }
+    static func viewCustom(view : UIView) {
+        
+        view.backgroundColor = colorCustom.shared.gray3
         
     }
 }

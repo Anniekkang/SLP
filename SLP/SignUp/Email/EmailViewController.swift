@@ -20,13 +20,20 @@ class EmailViewController: BaseViewController {
 
         mainView.backgroundColor = .white
         mainView.textField.delegate = self
+        mainView.textField.becomeFirstResponder()
         mainView.button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
     @objc func buttonTapped() {
-        
-        
-        
+        guard let text = mainView.textField.text else { return }
+        if isValidEmail(text: text) {
+            UserDefaults.standard.set(mainView.textField.text, forKey: "Email")
+            
+            let vc = GenderViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            mainView.makeToast("이메일 형식이 올바르지 않습니다.", duration: 1, position: .center)
+        }
     }
 
     override func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -37,9 +44,7 @@ class EmailViewController: BaseViewController {
     
     override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = mainView.textField.text else { return false }
-        
-        
-        
+      
         if text.isEmpty {
             
             customButton.changedButton(view: mainView.view, button: mainView.button)

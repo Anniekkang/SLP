@@ -19,6 +19,34 @@ class BirthView: BaseView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    let firstView : UIView = {
+        let view = UIView()
+        BirthCustomItem.viewCustom(view: view)
+        return view
+    }()
+    
+    let secondView : UIView = {
+        let view = UIView()
+        BirthCustomItem.viewCustom(view: view)
+        return view
+    }()
+    
+    let thirdView : UIView = {
+        let view = UIView()
+        BirthCustomItem.viewCustom(view: view)
+        return view
+    }()
+    
+    let viewStack : UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.alignment = .fill
+        view.distribution = .fillEqually
+        view.spacing = 20
+        return view
+    }()
+    
+    
     let label : UILabel = {
             let label = UILabel()
             label.text = "생년월일을 알려주세요"
@@ -110,8 +138,12 @@ class BirthView: BaseView {
         return view
     }()
     
+    //MARK: Configuration
     override func configuration() {
-        [datePicker,label,button,wholeStackView].forEach {
+        [firstView,secondView,thirdView].forEach {
+            viewStack.addArrangedSubview($0)
+        }
+        [datePicker,label,button,wholeStackView,viewStack].forEach {
             self.addSubview($0)
         }
         [yearStackView, monthStackView, dayStackView].forEach {
@@ -130,7 +162,10 @@ class BirthView: BaseView {
         
     }
     
+    //MARK: Constraints
     override func setConstraints() {
+        
+       
         datePicker.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.height.equalToSuperview().multipliedBy(0.33)
@@ -212,6 +247,33 @@ class BirthView: BaseView {
             make.trailing.top.bottom.equalToSuperview()
             make.leading.equalTo(dayTextField.snp.trailing)
         }
+        
+        viewStack.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(35)
+            make.top.equalTo(wholeStackView.snp.bottom)
+            make.height.equalTo(1)
+        }
+        
+        firstView.snp.makeConstraints { make in
+            make.leading.top.bottom.equalToSuperview()
+            make.height.equalTo(1)
+          
+        }
+        secondView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.height.equalTo(1)
+            make.leading.equalTo(firstView.snp.trailing).offset(20)
+        }
+        
+        thirdView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.leading.equalTo(secondView.snp.trailing).offset(20)
+            make.height.equalTo(1)
+        }
+        
+        
     }
    
     
