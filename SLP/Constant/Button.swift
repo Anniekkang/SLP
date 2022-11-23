@@ -19,6 +19,13 @@ class customButton {
         
     }
     
-    
+    static func genderVCchangedButton(view : UIView, button : UIButton) {
+        
+        view.backgroundColor = colorCustom.shared.whiteBrandColor
+        button.backgroundColor = colorCustom.shared.greenBrandColor
+        button.setTitleColor(colorCustom.shared.whiteColor, for: .normal)
+        
+        
+    }
     
 }

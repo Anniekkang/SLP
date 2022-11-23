@@ -231,8 +231,8 @@
 		9EB06C64292CD5D000EB357D /* Gender */ = {
 			isa = PBXGroup;
 			children = (
-				9ECC7C892922AF5600B3DC25 /* GenderView.swift */,
 				9ECC7C852922AF1D00B3DC25 /* GenderViewController.swift */,
+				9ECC7C892922AF5600B3DC25 /* GenderView.swift */,
 			);
 			path = Gender;
 			sourceTree = "<group>";
