@@ -5,13 +5,12 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.74226942860-59dtnj6vaeihtic0rio853t61gsrqgm8</string>
+				<string>com.googleusercontent.apps.355153590205-t8u7u644sesms399b5iunjeskdccbt08</string>
 			</array>
 		</dict>
+		<dict/>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>

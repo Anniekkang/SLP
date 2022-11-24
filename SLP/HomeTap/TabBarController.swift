@@ -44,7 +44,7 @@ class TabBarController : UITabBarController {
         fourthTap.tabBarItem = fourthBarItem
         
         
-        self.viewControllers = [firstTap,secondTap,thirdTap,fourthTap]
+        self.viewControllers = [nav1,nav2,nav3,nav4]
     }
 
     

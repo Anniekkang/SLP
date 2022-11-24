@@ -38,15 +38,20 @@ class HomeView: BaseView {
         return button
     }()
     
-    let matchingButton : UIButton = {
-       let button = UIButton()
-        button.setImage(UIImage(named: "search"), for: .normal)
-        
-        button.backgroundColor = colorCustom.shared.blackColor
-        button.layer.cornerRadius = 50
-        return button
+    let matchingView : UIView = {
+       let view = UIView()
+        view.layer.cornerRadius = 32
+        view.backgroundColor = colorCustom.shared.blackColor
+        return view
     }()
     
+    let insideButton : UIButton = {
+        let button = UIButton()
+        let image = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
+        button.setImage(image, for: .normal)
+        button.tintColor = colorCustom.shared.whiteColor
+        return button
+    }()
     
     let segment : UISegmentedControl = {
         let segment = UISegmentedControl()
@@ -56,9 +61,10 @@ class HomeView: BaseView {
     
     override func configuration() {
         self.addSubview(map)
-        [button, segment, matchingButton].forEach {
+        [button, segment, matchingView].forEach {
             map.addSubview($0)
         }
+        matchingView.addSubview(insideButton)
     }
     
     override func setConstraints() {
@@ -77,11 +83,16 @@ class HomeView: BaseView {
             make.leading.equalToSuperview().inset(16)
         }
         
-        matchingButton.snp.makeConstraints { make in
+        matchingView.snp.makeConstraints { make in
             make.width.height.equalTo(64)
-            make.centerY.equalToSuperview().multipliedBy(1.9)
             make.trailing.equalToSuperview().inset(16)
+            make.centerY.equalToSuperview().multipliedBy(1.7)
             
+        }
+        
+        insideButton.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.centerX.centerY.equalToSuperview()
         }
         
     }

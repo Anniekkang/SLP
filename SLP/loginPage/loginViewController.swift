@@ -52,7 +52,7 @@ class loginViewController: BaseViewController {
               // Sign in using the verificationID and the code sent to the user
               print("verify phone")
               //인증번호 userDefaults에 저장
-              UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+              UserDefaults.standard.set(verificationID, forKey: Userdefaults.verificationID.rawValue)
               
           }
         

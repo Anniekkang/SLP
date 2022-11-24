@@ -9,7 +9,7 @@ import Foundation
 
 enum APIUrl {
     static let baseURL = "http://api.sesac.co.kr:1210"
-    static let loginandSignUp = "/v1/user"
+    static let loginandSignUp = "http://api.sesac.co.kr:1210/v1/user"
     static let withdrawURL = "/v1/user/withdraw"
     static let updateToken = "/v1/user/update_fcm_token"
     static let updateMypage = "/v1/user/update_fcm_token"
