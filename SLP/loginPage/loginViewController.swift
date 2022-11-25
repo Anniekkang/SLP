@@ -13,7 +13,8 @@ import FirebaseCore
 
 class loginViewController: BaseViewController {
     
-   
+    typealias completionHandler = (String) -> ()
+    
     let mainView = loginView()
     
     override func loadView() {
@@ -28,39 +29,28 @@ class loginViewController: BaseViewController {
         mainView.textField.delegate = self
         mainView.button.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         
+       
     }
-    
 
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.mainView.endEditing(true)
     }
     
-    
-    
+ 
     @objc func tappedButton(_ sender : UIButton){
-       
+        print(#function)
         guard let text = mainView.textField.text else { return }
+        let mobileNumber = "+82" + text
+       
         
-       //전화번호 전달
-        PhoneAuthProvider.provider()
-          .verifyPhoneNumber("+82" + text, uiDelegate: nil) { verificationID, error in
-              if let error = error {
-               print("phoneAuth error : \(error)")
-                return
-              }
-              // Sign in using the verificationID and the code sent to the user
-              print("verify phone")
-              //인증번호 userDefaults에 저장
-              UserDefaults.standard.set(verificationID, forKey: Userdefaults.verificationID.rawValue)
-              
-          }
+        verifyNumber(phoneNumber: mobileNumber) { verificationID in
+            print("verify phone")
+            UserDefaults.standard.set(verificationID, forKey: Repository.verificationID.rawValue)
+            
+            let vc = AuthorizationViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
-        
-        
-        let vc = AuthorizationViewController()
-        navigationController?.pushViewController(vc, animated: true)
-
         
     }
     
@@ -69,7 +59,6 @@ class loginViewController: BaseViewController {
         customTextField.customTextFieldView(view: mainView.view)
         
         return true
-        
     }
     
     //textfield에서 text가 변화될 때
@@ -78,29 +67,19 @@ class loginViewController: BaseViewController {
         guard let text = mainView.textField.text else { return false }
         let textCount = text.count
         
-        let characterSet = CharacterSet(charactersIn: string)
-        if CharacterSet.decimalDigits.isSuperset(of: characterSet) == false {
-            return false
-        }
+        addHyphen(textField: textField, text: text, range: range, string: string)
         
-        let formatter = DefaultTextInputFormatter(textPattern: "###-####-####")
-        let result = formatter.formatInput(currentText: text , range: range, replacementString: string)
-        textField.text = result.formattedText
-        guard let position = textField.position(from: textField.beginningOfDocument, offset: result.caretBeginOffset) else { return false}
-        textField.selectedTextRange = textField.textRange(from: position, to: position)
         
-        if textCount > 12 {
-            self.view.makeToast("잘못된 전화번호 형식입니다.", duration: 1.0, position: .center)
+        if textCount > 12  {
             
+            self.view.makeToast("잘못된 전화번호 형식입니다.", duration: 1.0, position: .center)
    
         } else if textCount ==  12 {
             
             customButton.changedButton(view: mainView.view, button: mainView.button)
             
         }
-        
         return false
-     
     }
     
     

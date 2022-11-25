@@ -20,16 +20,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: Scene)
       
-        
-        
         let mainVC = loginViewController()
         let nav = UINavigationController(rootViewController: mainVC)
 
-       
-
-        
-        window?.rootViewController = TabBarController()
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
+        
+      
+        
+        //firstTime vs secondTime
+        if Repository.isFirstTime() {
+            window?.rootViewController = OnboardViewController()
+           // AuthAPIManager.shared.getIDToken()
+        } else {
+            window?.rootViewController = nav
+           // AuthAPIManager.shared.getIDToken()
+        }
+       
+        window?.makeKeyAndVisible()
+        
+        func changeRootVC(_ vc:UIViewController, animated: Bool) {
+            guard let window = self.window else { return }
+            window.rootViewController = vc // 전환
+            
+           
+          }
         
     }
 

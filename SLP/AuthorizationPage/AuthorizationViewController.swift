@@ -12,6 +12,8 @@ import FirebaseAuth
 
 class AuthorizationViewController: BaseViewController {
     static let shared = AuthorizationViewController()
+    
+    
     let mainView = AuthorizationView()
     
     
@@ -19,7 +21,11 @@ class AuthorizationViewController: BaseViewController {
         self.view = mainView
     }
     
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.mainView.makeToast("인증번호를 보냈습니다.",duration: 1.0 ,position: .center)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,30 +33,28 @@ class AuthorizationViewController: BaseViewController {
         mainView.backgroundColor = .white
         mainView.textField.delegate = self
         mainView.button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        AuthAPIManager.shared.getIDToken()
-      
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.view.makeToast("인증번호를 보냈습니다.",duration: 1.0 ,position: .center)
     }
     
     @objc func buttonTapped() {
         guard let text = mainView.textField.text else { return }
         let textCount = text.count
-
+        
         if textCount < 6 {
             self.view.makeToast("인증번호 6자리를 입력해주시기 바랍니다",duration: 1.0, position: .center)
-
+            
         } else {
-            guard let verificationID = UserDefaults.standard.string(forKey: Userdefaults.verificationID.rawValue) else { print("credential error")
+            guard let verificationID = UserDefaults.standard.string(forKey: Repository.verificationID.rawValue) else { print("credential error")
                 return }
-
-            AuthAPIManager.shared.verifyCode(verificationID: verificationID)
-
+            let verificationCode = text
+            
+            AuthAPIManager.shared.verifyCode(verificationID: verificationID, verificationCode: verificationCode)
+            AuthAPIManager.shared.fetchloginData(query: Repository.tokenID.rawValue) { String in
+                
             }
-
         }
+        
+    }
+    
     
     
     override func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
