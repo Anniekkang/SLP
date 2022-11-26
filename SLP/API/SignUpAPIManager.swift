@@ -21,7 +21,7 @@ class SignUpAPIManager {
         let headers : HTTPHeaders = ["idtoken" : query, "Content-Type": "application/x-www-form-urlencoded" ]
         let parameters : [String : Any ] =
         [
-            "phoneNumber" : "+821034113473" ,//Repository.phoneNumber,
+            "phoneNumber" : Repository.phoneNumber,
             "FCMtoken" : Repository.FCMToken,
             "nick": Repository.nickName,
             "birth": Repository.Birth,

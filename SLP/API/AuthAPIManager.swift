@@ -31,7 +31,7 @@ class AuthAPIManager {
                     let decoder = JSONDecoder()
                     do {
                         let decodeData = try decoder.decode(parameters.self, from: data)
-                        print(decodeData.ageMax)
+                        print("decodeData=========\(decodeData)")
                         completionHandler(statusCode)
                         
                         

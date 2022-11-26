@@ -38,13 +38,11 @@ class TabBarController : UITabBarController {
         let thirdBarItem = UITabBarItem(title: "새싹친구", image: UIImage(named: "sesac"), selectedImage: UIImage(named: "sesac"))
         let fourthBarItem = UITabBarItem(title: "내정보", image: UIImage(named: "mypage"), selectedImage: UIImage(named: "mypage"))
     
-        firstTap.tabBarItem = firstBarItem
-        secondTap.tabBarItem = secondBarItem
-        thirdTap.tabBarItem = thirdBarItem
-        fourthTap.tabBarItem = fourthBarItem
+        nav1.tabBarItem = firstBarItem
+        nav2.tabBarItem = secondBarItem
+        nav3.tabBarItem = thirdBarItem
+        nav4.tabBarItem = fourthBarItem
         
-        
-        self.viewControllers = [nav1,nav2,nav3,nav4]
     }
 
     

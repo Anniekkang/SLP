@@ -24,7 +24,7 @@ class HomeView: BaseView {
     let map : MKMapView = {
         let map = MKMapView()
         
-        map.showsUserLocation = true
+        map.showsUserLocation = true//현재 위치 마커로 표시
         map.setUserTrackingMode(.follow, animated: true)
         map.isZoomEnabled = true
         return map

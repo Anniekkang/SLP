@@ -67,10 +67,10 @@ class GenderViewController: BaseViewController {
             switch statusCode {
             case 200 :
                 print("SignUp Success")
-                self.navigationController?.pushViewController(TabBarController(), animated: true)
+                Transition.changedRV(vc: TabBarController())
             case 201 :
                 print("already registered")
-                self.navigationController?.pushViewController(TabBarController(), animated: true)
+                Transition.changedRV(vc: TabBarController())
             case 202 :
                 print("unabled Nickname")
                 self.navigationController?.pushViewController(nickNameViewController(), animated: true)
