@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainVC = loginViewController()
         let nav = UINavigationController(rootViewController: mainVC)
 
-        window?.rootViewController = nav
+        
         window?.makeKeyAndVisible()
         
       
@@ -31,10 +31,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //firstTime vs secondTime
         if Repository.isFirstTime() {
             window?.rootViewController = OnboardViewController()
-           // AuthAPIManager.shared.getIDToken()
+        
         } else {
             window?.rootViewController = nav
-           // AuthAPIManager.shared.getIDToken()
+           
         }
        
         window?.makeKeyAndVisible()

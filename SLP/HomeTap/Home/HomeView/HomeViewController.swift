@@ -30,6 +30,7 @@ class HomeViewController: BaseViewController, MKMapViewDelegate {
         
         configuration()
         self.currentLocation = locationManager.location
+        tabBarController?.tabBar.isHidden = false
         mainView.button.addTarget(self, action: #selector(locationButtonTapped), for: .touchUpInside)
         mainView.insideButton.addTarget(self, action: #selector(viewTapped), for: .touchUpInside)
         

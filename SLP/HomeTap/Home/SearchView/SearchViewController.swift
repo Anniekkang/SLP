@@ -19,7 +19,7 @@ class SearchViewController: BaseViewController {
         super.viewDidLoad()
 
         mainView.backgroundColor = colorCustom.shared.whiteColor
-        
+        tabBarController?.tabBar.isHidden = true
         navDesign()
         
     }
@@ -29,7 +29,7 @@ class SearchViewController: BaseViewController {
         
         let searchBar = UISearchBar()
         searchBarDesign(searchBar: searchBar)
-                        
+    
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "arrow"), style: .plain, target: self, action: #selector(backButtonTapped))
         navigationItem.leftBarButtonItem?.tintColor = colorCustom.shared.blackColor
         navigationItem.titleView = searchBar

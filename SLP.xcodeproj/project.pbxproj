@@ -15,6 +15,7 @@
 		9E619E7B292E764F001835C8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E7A292E764F001835C8 /* SearchView.swift */; };
 		9E619E7D292E765C001835C8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E7C292E765C001835C8 /* SearchViewController.swift */; };
 		9E619E7F292FC67C001835C8 /* loginFuncExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E7E292FC67C001835C8 /* loginFuncExtension.swift */; };
+		9E619E812931D64F001835C8 /* getID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E802931D64E001835C8 /* getID.swift */; };
 		9E876DB92920B8FC00BEBAE8 /* Noto_Sans_KR in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */; };
 		9E876DBD2920E06000BEBAE8 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DBC2920E06000BEBAE8 /* Splash.storyboard */; };
 		9E876DC02920E1DF00BEBAE8 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */; };
@@ -103,6 +104,7 @@
 		9E619E7A292E764F001835C8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		9E619E7C292E765C001835C8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9E619E7E292FC67C001835C8 /* loginFuncExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginFuncExtension.swift; sourceTree = "<group>"; };
+		9E619E802931D64E001835C8 /* getID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getID.swift; sourceTree = "<group>"; };
 		9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Noto_Sans_KR; sourceTree = "<group>"; };
 		9E876DBC2920E06000BEBAE8 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 		9EFDEBA8291928DB007743CE /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				9E619E802931D64E001835C8 /* getID.swift */,
 				9EFDEBA9291928F9007743CE /* Color.swift */,
 				9EC35922291AC49E001E69A4 /* Font.swift */,
 				9ECC7C8B2922B21200B3DC25 /* Transition.swift */,
@@ -625,6 +628,7 @@
 				9EE3C6CE292C2FCF00124D61 /* BirthCustomItem.swift in Sources */,
 				9E619E7B292E764F001835C8 /* SearchView.swift in Sources */,
 				9EFDEB9529190566007743CE /* SceneDelegate.swift in Sources */,
+				9E619E812931D64F001835C8 /* getID.swift in Sources */,
 				9EC3594B291E5256001E69A4 /* SplashViewController.swift in Sources */,
 				9ECC7C9329230FDB00B3DC25 /* textField.swift in Sources */,
 				9EFDEBB029192A11007743CE /* BaseView.swift in Sources */,

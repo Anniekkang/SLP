@@ -15,26 +15,8 @@ class AuthAPIManager {
     static let shared = AuthAPIManager()
     private init() {}
     
-    typealias completionHandler = (String) -> ()
+    typealias completionHandler = (Int) -> ()
     
-    func getIDToken(completion : @escaping completionHandler) {
-        print(#function)
-        let currentUser = Auth.auth().currentUser
-        currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
-            guard let idToken = idToken else {
-                print("optional error - id token")
-                return }
-            
-            if error != nil {
-                print("IDToken error")
-                return
-            }
-            
-            print("idToken : \(String(describing: idToken))")
-            completion(idToken)
-        }
-        
-    }
     
     
     
@@ -54,8 +36,12 @@ class AuthAPIManager {
                 
                 //인증번호 일치함 -> 로그인하기
                 print("Able to login with Phone in \(String(describing: authResult?.user.uid))")
-                self.getIDToken { idToken in
+                getID.shared.getIDToken { idToken in
                     UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
+                }
+          
+                self.fetchloginData(query: UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) ?? "") { statusCode in
+                    self.checkStatusCode(status: statusCode)
                 }
             }
         }
@@ -66,23 +52,24 @@ class AuthAPIManager {
     func fetchloginData(query : String, completionHandler : @escaping completionHandler) {
         guard let url = URL(string: APIUrl.baseURL + APIUrl.loginandSignUp) else { return }
         let headers : HTTPHeaders = ["idtoken" : query]
-    
+        
         AF.request(url, method: .get, headers: headers)
             .validate()
-            .responseData { [self] Response in
+            .responseData { Response in
                 switch Response.result {
                 case .success(let data) :
                     let decoder = JSONDecoder()
                     do {
-                        let loginData = try decoder.decode(parameters.self, from: data)
+                        let decodeData = try decoder.decode(parameters.self, from: data)
+                        print(decodeData.ageMax)
                         guard let statusCode = Response.response?.statusCode else { return }
-                        checkStatusCode(status: statusCode)
+                        completionHandler(statusCode)
                         
                     } catch {
                         print("decode error")
                     }
                 case .failure(let error):
-                    completionHandler("error")
+                    
                     print("errorcode : \(error)")
                 }
                 
@@ -97,15 +84,14 @@ class AuthAPIManager {
             AuthorizationViewController.shared.navigationController?.pushViewController(TabBarController(), animated: true)
         case 401 :
             print("Firebase TokenError")
-            self.getIDToken { idToken in
+            getID.shared.getIDToken { idToken in
                 UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
             }
             guard let newID = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
             print("=========\(newID)")
-             self.fetchloginData(query: newID) { _ in
-                            print("networking error")
-                            }
-            
+            self.fetchloginData(query: newID) { _ in
+                print("networking error")
+            }
         case 406 :
             print("unregistered User")
             AuthorizationViewController.shared.navigationController?.pushViewController(nickNameViewController(), animated: true)

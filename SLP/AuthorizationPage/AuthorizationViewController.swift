@@ -48,9 +48,7 @@ class AuthorizationViewController: BaseViewController {
             let verificationCode = text
             
             AuthAPIManager.shared.verifyCode(verificationID: verificationID, verificationCode: verificationCode)
-            AuthAPIManager.shared.fetchloginData(query: Repository.tokenID.rawValue) { String in
-                
-            }
+           
         }
         
     }
