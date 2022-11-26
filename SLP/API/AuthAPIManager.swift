@@ -25,24 +25,21 @@ class AuthAPIManager {
         AF.request(url, method: .get, headers: headers)
             .validate()
             .responseData { Response in
+                guard let statusCode = Response.response?.statusCode else { return }
                 switch Response.result {
                 case .success(let data) :
                     let decoder = JSONDecoder()
                     do {
                         let decodeData = try decoder.decode(parameters.self, from: data)
                         print(decodeData.ageMax)
-                        print("login success")
+                        completionHandler(statusCode)
                         
-                        DispatchQueue.main.async {
-                            AuthorizationViewController.shared.navigationController?.pushViewController(TabBarController(), animated: true)
-                        }
-                     
+                        
                     } catch {
                         print("decode error")
                     }
                 case .failure(let error):
                     print("errorcode : \(error)")
-                    guard let statusCode = Response.response?.statusCode else { return }
                     completionHandler(statusCode)
                     
                     
@@ -51,19 +48,6 @@ class AuthAPIManager {
             }
         
     }
-    
-    
-    
-    struct parameters : Codable {
-        var background: Int
-        var sesac:Int
-        let nick: String
-        let reputation: [Int]
-        var gender: Int
-        var study: String
-        var searchable: Int
-        var ageMin: Int
-        var ageMax: Int
-    }
+
     
 }

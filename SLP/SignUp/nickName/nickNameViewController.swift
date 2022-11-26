@@ -27,17 +27,18 @@ class nickNameViewController: BaseViewController {
     }
     
     @objc func buttonTapped() {
-        var text = mainView.textField.text
-        guard let count = text?.count else { return }
+        guard let text = mainView.textField.text else { return }
+        let count = text.count
         if count < 1 || count > 11 {
             self.view.makeToast("닉네임은 1자 이상 10자 이내로 부탁드려요.",duration: 1.0,position: .center)
-            text = ""
-        } else if text?.filter({ $0.isNumber}).count != 0 {
+            
+        } else if text.filter({ $0.isNumber}).count != 0 {
             self.view.makeToast("닉네임은 실명으로 부탁드려요.",duration: 1.0,position: .center)
-            text = ""
+            
         } else {
             
-            UserDefaults.standard.set(text, forKey: "nickName")
+            Repository.nickName = text
+            
             let vc = BirthViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }

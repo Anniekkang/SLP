@@ -12,6 +12,13 @@ enum Repository : String {
     case tokenID = "tokenID"
     case firstTime = "isFirstTime"
     
+    static var phoneNumber : String = ""
+    static var FCMToken : String = ""
+    static var nickName : String = ""
+    static var Birth : Date = Date()
+    static var Email : String = ""
+    static var Gender : Int = 2
+    
     static func isFirstTime() -> Bool {
         let defaults = UserDefaults.standard
         if defaults.object(forKey: Repository.firstTime.rawValue) == nil {

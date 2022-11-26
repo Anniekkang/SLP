@@ -8,12 +8,11 @@
 import UIKit
 
 class GenderViewController: BaseViewController {
-
-    var gender : Int?
+    
+    var gender : Int = 2
     let mainView = GenderView()
-    var isClicked = [false, false]
-    let maleNum = 0
-    let femaleNum = 1
+    var maleNum = 0
+    var femaleNum = 1
     
     override func loadView() {
         self.view = mainView
@@ -21,37 +20,73 @@ class GenderViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         mainView.backgroundColor = .white
         mainView.button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        
-        clickedView(view: mainView.femaleView)
-        clickedView(view: mainView.maleView)
-       
-    }
-    
-    func clickedView(view : UIView) {
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(viewClicked))
-        view.addGestureRecognizer(gesture)
-        
+        gesture()
         
     }
     
-    @objc func viewClicked() {
-        view.backgroundColor = colorCustom.shared.whiteBrandColor
+    
+    func gesture() {
+        let maleGesture = UITapGestureRecognizer(target: self, action: #selector(maleViewClicked))
+        let femaleGesture = UITapGestureRecognizer(target: self, action: #selector(femaleViewClicked))
+        mainView.maleView.addGestureRecognizer(maleGesture)
+        mainView.femaleView.addGestureRecognizer(femaleGesture)
         
-        
+    }
+    
+    
+    @objc func maleViewClicked() {
+        mainView.maleView.backgroundColor = colorCustom.shared.whiteBrandColor
+        mainView.femaleView.backgroundColor = colorCustom.shared.whiteColor
+        customButton.changedButton(view: nil, button: mainView.button)
+        gender = maleNum
+    }
+    
+    @objc func femaleViewClicked() {
+        mainView.femaleView.backgroundColor = colorCustom.shared.whiteBrandColor
+        mainView.maleView.backgroundColor = colorCustom.shared.whiteColor
+        customButton.changedButton(view: nil, button: mainView.button)
+        gender = femaleNum
     }
     
     @objc func buttonTapped() {
-    
         
-
-        Transition.changedRV(vc: TabBarController())
-       
+        if gender == 2 {
+            mainView.makeToast("성별을 선택해주시기 바랍니다", duration: 1.0, position: .center)
+            return
+        }
+        
+        Repository.Gender = gender
+        SignUpAPIManager.shared.sendSignUpData(query: UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) ?? "") { statusCode in
+            
+            print("=========\(Repository.phoneNumber)\(Repository.FCMToken),\(Repository.nickName),\(Repository.Birth),\(Repository.Email),\(Repository.Gender)")
+            
+            switch statusCode {
+            case 200 :
+                print("SignUp Success")
+                self.navigationController?.pushViewController(TabBarController(), animated: true)
+            case 201 :
+                print("already registered")
+                self.navigationController?.pushViewController(TabBarController(), animated: true)
+            case 202 :
+                print("unabled Nickname")
+                self.navigationController?.pushViewController(nickNameViewController(), animated: true)
+            case 401 :
+                print("Firebase Token Error")
+            case 500 :
+                print("Server Error")
+            case 501 :
+                print("Client Error")
+            default :
+                return
+            }
+        }
         
     }
-
+    
+    
     
 }

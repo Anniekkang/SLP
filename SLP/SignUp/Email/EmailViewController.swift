@@ -27,7 +27,7 @@ class EmailViewController: BaseViewController {
     @objc func buttonTapped() {
         guard let text = mainView.textField.text else { return }
         if isValidEmail(text: text) {
-            UserDefaults.standard.set(mainView.textField.text, forKey: "Email")
+            Repository.Email = text
             
             let vc = GenderViewController()
             navigationController?.pushViewController(vc, animated: true)

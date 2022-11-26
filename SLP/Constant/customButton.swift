@@ -10,9 +10,9 @@ import UIKit
 class customButton {
     
     
-    static func changedButton(view : UIView, button : UIButton) {
+    static func changedButton(view : UIView?, button : UIButton) {
         
-        view.backgroundColor = colorCustom.shared.gray3
+        view?.backgroundColor = colorCustom.shared.gray3
         button.backgroundColor = colorCustom.shared.greenBrandColor
         button.setTitleColor(colorCustom.shared.whiteColor, for: .normal)
         

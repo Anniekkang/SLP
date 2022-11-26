@@ -40,7 +40,9 @@ class BirthViewController: BaseViewController {
             if BirthDateFormatter.calDate(birthdate: mainView.datePicker.date) == false {
                 mainView.makeToast("새싹스터디는 만 17세 이상만 사용할 수 있습니다.", duration: 1.0, position: .center)
             } else {
-                UserDefaults.standard.set(mainView.datePicker.date, forKey: "Birthday")
+                
+                Repository.Birth = mainView.datePicker.date
+                
                 let vc = EmailViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
             }

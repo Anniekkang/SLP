@@ -32,6 +32,9 @@ extension AuthorizationViewController {
                 
                 AuthAPIManager.shared.fetchloginData(query: UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) ?? "") { statusCode in
                     switch statusCode {
+                    case 200 :
+                        print("Auth Success")
+                        self.navigationController?.pushViewController(TabBarController(), animated: true)
                     case 401 :
                         print("Firebase TokenError")
                         getID.shared.getIDToken { idToken in
@@ -39,8 +42,22 @@ extension AuthorizationViewController {
                         }
                         guard let newID = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
                         print("=========\(newID)")
-                        AuthAPIManager.shared.fetchloginData(query: newID) { _ in
-                            print("networking error")
+                        AuthAPIManager.shared.fetchloginData(query: newID) { statusCode in
+                            switch statusCode {
+                            case 200 :
+                                print("Auth Success")
+                                self.navigationController?.pushViewController(TabBarController(), animated: true)
+                            case 406 :
+                                print("unregistered User")
+                                DispatchQueue.main.async {
+                                    print("dispatchqueue")
+                                    
+                                    self.navigationController?.pushViewController(nickNameViewController(), animated: true)
+                                }
+                                
+                            default :
+                                print("error again")
+                            }
                         }
                     case 406 :
                         print("unregistered User")
@@ -48,8 +65,7 @@ extension AuthorizationViewController {
                             print("dispatchqueue")
                             
                             self.navigationController?.pushViewController(nickNameViewController(), animated: true)
-                            
-                            
+
                         }
                         
                     case 500 :

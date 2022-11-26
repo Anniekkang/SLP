@@ -41,7 +41,7 @@ class loginViewController: BaseViewController {
         print(#function)
         guard let text = mainView.textField.text else { return }
         let mobileNumber = "+82" + text
-       
+        Repository.phoneNumber = mobileNumber
         
         verifyNumber(phoneNumber: mobileNumber) { verificationID in
             print("verify phone")
