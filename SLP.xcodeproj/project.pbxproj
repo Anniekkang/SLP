@@ -16,6 +16,7 @@
 		9E619E7D292E765C001835C8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E7C292E765C001835C8 /* SearchViewController.swift */; };
 		9E619E7F292FC67C001835C8 /* loginFuncExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E7E292FC67C001835C8 /* loginFuncExtension.swift */; };
 		9E619E812931D64F001835C8 /* getID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E802931D64E001835C8 /* getID.swift */; };
+		9E619E832931F2CC001835C8 /* verifyCodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E822931F2CC001835C8 /* verifyCodeExtension.swift */; };
 		9E876DB92920B8FC00BEBAE8 /* Noto_Sans_KR in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */; };
 		9E876DBD2920E06000BEBAE8 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DBC2920E06000BEBAE8 /* Splash.storyboard */; };
 		9E876DC02920E1DF00BEBAE8 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */; };
@@ -105,6 +106,7 @@
 		9E619E7C292E765C001835C8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9E619E7E292FC67C001835C8 /* loginFuncExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginFuncExtension.swift; sourceTree = "<group>"; };
 		9E619E802931D64E001835C8 /* getID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getID.swift; sourceTree = "<group>"; };
+		9E619E822931F2CC001835C8 /* verifyCodeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyCodeExtension.swift; sourceTree = "<group>"; };
 		9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Noto_Sans_KR; sourceTree = "<group>"; };
 		9E876DBC2920E06000BEBAE8 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				9EC35927291AE11D001E69A4 /* AuthorizationViewController.swift */,
 				9EC35925291AE10E001E69A4 /* AuthorizationView.swift */,
 				9ECC7CA5292571D700B3DC25 /* AuthAPIManager.swift */,
+				9E619E822931F2CC001835C8 /* verifyCodeExtension.swift */,
 			);
 			path = AuthorizationPage;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				9EC35926291AE10E001E69A4 /* AuthorizationView.swift in Sources */,
 				9ECC7CBF2928921000B3DC25 /* MyPageTableViewCell.swift in Sources */,
 				9EFDEBB7291AA0D2007743CE /* loginView.swift in Sources */,
+				9E619E832931F2CC001835C8 /* verifyCodeExtension.swift in Sources */,
 				9ECC7CCD2928C5B800B3DC25 /* ManageMyPageView.swift in Sources */,
 				9E619E7F292FC67C001835C8 /* loginFuncExtension.swift in Sources */,
 				9E876DCA2920EC2D00BEBAE8 /* ScrollExtension.swift in Sources */,

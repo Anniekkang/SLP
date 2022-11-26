@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: Scene)
       
-        let mainVC = loginViewController()
+        let mainVC = nickNameViewController()
         let nav = UINavigationController(rootViewController: mainVC)
 
         

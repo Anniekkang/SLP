@@ -12,8 +12,7 @@ import FirebaseAuth
 
 class AuthorizationViewController: BaseViewController {
     static let shared = AuthorizationViewController()
-    
-    
+
     let mainView = AuthorizationView()
     
     
@@ -36,6 +35,8 @@ class AuthorizationViewController: BaseViewController {
     }
     
     @objc func buttonTapped() {
+        Auth.auth().settings?.isAppVerificationDisabledForTesting = true
+        
         guard let text = mainView.textField.text else { return }
         let textCount = text.count
         
@@ -45,9 +46,9 @@ class AuthorizationViewController: BaseViewController {
         } else {
             guard let verificationID = UserDefaults.standard.string(forKey: Repository.verificationID.rawValue) else { print("credential error")
                 return }
-            let verificationCode = text
             
-            AuthAPIManager.shared.verifyCode(verificationID: verificationID, verificationCode: verificationCode)
+            let verificationCode = text
+            self.verifyCode(verificationID: verificationID, verificationCode: verificationCode)
            
         }
         
