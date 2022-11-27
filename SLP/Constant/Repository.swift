@@ -21,7 +21,7 @@ enum Repository : String {
     static var lat : Double = 0.0
     static var long : Double = 0.0
     static var studylist : [String] = [""]
-    
+    static var locationAuthStatus : Int32?
     
     static func isFirstTime() -> Bool {
         let defaults = UserDefaults.standard

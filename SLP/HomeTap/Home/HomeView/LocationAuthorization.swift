@@ -50,6 +50,8 @@ extension HomeViewController : CLLocationManagerDelegate{
         default :
             print("nothing")
         }
+        Repository.locationAuthStatus = status.rawValue
+        print("==========\(status.rawValue)")
     }
     
     func showRequestAlert() {
