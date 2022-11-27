@@ -14,4 +14,7 @@ enum APIUrl {
     static let updateToken = "/v1/user/update_fcm_token"
     static let updateMypage = "/v1/user/update_fcm_token"
     static let findRequest = "/v1/queue"
+    static let search = "/v1/queue/search"
+    static let myQueueState = "/v1/queue/myQueueState"
+
 }

@@ -13,7 +13,8 @@ class HomeViewController: BaseViewController, MKMapViewDelegate {
     
     var center : CLLocationCoordinate2D?
     let mainView = HomeView()
-    
+    let annotation = MKPointAnnotation()
+   
     override func loadView() {
         self.view = mainView
     }
@@ -22,17 +23,17 @@ class HomeViewController: BaseViewController, MKMapViewDelegate {
     var currentLocation : CLLocation!
     
     override func viewWillAppear(_ animated: Bool) {
-       
-        
+        super.viewWillAppear(animated)
+    
+        annotation.coordinate = goLocation(latitude: currentLocation.coordinate.latitude, longtitude: currentLocation.coordinate.longitude, delta: 0.00158, map: mainView.map)
         
     }
     
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
   
-        mainView.map.delegate = self
+        self.mainView.map.addAnnotation(annotation)
         self.currentLocation = locationManager.location
         configuration()
         tabBarController?.tabBar.isHidden = false
@@ -51,6 +52,7 @@ class HomeViewController: BaseViewController, MKMapViewDelegate {
   
     @objc func locationButtonTapped(){
         mainView.map.showsUserLocation = true
+        goLocation(latitude: currentLocation.coordinate.latitude, longtitude: currentLocation.coordinate.longitude, delta: 0.00158, map: mainView.map)
     }
     
     

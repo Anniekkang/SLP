@@ -18,6 +18,10 @@ enum Repository : String {
     static var Birth : Date = Date()
     static var Email : String = ""
     static var Gender : Int = 2
+    static var lat : Double = 0.0
+    static var long : Double = 0.0
+    static var studylist : [String] = [""]
+    
     
     static func isFirstTime() -> Bool {
         let defaults = UserDefaults.standard

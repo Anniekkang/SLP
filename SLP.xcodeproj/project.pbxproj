@@ -22,6 +22,9 @@
 		9E619E8A29329C5E001835C8 /* SearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E8929329C5E001835C8 /* SearchBarExtension.swift */; };
 		9E619E8D2932A497001835C8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E8C2932A497001835C8 /* SearchViewController.swift */; };
 		9E619E8F2932A4A7001835C8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E8E2932A4A7001835C8 /* SearchView.swift */; };
+		9E619E922932DB3F001835C8 /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E912932DB3F001835C8 /* SearchData.swift */; };
+		9E619E942932DBD8001835C8 /* SearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E932932DBD8001835C8 /* SearchAPIManager.swift */; };
+		9E619E9629330F2F001835C8 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E9529330F2F001835C8 /* CustomAnnotationView.swift */; };
 		9E876DB92920B8FC00BEBAE8 /* Noto_Sans_KR in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */; };
 		9E876DBD2920E06000BEBAE8 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DBC2920E06000BEBAE8 /* Splash.storyboard */; };
 		9E876DC02920E1DF00BEBAE8 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */; };
@@ -117,6 +120,9 @@
 		9E619E8929329C5E001835C8 /* SearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarExtension.swift; sourceTree = "<group>"; };
 		9E619E8C2932A497001835C8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9E619E8E2932A4A7001835C8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		9E619E912932DB3F001835C8 /* SearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
+		9E619E932932DBD8001835C8 /* SearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIManager.swift; sourceTree = "<group>"; };
+		9E619E9529330F2F001835C8 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Noto_Sans_KR; sourceTree = "<group>"; };
 		9E876DBC2920E06000BEBAE8 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 				9ECC7CB22926247400B3DC25 /* HomeView.swift */,
 				9ECC7CB82928890F00B3DC25 /* LocationAuthorization.swift */,
 				9E619E8729326B94001835C8 /* LocationExtension.swift */,
+				9E619E9529330F2F001835C8 /* CustomAnnotationView.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -246,6 +253,15 @@
 				9E619E8E2932A4A7001835C8 /* SearchView.swift */,
 			);
 			path = SearchView;
+			sourceTree = "<group>";
+		};
+		9E619E902932DAFC001835C8 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				9E619E69292E2705001835C8 /* LoginData.swift */,
+				9E619E912932DB3F001835C8 /* SearchData.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		9E876DBE2920E1BB00BEBAE8 /* Onboarding - collectionView + pageControl */ = {
@@ -336,9 +352,9 @@
 			isa = PBXGroup;
 			children = (
 				9ECC7CA0292566B000B3DC25 /* APIUrl.swift */,
-				9E619E69292E2705001835C8 /* LoginData.swift */,
 				9ECC7CA5292571D700B3DC25 /* AuthAPIManager.swift */,
 				9ECC7CA7292571E600B3DC25 /* SignUpAPIManager.swift */,
+				9E619E932932DBD8001835C8 /* SearchAPIManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -471,6 +487,7 @@
 				9E619E77292E48E0001835C8 /* SLP.entitlements */,
 				9ECC7C962924E81F00B3DC25 /* .gitignore */,
 				9E619E75292E3FD3001835C8 /* GoogleService-Info.plist */,
+				9E619E902932DAFC001835C8 /* DataModel */,
 				9ECC7C9F292566A600B3DC25 /* API */,
 				9EFDEBAE29192A09007743CE /* Base */,
 				9ECC7CC42928B6B200B3DC25 /* MyPageTap */,
@@ -651,6 +668,7 @@
 				9E619E8D2932A497001835C8 /* SearchViewController.swift in Sources */,
 				9ECC7CB5292885C600B3DC25 /* ShopView.swift in Sources */,
 				9EE3C6B32928F12F00124D61 /* Reusable.swift in Sources */,
+				9E619E942932DBD8001835C8 /* SearchAPIManager.swift in Sources */,
 				9EC35928291AE11D001E69A4 /* AuthorizationViewController.swift in Sources */,
 				9E29D9C7291FBCDD00BBE368 /* BaseCollectionViewCell.swift in Sources */,
 				9E619E8F2932A4A7001835C8 /* SearchView.swift in Sources */,
@@ -678,6 +696,7 @@
 				9ECC7C8C2922B21200B3DC25 /* Transition.swift in Sources */,
 				9E619E66292E1FFD001835C8 /* Repository.swift in Sources */,
 				9EB06C68292CE97900EB357D /* EmailValidation.swift in Sources */,
+				9E619E9629330F2F001835C8 /* CustomAnnotationView.swift in Sources */,
 				9ECC7CB92928890F00B3DC25 /* LocationAuthorization.swift in Sources */,
 				9E876DC22920E1FC00BEBAE8 /* OnboardView.swift in Sources */,
 				9ECC7C802922AEF500B3DC25 /* BirthView.swift in Sources */,
@@ -691,6 +710,7 @@
 				9ECC7C822922AF0200B3DC25 /* BirthViewController.swift in Sources */,
 				9EFDEBAA291928F9007743CE /* Color.swift in Sources */,
 				9EB06C66292CD62700EB357D /* BirthDateFormatter.swift in Sources */,
+				9E619E922932DB3F001835C8 /* SearchData.swift in Sources */,
 				9ECC7CC62928B8E100B3DC25 /* TableViewExtension.swift in Sources */,
 				9EE3C6C129295AB300124D61 /* ImageTableViewCell.swift in Sources */,
 				9EFDEBA729192606007743CE /* OnboardingViewController.swift in Sources */,
