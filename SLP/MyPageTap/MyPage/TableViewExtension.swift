@@ -36,11 +36,4 @@ extension MyPageViewController : UITableViewDelegate,UITableViewDataSource {
     }
                                   
 
-   func buttonTapped(){
-        print(#function)
-       
-       self.navigationController?.pushViewController(ManageMyPageViewController(), animated: true)
-     
-    }
-
 }

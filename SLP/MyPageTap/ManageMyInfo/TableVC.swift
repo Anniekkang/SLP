@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ManageMyPageViewController : UITableViewDelegate, UITableViewDataSource {
+extension ManageMyInfoViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -27,11 +27,18 @@ extension ManageMyPageViewController : UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.section {
-        case 0 :
+        case 0 : //background
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.id, for: indexPath) as? ImageTableViewCell else { return UITableViewCell() }
+            
+            if parameters.background == 0 {
+                cell.backgroundImage.image = UIImage(named: "sesac_background_1")
+            }
             return cell
-        case 1 :
+        case 1 : //nick
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ExpandableCardTableViewCell.id, for: indexPath) as? ExpandableCardTableViewCell else { return UITableViewCell() }
+            
+            cell.titleLabel.text = parameters.nick
+            
             if isOpen == false {
                 cell.isHidden = true
     
@@ -40,7 +47,7 @@ extension ManageMyPageViewController : UITableViewDelegate, UITableViewDataSourc
             }
             
             return cell
-        case 2 :
+        case 2 : //gender,자주하는 스터디, 내 번호허용, 상대방 연령대, 회원탈퇴
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ManageMyPageCell.id, for: indexPath) as? ManageMyPageCell else { return UITableViewCell() }
             cell.label.text = MyPageData.sectionThreeArray[indexPath.row]
             return cell

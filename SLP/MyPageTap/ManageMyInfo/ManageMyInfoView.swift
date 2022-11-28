@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ManageMyPageView: BaseView {
+class ManageMyInfoView: BaseView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

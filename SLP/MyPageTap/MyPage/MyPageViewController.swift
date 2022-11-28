@@ -32,6 +32,37 @@ class MyPageViewController: BaseViewController {
         mainView.tableView.register(NameTableViewCell.self, forCellReuseIdentifier: NameTableViewCell.id)
         mainView.backgroundColor = .white
     }
+    
+    
+    func buttonTapped(){
+         print(#function)
+        
+        AuthAPIManager.shared.fetchloginData(query: UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) ?? "") { statusCode in
+            switch statusCode {
+            case 200 :
+                print("login success")
+                self.navigationController?.pushViewController(ManageMyInfoViewController(), animated: true)
+            case 401 :
+                print("firebase token error")
+            case 406 :
+                print("unregistered User")
+            case 500 :
+                print("server error")
+            case 501 :
+                print("client error")
+            default :
+                print("networking error")
+                break
+            }
+            
+        }
+        
+        
+       
+      
+     }
+
+    
 }
 
 

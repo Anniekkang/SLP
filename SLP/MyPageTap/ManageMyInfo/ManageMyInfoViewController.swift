@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ManageMyPageViewController: BaseViewController {
+class ManageMyInfoViewController: BaseViewController {
 
-    let mainView = ManageMyPageView()
+    let mainView = ManageMyInfoView()
     var isOpen : Bool = false //접혀있는 상태
     
     override func loadView() {
@@ -77,7 +77,7 @@ class ManageMyPageViewController: BaseViewController {
 
 }
 
-extension ManageMyPageViewController : HeaderViewDelegate {
+extension ManageMyInfoViewController : HeaderViewDelegate {
     func didTouchSection() {
         isOpen.toggle()
         mainView.tableView.reloadData()

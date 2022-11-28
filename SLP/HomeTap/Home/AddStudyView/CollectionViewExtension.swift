@@ -18,7 +18,7 @@ extension AddStudyViewController : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddStudyCollectionViewCell.id, for: indexPath) as? AddStudyCollectionViewCell else { return UICollectionViewCell()}
-        cell.button.setTitle(, for: <#T##UIControl.State#>)
+       
         return cell
     }
     

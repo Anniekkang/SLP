@@ -30,6 +30,7 @@ class AuthAPIManager {
                 case .success(let data) :
                     let decoder = JSONDecoder()
                     do {
+                        //decode : JSON data -> struct data
                         let decodeData = try decoder.decode(parameters.self, from: data)
                         print("decodeData=========\(decodeData)")
                         completionHandler(statusCode)

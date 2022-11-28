@@ -37,6 +37,7 @@ class SignUpAPIManager {
                 switch Response.result {
                 case .success(let data) :
                     print("SignUp Seccess")
+                    print("data============\(data)")
                     completionHandler(statusCode)
                 case .failure(let error):
                     print("errorcode : \(error)")

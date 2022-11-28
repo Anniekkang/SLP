@@ -19,15 +19,15 @@ struct requstBody : Codable {
 }
 
 struct parameters : Codable {
-    var background: Int
-    var sesac:Int
-    let nick: String
-    let reputation: [Int]
-    var gender: Int
-    var study: String
-    var searchable: Int
-    var ageMin: Int
-    var ageMax: Int
+    static let background: Int = 0
+    static let sesac: Int = 0
+    static let nick: String = ""
+    static let reputation: [Int] = [0]
+    static let gender: Int = 0
+    static let study: String = ""
+    static let searchable: Int = 0
+    static let ageMin: Int = 0
+    static let ageMax: Int = 0
 }
 
 

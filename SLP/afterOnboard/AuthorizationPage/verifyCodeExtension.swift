@@ -49,6 +49,7 @@ extension AuthorizationViewController {
                                 self.navigationController?.pushViewController(TabBarController(), animated: true)
                             case 406 :
                                 print("unregistered User")
+                                print()
                                 DispatchQueue.main.async {
                                     print("dispatchqueue")
                                     

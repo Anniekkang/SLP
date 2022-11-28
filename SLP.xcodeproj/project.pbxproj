@@ -27,6 +27,7 @@
 		9E619E982933559D001835C8 /* AddStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E972933559D001835C8 /* AddStudyCollectionViewCell.swift */; };
 		9E619E9A29335918001835C8 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E9929335918001835C8 /* CollectionViewExtension.swift */; };
 		9E619E9C29338ACF001835C8 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E9B29338ACF001835C8 /* HeaderCollectionReusableView.swift */; };
+		9E619EC22934E1C9001835C8 /* MyPageAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619EC12934E1C9001835C8 /* MyPageAPIManager.swift */; };
 		9E876DB92920B8FC00BEBAE8 /* Noto_Sans_KR in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */; };
 		9E876DBD2920E06000BEBAE8 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DBC2920E06000BEBAE8 /* Splash.storyboard */; };
 		9E876DC02920E1DF00BEBAE8 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */; };
@@ -79,8 +80,8 @@
 		9ECC7CC32928B53900B3DC25 /* MyPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CC22928B53900B3DC25 /* MyPageData.swift */; };
 		9ECC7CC62928B8E100B3DC25 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CC52928B8E100B3DC25 /* TableViewExtension.swift */; };
 		9ECC7CC82928BD9700B3DC25 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CC72928BD9700B3DC25 /* TabBarController.swift */; };
-		9ECC7CCB2928C5A100B3DC25 /* ManageMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CCA2928C5A100B3DC25 /* ManageMyPageViewController.swift */; };
-		9ECC7CCD2928C5B800B3DC25 /* ManageMyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CCC2928C5B800B3DC25 /* ManageMyPageView.swift */; };
+		9ECC7CCB2928C5A100B3DC25 /* ManageMyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CCA2928C5A100B3DC25 /* ManageMyInfoViewController.swift */; };
+		9ECC7CCD2928C5B800B3DC25 /* ManageMyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CCC2928C5B800B3DC25 /* ManageMyInfoView.swift */; };
 		9ECC7CCF2928CA7800B3DC25 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CCE2928CA7800B3DC25 /* NameTableViewCell.swift */; };
 		9EE3C6AF2928F01A00124D61 /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6AE2928F01A00124D61 /* TableVC.swift */; };
 		9EE3C6B32928F12F00124D61 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE3C6B22928F12F00124D61 /* Reusable.swift */; };
@@ -127,6 +128,7 @@
 		9E619E972933559D001835C8 /* AddStudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E619E9929335918001835C8 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		9E619E9B29338ACF001835C8 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		9E619EC12934E1C9001835C8 /* MyPageAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPIManager.swift; sourceTree = "<group>"; };
 		9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Noto_Sans_KR; sourceTree = "<group>"; };
 		9E876DBC2920E06000BEBAE8 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
@@ -171,8 +173,8 @@
 		9ECC7CC22928B53900B3DC25 /* MyPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageData.swift; sourceTree = "<group>"; };
 		9ECC7CC52928B8E100B3DC25 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
 		9ECC7CC72928BD9700B3DC25 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		9ECC7CCA2928C5A100B3DC25 /* ManageMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyPageViewController.swift; sourceTree = "<group>"; };
-		9ECC7CCC2928C5B800B3DC25 /* ManageMyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyPageView.swift; sourceTree = "<group>"; };
+		9ECC7CCA2928C5A100B3DC25 /* ManageMyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyInfoViewController.swift; sourceTree = "<group>"; };
+		9ECC7CCC2928C5B800B3DC25 /* ManageMyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyInfoView.swift; sourceTree = "<group>"; };
 		9ECC7CCE2928CA7800B3DC25 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
 		9EE3C6AE2928F01A00124D61 /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
 		9EE3C6B22928F12F00124D61 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				9ECC7CA5292571D700B3DC25 /* AuthAPIManager.swift */,
 				9ECC7CA7292571E600B3DC25 /* SignUpAPIManager.swift */,
 				9E619E932932DBD8001835C8 /* SearchAPIManager.swift */,
+				9E619EC12934E1C9001835C8 /* MyPageAPIManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -404,12 +407,12 @@
 		9ECC7CAF2926238900B3DC25 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				9ECC7CBA29288D4300B3DC25 /* MyPageViewController.swift */,
+				9ECC7CBC29288D5600B3DC25 /* MyPageView.swift */,
+				9ECC7CC22928B53900B3DC25 /* MyPageData.swift */,
 				9ECC7CC52928B8E100B3DC25 /* TableViewExtension.swift */,
 				9ECC7CCE2928CA7800B3DC25 /* NameTableViewCell.swift */,
 				9ECC7CBE2928921000B3DC25 /* MyPageTableViewCell.swift */,
-				9ECC7CBC29288D5600B3DC25 /* MyPageView.swift */,
-				9ECC7CBA29288D4300B3DC25 /* MyPageViewController.swift */,
-				9ECC7CC22928B53900B3DC25 /* MyPageData.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -418,22 +421,22 @@
 			isa = PBXGroup;
 			children = (
 				9ECC7CAF2926238900B3DC25 /* MyPage */,
-				9ECC7CC92928C57400B3DC25 /* ManageMyPage */,
+				9ECC7CC92928C57400B3DC25 /* ManageMyInfo */,
 			);
 			path = MyPageTap;
 			sourceTree = "<group>";
 		};
-		9ECC7CC92928C57400B3DC25 /* ManageMyPage */ = {
+		9ECC7CC92928C57400B3DC25 /* ManageMyInfo */ = {
 			isa = PBXGroup;
 			children = (
+				9ECC7CCA2928C5A100B3DC25 /* ManageMyInfoViewController.swift */,
+				9ECC7CCC2928C5B800B3DC25 /* ManageMyInfoView.swift */,
+				9EE3C6AE2928F01A00124D61 /* TableVC.swift */,
 				9EE3C6BF29295AA300124D61 /* ImageSection */,
 				9EE3C6BC2929556600124D61 /* NameSection */,
 				9EE3C6C229295D5C00124D61 /* ListSection */,
-				9ECC7CCA2928C5A100B3DC25 /* ManageMyPageViewController.swift */,
-				9ECC7CCC2928C5B800B3DC25 /* ManageMyPageView.swift */,
-				9EE3C6AE2928F01A00124D61 /* TableVC.swift */,
 			);
-			path = ManageMyPage;
+			path = ManageMyInfo;
 			sourceTree = "<group>";
 		};
 		9EE3C6BC2929556600124D61 /* NameSection */ = {
@@ -667,12 +670,13 @@
 				9ECC7CBF2928921000B3DC25 /* MyPageTableViewCell.swift in Sources */,
 				9EFDEBB7291AA0D2007743CE /* loginView.swift in Sources */,
 				9E619E832931F2CC001835C8 /* verifyCodeExtension.swift in Sources */,
-				9ECC7CCD2928C5B800B3DC25 /* ManageMyPageView.swift in Sources */,
+				9ECC7CCD2928C5B800B3DC25 /* ManageMyInfoView.swift in Sources */,
 				9E619E7F292FC67C001835C8 /* loginFuncExtension.swift in Sources */,
 				9E876DCA2920EC2D00BEBAE8 /* ScrollExtension.swift in Sources */,
 				9EC35940291CDCF5001E69A4 /* OnboardingCollectionViewCell.swift in Sources */,
 				9E619E8D2932A497001835C8 /* SearchViewController.swift in Sources */,
 				9ECC7CB5292885C600B3DC25 /* ShopView.swift in Sources */,
+				9E619EC22934E1C9001835C8 /* MyPageAPIManager.swift in Sources */,
 				9EE3C6B32928F12F00124D61 /* Reusable.swift in Sources */,
 				9E619E942932DBD8001835C8 /* SearchAPIManager.swift in Sources */,
 				9EC35928291AE11D001E69A4 /* AuthorizationViewController.swift in Sources */,
@@ -708,7 +712,7 @@
 				9ECC7CB92928890F00B3DC25 /* LocationAuthorization.swift in Sources */,
 				9E876DC22920E1FC00BEBAE8 /* OnboardView.swift in Sources */,
 				9ECC7C802922AEF500B3DC25 /* BirthView.swift in Sources */,
-				9ECC7CCB2928C5A100B3DC25 /* ManageMyPageViewController.swift in Sources */,
+				9ECC7CCB2928C5A100B3DC25 /* ManageMyInfoViewController.swift in Sources */,
 				9ECC7CA8292571E600B3DC25 /* SignUpAPIManager.swift in Sources */,
 				9E29D9C1291F9FB200BBE368 /* OnboardingData.swift in Sources */,
 				9ECC7C7E2922AA6600B3DC25 /* nickNameView.swift in Sources */,
