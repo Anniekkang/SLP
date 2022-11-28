@@ -25,4 +25,5 @@ class colorCustom {
     let gray1 = UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1)
     let success = UIColor(red: 0.384, green: 0.559, blue: 0.9, alpha: 1)
     let error = UIColor(red: 0.913, green: 0.401, blue: 0.419, alpha: 1)
+    let buttonBorder = UIColor(red: 0.898, green:  0.898, blue:  0.898, alpha: 1)
 }

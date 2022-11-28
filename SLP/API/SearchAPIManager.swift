@@ -29,7 +29,7 @@ class SearhAPIManager {
                 case .success(let data) :
                     let decoder = JSONDecoder()
                     do {
-                        let decodeData = try decoder.decode(matchingData.self, from: data)
+                        let decodeData = try decoder.decode(HomeTapData.matchingData.self, from: data)
                         print("decodeData=========\(decodeData)")
                         completionHandler(statusCode)
                         

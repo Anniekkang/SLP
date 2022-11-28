@@ -8,9 +8,12 @@
 import UIKit
 
 class AddStudyView: BaseView {
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        configuration()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -19,58 +22,63 @@ class AddStudyView: BaseView {
     
     
     let button : UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setTitle("새싹 찾기", for: .normal)
-        button.titleLabel?.textAlignment = .center
-        button.titleLabel?.textColor = colorCustom.shared.whiteColor
+        button.setTitleColor(colorCustom.shared.whiteColor, for: .normal)
         button.backgroundColor = colorCustom.shared.greenBrandColor
         button.layer.cornerRadius = 8
+        button.clipsToBounds = true
+        button.sizeToFit()
+
         return button
     }()
     
-    let aroundLabel : UILabel = {
-       let label = UILabel()
-        label.text = "지금 주변에는"
-        label.textColor = colorCustom.shared.blackColor
-        label.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.small.rawValue)
-        label.textAlignment = .left
-        return label
-    }()
-    
-    let wantLabel : UILabel = {
-        let label = UILabel()
-         label.text = "내가 하고 싶은"
-         label.textColor = colorCustom.shared.blackColor
-         label.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.small.rawValue)
-         label.textAlignment = .left
-         return label
+    let collectionView : UICollectionView = {
+        let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
+        return view
     }()
     
     
     override func configuration() {
-        [button,aroundLabel,wantLabel].forEach {
+        [button,collectionView].forEach {
             self.addSubview($0)
         }
     }
     
     override func setConstraints() {
+        collectionView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.equalToSuperview().inset(16)
+            make.height.equalToSuperview().multipliedBy(0.8)
+        }
+        
         button.snp.makeConstraints { make in
             make.height.equalTo(48)
             make.leading.trailing.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(50)
         }
+
+
         
-        aroundLabel.snp.makeConstraints { make in
-            make.height.equalTo(18)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.top.equalToSuperview().offset(120)
-        }
         
-        wantLabel.snp.makeConstraints { make in
-            make.height.equalTo(18)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.top.equalTo(aroundLabel.snp.bottom).offset(20)
-        }
         
     }
+    
+}
+
+extension AddStudyView {
+    static func collectionViewLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        let itemWidth : CGFloat = 60
+        let itemHeight : CGFloat = 22
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        layout.estimatedItemSize = CGSize(width: itemWidth, height: itemHeight)
+        layout.scrollDirection = .vertical
+        return layout
+        
+    }
+    
+    
 }

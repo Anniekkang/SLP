@@ -29,6 +29,14 @@ class AddStudyViewController: BaseViewController {
         
     }
     
+    override func configuration() {
+        self.searchBar.delegate = self
+        mainView.collectionView.delegate = self
+        mainView.collectionView.dataSource = self
+        mainView.collectionView.register(AddStudyCollectionViewCell.self, forCellWithReuseIdentifier: AddStudyCollectionViewCell.id)
+        mainView.collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.id)
+    }
+    
     @objc func stopFindButtonTapped() {
         self.navigationController?.pushViewController(SearchViewController(), animated: true)
     }
@@ -66,4 +74,12 @@ class AddStudyViewController: BaseViewController {
         navigationController?.popViewController(animated: true)
     }
    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        print(#function)
+        return true
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(#function)
+    }
 }
