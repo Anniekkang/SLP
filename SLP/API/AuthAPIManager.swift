@@ -37,7 +37,8 @@ class AuthAPIManager {
                         
                         
                     } catch {
-                        print("decode error")
+                        print("decode error : \(error)")
+                        
                     }
                 case .failure(let error):
                     print("errorcode : \(error)")

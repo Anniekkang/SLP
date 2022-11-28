@@ -12,7 +12,7 @@ enum Repository : String {
     case tokenID = "tokenID"
     case firstTime = "isFirstTime"
     
-    static var phoneNumber : String = ""
+    static var phoneNumber : String = "+821034113473"
     static var FCMToken : String = ""
     static var nickName : String = ""
     static var Birth : Date = Date()

@@ -27,6 +27,10 @@ class nickNameViewController: BaseViewController {
     }
     
     @objc func buttonTapped() {
+        
+        print("++++++++++++++++++\(UserDefaults.standard.string(forKey: Repository.tokenID.rawValue))")
+        
+        
         guard let text = mainView.textField.text else { return }
         let count = text.count
         if count < 1 || count > 11 {

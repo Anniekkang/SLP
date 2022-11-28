@@ -30,14 +30,14 @@ extension ManageMyInfoViewController : UITableViewDelegate, UITableViewDataSourc
         case 0 : //background
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.id, for: indexPath) as? ImageTableViewCell else { return UITableViewCell() }
             
-            if parameters.background == 0 {
+            if parameters().background == 0 {
                 cell.backgroundImage.image = UIImage(named: "sesac_background_1")
             }
             return cell
         case 1 : //nick
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ExpandableCardTableViewCell.id, for: indexPath) as? ExpandableCardTableViewCell else { return UITableViewCell() }
             
-            cell.titleLabel.text = parameters.nick
+            cell.titleLabel.text = parameters().nick
             
             if isOpen == false {
                 cell.isHidden = true

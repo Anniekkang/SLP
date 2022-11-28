@@ -27,10 +27,12 @@ extension AuthorizationViewController {
                 //인증번호 일치함 -> 로그인하기
                 print("Able to login with Phone in \(String(describing: authResult?.user.uid))")
                 getID.shared.getIDToken { idToken in
+                    
                     UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
+                    
                 }
-                
-                AuthAPIManager.shared.fetchloginData(query: UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) ?? "") { statusCode in
+                guard let tokenId = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
+                AuthAPIManager.shared.fetchloginData(query: tokenId) { statusCode in
                     switch statusCode {
                     case 200 :
                         print("Auth Success")

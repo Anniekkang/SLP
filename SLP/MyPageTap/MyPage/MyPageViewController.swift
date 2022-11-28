@@ -36,11 +36,12 @@ class MyPageViewController: BaseViewController {
     
     func buttonTapped(){
          print(#function)
-        
-        AuthAPIManager.shared.fetchloginData(query: UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) ?? "") { statusCode in
+        guard let tokenId = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
+        AuthAPIManager.shared.fetchloginData(query: tokenId) { statusCode in
             switch statusCode {
             case 200 :
                 print("login success")
+                print("----------------parameters.nick:\(parameters().nick)")
                 self.navigationController?.pushViewController(ManageMyInfoViewController(), animated: true)
             case 401 :
                 print("firebase token error")

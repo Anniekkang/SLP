@@ -60,8 +60,9 @@ class GenderViewController: BaseViewController {
         }
         
         Repository.Gender = gender
-        SignUpAPIManager.shared.sendSignUpData(query: UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) ?? "") { statusCode in
-            
+        guard let tokenId =  UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
+        SignUpAPIManager.shared.sendSignUpData(query: tokenId) { statusCode in
+           
             print("=========\(Repository.phoneNumber)\(Repository.FCMToken),\(Repository.nickName),\(Repository.Birth),\(Repository.Email),\(Repository.Gender)")
             
             switch statusCode {

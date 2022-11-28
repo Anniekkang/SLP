@@ -19,15 +19,35 @@ struct requstBody : Codable {
 }
 
 struct parameters : Codable {
-    static let background: Int = 0
-    static let sesac: Int = 0
-    static let nick: String = ""
-    static let reputation: [Int] = [0]
-    static let gender: Int = 0
-    static let study: String = ""
-    static let searchable: Int = 0
-    static let ageMin: Int = 0
-    static let ageMax: Int = 0
+    var _id : String = ""
+    var __v : Int = 0
+    var uid : String = ""
+    var phoneNumber : String = ""
+    var email : String = ""
+    var FCMtoken : String = ""
+    var nick: String = ""
+    var birth : String = ""
+    var gender: Int = 0
+    var study: String = ""
+    var comment : [String] = [""]
+    var reputation: [Int] = [0]
+    var sesac: Int = 0
+    var sesacCollection : [Int] = [0]
+    var background: Int = 0
+    var backgroundCollection : [Int] = [0]
+    var purchaseToken : [String] = [""]
+    var transactionId : [String] = [""]
+    var reviewedBefore : [String] = [""]
+    var reportedNum : Int = 0
+    var reportedUser : [String] = [""]
+    var dodgepenalty : Int = 0
+    var dodgeNum : Int = 0
+    var ageMin: Int = 0
+    var ageMax: Int = 0
+    var searchable: Int = 0
+    var createdAt : String = ""
+    
+    
 }
 
 
