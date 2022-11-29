@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: Scene)
       
-        let mainVC = MyPageViewController()
+        let mainVC = loginViewController()
         let nav = UINavigationController(rootViewController: mainVC)
 
         
@@ -33,8 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = OnboardViewController()
         
         } else {
-            window?.rootViewController = nav
-           
+            window?.rootViewController = TabBarController()
         }
        
         window?.makeKeyAndVisible()

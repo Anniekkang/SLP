@@ -45,6 +45,29 @@ class MyPageViewController: BaseViewController {
                 self.navigationController?.pushViewController(ManageMyInfoViewController(), animated: true)
             case 401 :
                 print("firebase token error")
+                getID.shared.getIDToken { idToken in
+                    UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
+                }
+                guard let newID = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
+                print("=========\(newID)")
+                AuthAPIManager.shared.fetchloginData(query: newID) { statusCode in
+                    switch statusCode {
+                    case 200 :
+                        print("Auth Success")
+                        self.navigationController?.pushViewController(TabBarController(), animated: true)
+                    case 406 :
+                        print("unregistered User")
+                        print()
+                        DispatchQueue.main.async {
+                            print("dispatchqueue")
+                            
+                            self.navigationController?.pushViewController(nickNameViewController(), animated: true)
+                        }
+                        
+                    default :
+                        print("error again")
+                    }
+                }
             case 406 :
                 print("unregistered User")
             case 500 :

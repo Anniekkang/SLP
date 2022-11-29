@@ -49,8 +49,8 @@ class HeaderCell : BaseHeaderCell {
     
     let label : UILabel = {
        let label = UILabel()
-        label.text = "name"
         label.textColor = .black
+        label.text = parameters().nick
         label.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.large.rawValue)
         label.textAlignment = .left
         return label

@@ -46,5 +46,51 @@ class SearhAPIManager {
             }
 
     }
+    
+    func sendLocation(query : String, completionHandler : @escaping completionHandler) {
+        
+        guard let url = URL(string: APIUrl.baseURL + APIUrl.search) else { return }
+        let headers : HTTPHeaders = ["idtoken" : query, "Content-Type": "application/x-www-form-urlencoded" ]
+        let parameters : [String : Any ] =
+        [
+            "lat": Repository.currentLocationlat,
+            "long": Repository.currentLocationlong
+        ]
+        
+        AF.request(url, method: .post, parameters: parameters ,headers: headers)
+            .validate()
+            .responseData { Response in
+                guard let statusCode = Response.response?.statusCode else { return }
+                switch Response.result {
+                case .success(let data) :
+                    
+                    print("SearchAPI success")
+                    print("data============\(data)")
+                    
+                    let decoder = JSONDecoder()
+                    do {
+                        let decodeData = try decoder.decode(HomeTapData.sesecSearchData.self, from: data)
+                        print("decodedata============\(decodeData)")
+                    } catch {
+                        print("decodeError====\(error)")
+                    }
+                    
+                    
+                    completionHandler(statusCode)
+                case .failure(let error):
+                    print("errorcode : \(error)")
+                    completionHandler(statusCode)
+               
+                }
+                
+            }
+        
+        
+        
+    }
+        
+        
+        
+    }
 
-}
+

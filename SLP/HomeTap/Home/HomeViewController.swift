@@ -33,6 +33,9 @@ class HomeViewController: BaseViewController, MKMapViewDelegate {
             
             
         } else {
+            Repository.currentLocationlat = Double("\(currentLocation.coordinate.latitude)") ?? 0.0
+            Repository.currentLocationlong = Double("\(currentLocation.coordinate.longitude)") ?? 0.0
+            
             annotation.coordinate = goLocation(latitude: currentLocation.coordinate.latitude, longtitude: currentLocation.coordinate.longitude, delta: 0.00158, map: mainView.map)
             
         }

@@ -33,11 +33,14 @@ extension ManageMyInfoViewController : UITableViewDelegate, UITableViewDataSourc
             if parameters().background == 0 {
                 cell.backgroundImage.image = UIImage(named: "sesac_background_1")
             }
+            
+            if parameters().sesac == 0 {
+                cell.sesacImage.image = UIImage(named: "sesac_face_1")
+            }
+        
             return cell
         case 1 : //nick
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ExpandableCardTableViewCell.id, for: indexPath) as? ExpandableCardTableViewCell else { return UITableViewCell() }
-            
-            cell.titleLabel.text = parameters().nick
             
             if isOpen == false {
                 cell.isHidden = true
@@ -63,6 +66,7 @@ extension ManageMyInfoViewController : UITableViewDelegate, UITableViewDataSourc
             guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderCell") as? HeaderCell else { return UIView() }
            
             headerView.delegate = self
+            headerView.label.text = parameters().nick
             
             
             return headerView

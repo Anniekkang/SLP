@@ -23,7 +23,6 @@ class ImageTableViewCell: BaseTableViewCell {
   
     let backgroundImage : UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "sesac_bg_01")
         view.layer.cornerRadius = 8
         view.clipsToBounds = true
         
@@ -33,7 +32,6 @@ class ImageTableViewCell: BaseTableViewCell {
     
     let sesacImage : UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "sesac_face_1")
         return view
     }()
     
