@@ -53,8 +53,8 @@ class SearhAPIManager {
         let headers : HTTPHeaders = ["idtoken" : query, "Content-Type": "application/x-www-form-urlencoded" ]
         let parameters : [String : Any ] =
         [
-            "lat": Repository.currentLocationlat,
-            "long": Repository.currentLocationlong
+            "lat": 37.517819364682694,
+            "long": 126.88647317074734
         ]
         
         AF.request(url, method: .post, parameters: parameters ,headers: headers)
@@ -89,6 +89,51 @@ class SearhAPIManager {
         
     }
         
+    func requestSesacFind(query : String, completionHandler : @escaping completionHandler) {
+        
+        guard let url = URL(string: APIUrl.baseURL + APIUrl.findRequest) else { return }
+        let headers : HTTPHeaders = ["idtoken" : query, "Content-Type": "application/x-www-form-urlencoded" ]
+        let parameters : [String : Any ] =
+        [
+            "lat": Repository.currentLocationlat,
+            "long": Repository.currentLocationlong,
+            "studylist" : ["anything"]
+        ]
+        
+        let encoder = URLEncoding(arrayEncoding: .noBrackets)
+        
+        AF.request(url, method: .post, parameters: parameters,encoding: encoder, headers: headers)
+            .validate()
+            .responseData { Response in
+                guard let statusCode = Response.response?.statusCode else { return }
+                switch Response.result {
+                case .success(let data) :
+                    
+                    print("FindAPI success")
+                    print("data============\(data)")
+                    
+                    let decoder = JSONDecoder()
+                    print("---------------\(HomeTapData.sesecSearchData.self)")
+                    do {
+                        
+                        let decodeData = try decoder.decode(HomeTapData.sesecSearchData.self, from: Response.data!)
+                        print("decodedata============\(decodeData)")
+                    } catch {
+                        print("decodeError====\(error)")
+                    }
+                    completionHandler(statusCode)
+                    
+                case .failure(let error):
+                    print("errorcode : \(error)")
+                    completionHandler(statusCode)
+               
+                }
+                
+            }
+        
+        
+        
+    }
         
         
     }

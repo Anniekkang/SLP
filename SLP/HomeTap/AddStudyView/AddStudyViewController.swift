@@ -12,6 +12,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
 
     let mainView = AddStudyView()
     let searchBar = UISearchBar()
+    let idToken = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) ?? ""
     
     override func loadView() {
         self.view = mainView
@@ -65,7 +66,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
         tabBarController?.tabBar.isHidden = true
         navDesign(searchBar: searchBar)
         searchBarDesign(searchBar: searchBar)
-       
+    
         
     }
     
@@ -78,7 +79,49 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
     }
     
     @objc func stopFindButtonTapped() {
-        self.navigationController?.pushViewController(SearchViewController(), animated: true)
+        
+        SearhAPIManager.shared.requestSesacFind(query : idToken, completionHandler: { statusCode in
+            
+            switch statusCode {
+            case 200 :
+                print("success API")
+                self.mainView.collectionView.reloadData()
+            case 401 :
+                print("FIrebaseTokenError")
+                
+                getID.shared.getIDToken { idToken in
+                    UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
+                }
+                guard let newID = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
+                print("=========\(newID)")
+                AuthAPIManager.shared.fetchloginData(query: newID) { statusCode in
+                    switch statusCode {
+                    case 200 :
+                        print("success API")
+                        self.mainView.collectionView.reloadData()
+                   
+                    default :
+                        print("error again : \(statusCode)")
+                    }
+                }
+            case 406 :
+                print("unregistered User")
+            case 500 :
+                print("server error")
+            case 501 :
+                print("client error")
+            default :
+                print("extra situation")
+            }
+            
+            
+            
+            
+            self.navigationController?.pushViewController(SearchViewController(), animated: true)
+            
+        })
+                                                
+        
     }
     
     func searchBarDesign(searchBar : UISearchBar) {

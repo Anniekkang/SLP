@@ -25,8 +25,8 @@ class HomeTapData {
     var wantArray : [String]?
     
     struct sesecSearchData : Codable {
-        var fromQueueDB : sesacSearchValueData
-        var fromQueueDBRequested : sesacSearchValueData
+        var fromQueueDB : [sesacSearchValueData]
+        var fromQueueDBRequested : [sesacSearchValueData]
         var fromRecommend : [String]
    
     }
