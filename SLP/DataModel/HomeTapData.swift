@@ -45,4 +45,13 @@ class HomeTapData {
         var background : Int
       
     }
+    
+    struct myQueStatus : Codable {
+        var dodged : Int = 0
+        var matched : Int = 0
+        var reviewed : Int = 0
+        var matchedNick : String = ""
+        var matchedUid : String = ""
+      
+    }
 }

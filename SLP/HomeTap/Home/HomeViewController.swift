@@ -15,30 +15,77 @@ class HomeViewController: BaseViewController, MKMapViewDelegate {
     let mainView = HomeView()
     let annotation = MKPointAnnotation()
     let sesacLocation = CLLocationCoordinate2D(latitude: 37.517819364682694, longitude: 126.88647317074734)
+    let locationManager = CLLocationManager()
+    var currentLocation : CLLocationCoordinate2D!
     
     override func loadView() {
         self.view = mainView
     }
     
-    let locationManager = CLLocationManager()
-    var currentLocation : CLLocation!
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+      
         //if LocationAuthStatus == .denied
-        if Repository.locationAuthStatus == 2 {
+        if Repository.locationAuthStatus == 2  {
             
             annotation.coordinate = goLocation(latitude: sesacLocation.latitude, longtitude: sesacLocation.longitude, delta: 0.00158, map: mainView.map)
+            mainView.map.reloadInputViews()
             
             
         } else {
-            Repository.currentLocationlat = Double("\(currentLocation.coordinate.latitude)") ?? 0.0
-            Repository.currentLocationlong = Double("\(currentLocation.coordinate.longitude)") ?? 0.0
+            currentLocation = locationManager.location?.coordinate ?? sesacLocation
+            Repository.currentLocationlat = sesacLocation.latitude //currentLocation.latitude
+            Repository.currentLocationlong = sesacLocation.longitude //currentLocation.longitude
             
-            annotation.coordinate = goLocation(latitude: currentLocation.coordinate.latitude, longtitude: currentLocation.coordinate.longitude, delta: 0.00158, map: mainView.map)
+            annotation.coordinate = goLocation(latitude: Repository.currentLocationlat, longtitude: Repository.currentLocationlong, delta: 0.00158, map: mainView.map)
             
         }
+        
+        SearchAPIManager.shared.fetchMyState(query: TokenID.tokenID) { statusCode in
+            switch statusCode {
+            case 200 :
+                print("matchingStatus API")
+                switch Repository.myStatus {
+                case 0 : //wait for matching
+                case 1 : //
+                default :
+                    
+                }
+            case 201 :
+                print("normal status")
+            case 401 :
+                print("FIrebaseTokenError")
+                
+                getID.shared.getIDToken { idToken in
+                    UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
+                }
+                AuthAPIManager.shared.fetchloginData(query: TokenID.tokenID) { statusCode in
+                    switch statusCode {
+                    case 200 :
+                        print("matchingStatus API")
+                       
+                   
+                    default :
+                        print("error again : \(statusCode)")
+                    }
+                }
+            case 406 :
+                print("unregistered User")
+            case 500 :
+                print("server error")
+            case 501 :
+                print("client error")
+            default :
+                print("extra situation")
+            }
+            
+            
+        }
+            
+        SearchAPIManager.shared.callSearchAPI(mainView: self.mainView)
     }
     
     
@@ -46,7 +93,6 @@ class HomeViewController: BaseViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         self.mainView.map.addAnnotation(annotation)
-        self.currentLocation = locationManager.location
         configuration()
         tabBarController?.tabBar.isHidden = false
         
@@ -70,7 +116,8 @@ class HomeViewController: BaseViewController, MKMapViewDelegate {
             showRequestAlert()
         } else {
            
-            goLocation(latitude: currentLocation.coordinate.latitude, longtitude: currentLocation.coordinate.longitude, delta: 0.00158, map: mainView.map)
+            goLocation(latitude: Repository.currentLocationlat, longtitude: Repository.currentLocationlong, delta: 0.00158, map: mainView.map)
+            SearchAPIManager.shared.callSearchAPI(mainView: self.mainView)
         }
         
     }
@@ -91,6 +138,7 @@ class HomeViewController: BaseViewController, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let currentLocation : CLLocationCoordinate2D = mapView.centerCoordinate
         annotation.coordinate = goLocation(latitude: currentLocation.latitude, longtitude: currentLocation.longitude, delta: 0.00158, map: mapView)
+        SearchAPIManager.shared.callSearchAPI(mainView: self.mainView)
     }
     
     

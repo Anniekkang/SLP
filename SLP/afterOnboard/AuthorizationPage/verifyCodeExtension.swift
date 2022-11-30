@@ -31,8 +31,8 @@ extension AuthorizationViewController {
                     UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
                     
                 }
-                guard let tokenId = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
-                AuthAPIManager.shared.fetchloginData(query: tokenId) { statusCode in
+                
+                AuthAPIManager.shared.fetchloginData(query: TokenID.tokenID) { statusCode in
                     switch statusCode {
                     case 200 :
                         print("Auth Success")
@@ -42,9 +42,7 @@ extension AuthorizationViewController {
                         getID.shared.getIDToken { idToken in
                             UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
                         }
-                        guard let newID = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
-                        print("=========\(newID)")
-                        AuthAPIManager.shared.fetchloginData(query: newID) { statusCode in
+                        AuthAPIManager.shared.fetchloginData(query: TokenID.tokenID) { statusCode in
                             switch statusCode {
                             case 200 :
                                 print("Auth Success")

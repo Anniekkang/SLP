@@ -12,7 +12,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
 
     let mainView = AddStudyView()
     let searchBar = UISearchBar()
-    let idToken = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) ?? ""
+    
     
     override func loadView() {
         self.view = mainView
@@ -20,7 +20,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         guard let idToken = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
-        SearhAPIManager.shared.sendLocation(query: idToken) { statusCode in
+        SearchAPIManager.shared.nearSesacSearch(query: TokenID.tokenID) { statusCode in
             switch statusCode {
             case 200 :
                 print("success API")
@@ -31,9 +31,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
                 getID.shared.getIDToken { idToken in
                     UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
                 }
-                guard let newID = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
-                print("=========\(newID)")
-                AuthAPIManager.shared.fetchloginData(query: newID) { statusCode in
+                AuthAPIManager.shared.fetchloginData(query: TokenID.tokenID) { statusCode in
                     switch statusCode {
                     case 200 :
                         print("success API")
@@ -80,7 +78,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
     
     @objc func stopFindButtonTapped() {
         
-        SearhAPIManager.shared.requestSesacFind(query : idToken, completionHandler: { statusCode in
+        SearchAPIManager.shared.requestSesacFind(query : TokenID.tokenID, completionHandler: { statusCode in
             
             switch statusCode {
             case 200 :
@@ -92,9 +90,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
                 getID.shared.getIDToken { idToken in
                     UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
                 }
-                guard let newID = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
-                print("=========\(newID)")
-                AuthAPIManager.shared.fetchloginData(query: newID) { statusCode in
+                AuthAPIManager.shared.fetchloginData(query: TokenID.tokenID) { statusCode in
                     switch statusCode {
                     case 200 :
                         print("success API")

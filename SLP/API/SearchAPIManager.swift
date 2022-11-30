@@ -9,8 +9,8 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class SearhAPIManager {
-    static let shared = SearhAPIManager()
+class SearchAPIManager {
+    static let shared = SearchAPIManager()
     private init() {}
     
     typealias completionHandler = (Int) -> ()
@@ -47,14 +47,14 @@ class SearhAPIManager {
 
     }
     
-    func sendLocation(query : String, completionHandler : @escaping completionHandler) {
+    func nearSesacSearch(query : String, completionHandler : @escaping completionHandler) {
         
         guard let url = URL(string: APIUrl.baseURL + APIUrl.search) else { return }
         let headers : HTTPHeaders = ["idtoken" : query, "Content-Type": "application/x-www-form-urlencoded" ]
         let parameters : [String : Any ] =
         [
-            "lat": 37.517819364682694,
-            "long": 126.88647317074734
+            "lat": 37.517819364682694, //Repository.currentLocationlat,
+            "long": 126.88647317074734 //Repository.currentLocationlong
         ]
         
         AF.request(url, method: .post, parameters: parameters ,headers: headers)
@@ -74,9 +74,8 @@ class SearhAPIManager {
                     } catch {
                         print("decodeError====\(error)")
                     }
-                    
-                    
                     completionHandler(statusCode)
+                    
                 case .failure(let error):
                     print("errorcode : \(error)")
                     completionHandler(statusCode)
@@ -95,8 +94,8 @@ class SearhAPIManager {
         let headers : HTTPHeaders = ["idtoken" : query, "Content-Type": "application/x-www-form-urlencoded" ]
         let parameters : [String : Any ] =
         [
-            "lat": Repository.currentLocationlat,
-            "long": Repository.currentLocationlong,
+            "lat": 37.517819364682694, //Repository.currentLocationlat,
+            "long": 126.88647317074734, //Repository.currentLocationlong,
             "studylist" : ["anything"]
         ]
         
@@ -112,15 +111,7 @@ class SearhAPIManager {
                     print("FindAPI success")
                     print("data============\(data)")
                     
-                    let decoder = JSONDecoder()
-                    print("---------------\(HomeTapData.sesecSearchData.self)")
-                    do {
-                        
-                        let decodeData = try decoder.decode(HomeTapData.sesecSearchData.self, from: Response.data!)
-                        print("decodedata============\(decodeData)")
-                    } catch {
-                        print("decodeError====\(error)")
-                    }
+                    
                     completionHandler(statusCode)
                     
                 case .failure(let error):
@@ -135,7 +126,82 @@ class SearhAPIManager {
         
     }
         
+    
+    func callSearchAPI(mainView : UIView) {
+        SearchAPIManager.shared.nearSesacSearch(query: TokenID.tokenID) { statusCode in
+            
+            switch statusCode {
+            case 200 :
+                print("success API")
+                mainView.reloadInputViews()
+            case 401 :
+                print("FIrebaseTokenError")
+                
+                getID.shared.getIDToken { idToken in
+                    UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
+                }
+                AuthAPIManager.shared.fetchloginData(query: TokenID.tokenID) { statusCode in
+                    switch statusCode {
+                    case 200 :
+                        print("success API")
+                        mainView.reloadInputViews()
+                   
+                    default :
+                        print("error again : \(statusCode)")
+                    }
+                }
+            case 406 :
+                print("unregistered User")
+            case 500 :
+                print("server error")
+            case 501 :
+                print("client error")
+            default :
+                print("extra situation")
+            }
+            
+            
+        }
+        
+
+    }
+    
+        
+    func fetchMyState(query : String, completionHandler : @escaping completionHandler) {
+        guard let url = URL(string: APIUrl.baseURL + APIUrl.myQueueState) else { return }
+        let headers : HTTPHeaders = ["idtoken" : query]
+        
+        AF.request(url, method: .get, headers: headers)
+            .validate()
+            .responseData { Response in
+                guard let statusCode = Response.response?.statusCode else { return }
+                switch Response.result {
+                case .success(let data) :
+                    let decoder = JSONDecoder()
+                    do {
+                        //decode : JSON data -> struct data
+                        let decodeData = try decoder.decode(HomeTapData.myQueStatus.self, from: data)
+                        let matchingData = decodeData.matched
+                        Repository.myStatus = matchingData
+                        print("decodeData- Matching=========\(matchingData)")
+                        completionHandler(statusCode)
+                        
+                        
+                    } catch {
+                        print("decode error : \(error)")
+                        
+                    }
+                case .failure(let error):
+                    print("errorcode : \(error)")
+                    completionHandler(statusCode)
+                    
+                    
+                }
+                
+            }
         
     }
+ 
+}
 
 

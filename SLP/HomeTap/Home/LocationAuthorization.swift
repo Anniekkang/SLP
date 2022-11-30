@@ -15,6 +15,7 @@ extension HomeViewController : CLLocationManagerDelegate{
         let status : CLAuthorizationStatus = locationManager.authorizationStatus
         if CLLocationManager.locationServicesEnabled() {
             checkUserAuthorization(status)
+            print(status)
         } else {
            print("위치서비스 꺼져있음")
         }
@@ -23,7 +24,8 @@ extension HomeViewController : CLLocationManagerDelegate{
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locationManager.authorizationStatus == .authorizedWhenInUse {
-            currentLocation = locationManager.location
+            currentLocation = locations.first?.coordinate
+            SearchAPIManager.shared.callSearchAPI(mainView: self.mainView)
         }
         
     }
@@ -32,6 +34,7 @@ extension HomeViewController : CLLocationManagerDelegate{
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         let status : CLAuthorizationStatus = locationManager.authorizationStatus
         checkUserAuthorization(status)
+        SearchAPIManager.shared.callSearchAPI(mainView: self.mainView)
     }
     
     

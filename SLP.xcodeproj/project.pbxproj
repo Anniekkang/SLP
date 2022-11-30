@@ -27,6 +27,7 @@
 		9E619E9A29335918001835C8 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E9929335918001835C8 /* CollectionViewExtension.swift */; };
 		9E619E9C29338ACF001835C8 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E9B29338ACF001835C8 /* HeaderCollectionReusableView.swift */; };
 		9E619EC22934E1C9001835C8 /* MyPageAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619EC12934E1C9001835C8 /* MyPageAPIManager.swift */; };
+		9E619EE42937048E001835C8 /* TokenID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619EE32937048E001835C8 /* TokenID.swift */; };
 		9E876DB92920B8FC00BEBAE8 /* Noto_Sans_KR in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */; };
 		9E876DBD2920E06000BEBAE8 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E876DBC2920E06000BEBAE8 /* Splash.storyboard */; };
 		9E876DC02920E1DF00BEBAE8 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */; };
@@ -48,6 +49,7 @@
 		9EC35940291CDCF5001E69A4 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC3593F291CDCF5001E69A4 /* OnboardingCollectionViewCell.swift */; };
 		9EC3594B291E5256001E69A4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC3594A291E5256001E69A4 /* SplashViewController.swift */; };
 		9EC3594E291E526C001E69A4 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC3594D291E526C001E69A4 /* SplashView.swift */; };
+		9ECC6D082937EE91004A1587 /* myQueStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6D072937EE91004A1587 /* myQueStatus.swift */; };
 		9ECC7C7C2922AA5800B3DC25 /* nickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C7B2922AA5800B3DC25 /* nickNameViewController.swift */; };
 		9ECC7C7E2922AA6600B3DC25 /* nickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C7D2922AA6600B3DC25 /* nickNameView.swift */; };
 		9ECC7C802922AEF500B3DC25 /* BirthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C7F2922AEF500B3DC25 /* BirthView.swift */; };
@@ -127,6 +129,7 @@
 		9E619E9929335918001835C8 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		9E619E9B29338ACF001835C8 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		9E619EC12934E1C9001835C8 /* MyPageAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPIManager.swift; sourceTree = "<group>"; };
+		9E619EE32937048E001835C8 /* TokenID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenID.swift; sourceTree = "<group>"; };
 		9E876DB82920B8FC00BEBAE8 /* Noto_Sans_KR */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Noto_Sans_KR; sourceTree = "<group>"; };
 		9E876DBC2920E06000BEBAE8 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		9E876DBF2920E1DF00BEBAE8 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 		9EC3593F291CDCF5001E69A4 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		9EC3594A291E5256001E69A4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		9EC3594D291E526C001E69A4 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		9ECC6D072937EE91004A1587 /* myQueStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myQueStatus.swift; sourceTree = "<group>"; };
 		9ECC7C7B2922AA5800B3DC25 /* nickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameViewController.swift; sourceTree = "<group>"; };
 		9ECC7C7D2922AA6600B3DC25 /* nickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameView.swift; sourceTree = "<group>"; };
 		9ECC7C7F2922AEF500B3DC25 /* BirthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthView.swift; sourceTree = "<group>"; };
@@ -519,6 +523,8 @@
 				9ECC7C9429230FE300B3DC25 /* customButton.swift */,
 				9EE3C6B22928F12F00124D61 /* Reusable.swift */,
 				9E619E65292E1FFD001835C8 /* Repository.swift */,
+				9E619EE32937048E001835C8 /* TokenID.swift */,
+				9ECC6D072937EE91004A1587 /* myQueStatus.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -652,6 +658,7 @@
 				9E876DCC2920EF3F00BEBAE8 /* collectionViewExtension.swift in Sources */,
 				9EFDEBAD29192A03007743CE /* OnboardingView.swift in Sources */,
 				9EC3594E291E526C001E69A4 /* SplashView.swift in Sources */,
+				9ECC6D082937EE91004A1587 /* myQueStatus.swift in Sources */,
 				9ECC7CB1292623AE00B3DC25 /* HomeViewController.swift in Sources */,
 				9EC35923291AC49E001E69A4 /* Font.swift in Sources */,
 				9EC35926291AE10E001E69A4 /* AuthorizationView.swift in Sources */,
@@ -670,6 +677,7 @@
 				9EC35928291AE11D001E69A4 /* AuthorizationViewController.swift in Sources */,
 				9E29D9C7291FBCDD00BBE368 /* BaseCollectionViewCell.swift in Sources */,
 				9E619E8F2932A4A7001835C8 /* SearchView.swift in Sources */,
+				9E619EE42937048E001835C8 /* TokenID.swift in Sources */,
 				9ECC7CC32928B53900B3DC25 /* MyPageData.swift in Sources */,
 				9ECC7CC12928925C00B3DC25 /* BaseTableViewCell.swift in Sources */,
 				9EE3C6BB292913BF00124D61 /* HeaderCell.swift in Sources */,
