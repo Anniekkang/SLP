@@ -19,7 +19,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        guard let idToken = UserDefaults.standard.string(forKey: Repository.tokenID.rawValue) else { return }
+        
         SearchAPIManager.shared.nearSesacSearch(query: TokenID.tokenID) { statusCode in
             switch statusCode {
             case 200 :
@@ -167,7 +167,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
             
         } else {
             //make cell in section2
-            
+          
             
             
             

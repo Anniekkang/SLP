@@ -16,5 +16,6 @@ enum APIUrl {
     static let findRequest = "/v1/queue"
     static let search = "/v1/queue/search"
     static let myQueueState = "/v1/queue/myQueueState"
+    static let saveMyPage = "/v1/user/mypage"
 
 }

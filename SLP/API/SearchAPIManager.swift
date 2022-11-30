@@ -133,6 +133,9 @@ class SearchAPIManager {
             switch statusCode {
             case 200 :
                 print("success API")
+                
+                
+                
                 mainView.reloadInputViews()
             case 401 :
                 print("FIrebaseTokenError")
@@ -199,6 +202,50 @@ class SearchAPIManager {
                 }
                 
             }
+    }
+    
+    func callMatchAPI(matchingButton : UIButton) {
+        SearchAPIManager.shared.fetchMyState(query: TokenID.tokenID) { statusCode in
+            switch statusCode {
+            case 200 :
+                print("matchingStatus API")
+                if Repository.myStatus == MyQueStatus.WaitforMatching.rawValue {
+                    matchingButton.setImage(UIImage(named: "Property 1=matching"), for: .normal)
+                    
+                } else {
+                   matchingButton.setImage(UIImage(named: "Property 1=matched"), for: .normal)
+                }
+                
+            case 201 :
+                print("normal status")
+            case 401 :
+                print("FIrebaseTokenError")
+                
+                getID.shared.getIDToken { idToken in
+                    UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
+                }
+                AuthAPIManager.shared.fetchloginData(query: TokenID.tokenID) { statusCode in
+                    switch statusCode {
+                    case 200 :
+                        print("matchingStatus API")
+                       
+                   
+                    default :
+                        print("error again : \(statusCode)")
+                    }
+                }
+            case 406 :
+                print("unregistered User")
+            case 500 :
+                print("server error")
+            case 501 :
+                print("client error")
+            default :
+                print("extra situation")
+            }
+            
+            
+        }
         
     }
  

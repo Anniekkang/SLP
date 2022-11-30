@@ -8,7 +8,7 @@
 import UIKit
 
 class ManageMyInfoViewController: BaseViewController {
-
+    
     let mainView = ManageMyInfoView()
     var isOpen : Bool = false //접혀있는 상태
     
@@ -18,15 +18,15 @@ class ManageMyInfoViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         mainView.backgroundColor = .white
-      
+        
         naviDesign()
         configuration()
-       
+        
     }
     
-
+    
     func naviDesign() {
         self.navigationController?.navigationBar.backgroundColor = .white
         
@@ -41,7 +41,7 @@ class ManageMyInfoViewController: BaseViewController {
         self.navigationController?.navigationBar.scrollEdgeAppearance = setNavigationBarAppearance()
         self.navigationController?.navigationBar.standardAppearance = setNavigationBarAppearance()
     }
-
+    
     func setNavigationBarAppearance() -> UINavigationBarAppearance {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = colorCustom.shared.whiteColor
@@ -54,10 +54,40 @@ class ManageMyInfoViewController: BaseViewController {
     }
     
     @objc func saveButtonTapped() {
-        
+        MyPageAPIManager.shared.updateMyPage(query:TokenID.tokenID) { statusCode in
+            switch statusCode {
+            case 200 :
+                print("myPageSave success")
+                self.navigationController?.popViewController(animated: true)
+            case 401 :
+                print("firebase token error")
+                getID.shared.getIDToken { idToken in
+                    UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
+                }
+                AuthAPIManager.shared.fetchloginData(query: TokenID.tokenID) { statusCode in
+                    switch statusCode {
+                    case 200 :
+                        print("myPageSave success")
+                        self.navigationController?.popViewController(animated: true)
+                  
+                    default :
+                        print("error again")
+                    }
+                }
+            case 406 :
+                print("unregistered User")
+            case 500 :
+                print("server error")
+            case 501 :
+                print("client error")
+            default :
+                print("networking error")
+                break
+            }
+        }
     }
     
-
+    
     override func configuration() {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
@@ -69,12 +99,12 @@ class ManageMyInfoViewController: BaseViewController {
         // MARK : tableviewHeaderView
         mainView.tableView.register(HeaderCell.self, forHeaderFooterViewReuseIdentifier: "HeaderCell")
         
-       
+        
         
         
     }
-
-
+    
+    
 }
 
 extension ManageMyInfoViewController : HeaderViewDelegate {
@@ -83,6 +113,6 @@ extension ManageMyInfoViewController : HeaderViewDelegate {
         mainView.tableView.reloadData()
     }
     
-   
+    
     
 }

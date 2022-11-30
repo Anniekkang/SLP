@@ -50,6 +50,7 @@
 		9EC3594B291E5256001E69A4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC3594A291E5256001E69A4 /* SplashViewController.swift */; };
 		9EC3594E291E526C001E69A4 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC3594D291E526C001E69A4 /* SplashView.swift */; };
 		9ECC6D082937EE91004A1587 /* myQueStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6D072937EE91004A1587 /* myQueStatus.swift */; };
+		9ECC6D0A29381A46004A1587 /* MyPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6D0929381A46004A1587 /* MyPageData.swift */; };
 		9ECC7C7C2922AA5800B3DC25 /* nickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C7B2922AA5800B3DC25 /* nickNameViewController.swift */; };
 		9ECC7C7E2922AA6600B3DC25 /* nickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C7D2922AA6600B3DC25 /* nickNameView.swift */; };
 		9ECC7C802922AEF500B3DC25 /* BirthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C7F2922AEF500B3DC25 /* BirthView.swift */; };
@@ -78,7 +79,6 @@
 		9ECC7CBD29288D5600B3DC25 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CBC29288D5600B3DC25 /* MyPageView.swift */; };
 		9ECC7CBF2928921000B3DC25 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CBE2928921000B3DC25 /* MyPageTableViewCell.swift */; };
 		9ECC7CC12928925C00B3DC25 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CC02928925C00B3DC25 /* BaseTableViewCell.swift */; };
-		9ECC7CC32928B53900B3DC25 /* MyPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CC22928B53900B3DC25 /* MyPageData.swift */; };
 		9ECC7CC62928B8E100B3DC25 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CC52928B8E100B3DC25 /* TableViewExtension.swift */; };
 		9ECC7CC82928BD9700B3DC25 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CC72928BD9700B3DC25 /* TabBarController.swift */; };
 		9ECC7CCB2928C5A100B3DC25 /* ManageMyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7CCA2928C5A100B3DC25 /* ManageMyInfoViewController.swift */; };
@@ -147,6 +147,7 @@
 		9EC3594A291E5256001E69A4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		9EC3594D291E526C001E69A4 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		9ECC6D072937EE91004A1587 /* myQueStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myQueStatus.swift; sourceTree = "<group>"; };
+		9ECC6D0929381A46004A1587 /* MyPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageData.swift; sourceTree = "<group>"; };
 		9ECC7C7B2922AA5800B3DC25 /* nickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameViewController.swift; sourceTree = "<group>"; };
 		9ECC7C7D2922AA6600B3DC25 /* nickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameView.swift; sourceTree = "<group>"; };
 		9ECC7C7F2922AEF500B3DC25 /* BirthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthView.swift; sourceTree = "<group>"; };
@@ -172,7 +173,6 @@
 		9ECC7CBC29288D5600B3DC25 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		9ECC7CBE2928921000B3DC25 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
 		9ECC7CC02928925C00B3DC25 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		9ECC7CC22928B53900B3DC25 /* MyPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageData.swift; sourceTree = "<group>"; };
 		9ECC7CC52928B8E100B3DC25 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
 		9ECC7CC72928BD9700B3DC25 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9ECC7CCA2928C5A100B3DC25 /* ManageMyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMyInfoViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +258,7 @@
 			children = (
 				9E619E69292E2705001835C8 /* LoginData.swift */,
 				9E619E912932DB3F001835C8 /* HomeTapData.swift */,
+				9ECC6D0929381A46004A1587 /* MyPageData.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -402,7 +403,6 @@
 			children = (
 				9ECC7CBA29288D4300B3DC25 /* MyPageViewController.swift */,
 				9ECC7CBC29288D5600B3DC25 /* MyPageView.swift */,
-				9ECC7CC22928B53900B3DC25 /* MyPageData.swift */,
 				9ECC7CC52928B8E100B3DC25 /* TableViewExtension.swift */,
 				9ECC7CCE2928CA7800B3DC25 /* NameTableViewCell.swift */,
 				9ECC7CBE2928921000B3DC25 /* MyPageTableViewCell.swift */,
@@ -674,11 +674,11 @@
 				9E619EC22934E1C9001835C8 /* MyPageAPIManager.swift in Sources */,
 				9EE3C6B32928F12F00124D61 /* Reusable.swift in Sources */,
 				9E619E942932DBD8001835C8 /* SearchAPIManager.swift in Sources */,
+				9ECC6D0A29381A46004A1587 /* MyPageData.swift in Sources */,
 				9EC35928291AE11D001E69A4 /* AuthorizationViewController.swift in Sources */,
 				9E29D9C7291FBCDD00BBE368 /* BaseCollectionViewCell.swift in Sources */,
 				9E619E8F2932A4A7001835C8 /* SearchView.swift in Sources */,
 				9E619EE42937048E001835C8 /* TokenID.swift in Sources */,
-				9ECC7CC32928B53900B3DC25 /* MyPageData.swift in Sources */,
 				9ECC7CC12928925C00B3DC25 /* BaseTableViewCell.swift in Sources */,
 				9EE3C6BB292913BF00124D61 /* HeaderCell.swift in Sources */,
 				9ECC7CB7292885F500B3DC25 /* ShopViewController.swift in Sources */,

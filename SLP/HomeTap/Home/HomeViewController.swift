@@ -44,47 +44,7 @@ class HomeViewController: BaseViewController, MKMapViewDelegate {
             
         }
         
-        SearchAPIManager.shared.fetchMyState(query: TokenID.tokenID) { statusCode in
-            switch statusCode {
-            case 200 :
-                print("matchingStatus API")
-                switch Repository.myStatus {
-                case 0 : //wait for matching
-                case 1 : //
-                default :
-                    
-                }
-            case 201 :
-                print("normal status")
-            case 401 :
-                print("FIrebaseTokenError")
-                
-                getID.shared.getIDToken { idToken in
-                    UserDefaults.standard.set(idToken, forKey: Repository.tokenID.rawValue)
-                }
-                AuthAPIManager.shared.fetchloginData(query: TokenID.tokenID) { statusCode in
-                    switch statusCode {
-                    case 200 :
-                        print("matchingStatus API")
-                       
-                   
-                    default :
-                        print("error again : \(statusCode)")
-                    }
-                }
-            case 406 :
-                print("unregistered User")
-            case 500 :
-                print("server error")
-            case 501 :
-                print("client error")
-            default :
-                print("extra situation")
-            }
-            
-            
-        }
-            
+        SearchAPIManager.shared.callMatchAPI(matchingButton: mainView.matchingButton)
         SearchAPIManager.shared.callSearchAPI(mainView: self.mainView)
     }
     
@@ -97,7 +57,7 @@ class HomeViewController: BaseViewController, MKMapViewDelegate {
         tabBarController?.tabBar.isHidden = false
         
         mainView.button.addTarget(self, action: #selector(locationButtonTapped), for: .touchUpInside)
-        mainView.insideButton.addTarget(self, action: #selector(viewTapped), for: .touchUpInside)
+        mainView.matchingButton.addTarget(self, action: #selector(viewTapped), for: .touchUpInside)
     }
     
     @objc func viewTapped() {
