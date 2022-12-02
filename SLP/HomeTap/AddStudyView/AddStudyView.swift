@@ -35,6 +35,7 @@ class AddStudyView: BaseView {
     
     let collectionView : UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
+        view.sizeToFit()
         return view
     }()
     

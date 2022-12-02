@@ -14,7 +14,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
     let searchBar = UISearchBar()
     var studyName : [String] = []
     var studyArray : [String] = []
-    
+ //   let columnLayout = CustomViewFlowLayout()
     
     override func loadView() {
         self.view = mainView
@@ -77,6 +77,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
         mainView.collectionView.register(firstSectionCell.self, forCellWithReuseIdentifier: firstSectionCell.id)
         mainView.collectionView.register(secondSectionCell.self, forCellWithReuseIdentifier: secondSectionCell.id)
         mainView.collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.id)
+       // mainView.collectionView.collectionViewLayout = columnLayout
     }
     
     @objc func stopFindButtonTapped() {
@@ -112,9 +113,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
             default :
                 print("extra situation")
             }
-            
-            
-            
+    
             
             self.navigationController?.pushViewController(SearchViewController(), animated: true)
             
@@ -159,19 +158,23 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
     
     @objc func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(#function)
-        guard let text = self.searchBar.text else { return }
+        guard var text = self.searchBar.text else { return }
         studyName = text.components(separatedBy: " ")
         
         if studyName.filter({ String in String.count > 8 }).isEmpty == false || studyName.isEmpty == true {
             mainView.makeToast("최소 한 자 이상, 최대 8글자까지 작성 가능합니다", duration: 1.0, position: .center)
             return
-
+            
         } else if studyName.last == "" {
             studyName.removeLast()
             
+        } else if  studyArray.count == 9  {
+            mainView.makeToast("스터디를 더이상 추가할 수 없습니다", duration: 1.0, position: .center)
         }
         
         studyArray.append(contentsOf: studyName)
+        mainView.collectionView.reloadData()
+        
         print("studyArray========\(studyArray)")
         print("studyName ========\(studyName)")
         

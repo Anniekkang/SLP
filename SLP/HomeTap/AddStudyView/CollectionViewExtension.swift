@@ -13,7 +13,8 @@ extension AddStudyViewController : UICollectionViewDelegate, UICollectionViewDat
         return HomeTapData().addStudyArray.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return studyArray.count
+        print("studyArray2=====\(studyArray)")
+        return studyArray.count < 9 ? studyArray.count : 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -24,9 +25,10 @@ extension AddStudyViewController : UICollectionViewDelegate, UICollectionViewDat
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: secondSectionCell.id, for: indexPath) as? secondSectionCell else { return UICollectionViewCell()}
-            print("cell")
+            print("indexPath ===\(indexPath)")
+            print("studyArray3=====\(studyArray)")
             cell.label.text = studyArray[indexPath.item]
-            
+            self.searchBar.text = ""
             return cell
             
         }
@@ -50,10 +52,37 @@ extension AddStudyViewController : UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
         if indexPath.section == 0 {
-            return CGSize(width: 10, height: 32)
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: firstSectionCell.id, for: indexPath) as? firstSectionCell else { return CGSize(width: 20, height: 32) }
+            let cellWidth = cell.button.frame.width
+            return CGSize(width: cellWidth, height: 32)
         }
-        return CGSize(width: 20 , height: 32)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: secondSectionCell.id, for: indexPath) as? secondSectionCell else { return CGSize(width: 20, height: 32) }
+        let cellWidth = cell.view.frame.width
+        return CGSize(width: cellWidth, height: 32)
     }
 }
+
+
+
+//class CustomViewFlowLayout: UICollectionViewFlowLayout {
+//    let cellSpacing: CGFloat = 10
+//
+//    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+//        self.minimumLineSpacing = 10.0
+//        self.sectionInset = UIEdgeInsets(top: 16.0, left: 0.0, bottom: 16.0, right: 0.0)
+//        let attributes = super.layoutAttributesForElements(in: rect)
+//
+//        var leftMargin = sectionInset.left
+//        var maxY: CGFloat = -1.0
+//        attributes?.forEach { layoutAttribute in
+//            if layoutAttribute.frame.origin.y >= maxY {
+//                leftMargin = sectionInset.left
+//            }
+//            layoutAttribute.frame.origin.x = leftMargin
+//            leftMargin += layoutAttribute.frame.width + cellSpacing
+//            maxY = max(layoutAttribute.frame.maxY, maxY)
+//        }
+//        return attributes
+//    }
+//}

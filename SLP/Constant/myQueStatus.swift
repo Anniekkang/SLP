@@ -7,16 +7,9 @@
 
 import UIKit
 
-enum MyQueStatus {
-    case WaitforMatching
-    case Matched
+enum MyQueStatus : Int {
+    case WaitforMatching = 0
+    case Matched = 1
     
-    var myQueStatus : Int {
-        switch self {
-        case .WaitforMatching :
-            return 0
-        case .Matched :
-            return 1
-        }
-    }
+    
 }

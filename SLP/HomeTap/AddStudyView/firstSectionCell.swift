@@ -24,6 +24,8 @@ class firstSectionCell: BaseCollectionViewCell {
         button.titleLabel?.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.medium.rawValue)
         button.layer.cornerRadius = 8
         button.layer.borderColor = colorCustom.shared.buttonBorder.cgColor
+        button.sizeToFit()
+        button.setTitle("test", for: .normal)
         return button
     }()
     

@@ -12,6 +12,9 @@ class secondSectionCell: BaseCollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        configure()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -32,7 +35,7 @@ class secondSectionCell: BaseCollectionViewCell {
         let label = UILabel()
         label.textColor = colorCustom.shared.greenBrandColor
         label.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.medium.rawValue)
-        label.textAlignment = .right
+        label.textAlignment = .center
         label.sizeToFit()
         label.text = "test"
         return label
@@ -40,9 +43,10 @@ class secondSectionCell: BaseCollectionViewCell {
     
     let XButton : UIButton = {
         let button = UIButton()
-        button.setTitleColor(colorCustom.shared.greenBrandColor, for: .normal)
+        let image = UIImage(named: "close_small")?.withRenderingMode(.alwaysTemplate)
         button.titleLabel?.font = UIFont(name: FontName.fontRegular.rawValue, size: FontSize.medium.rawValue)
-        button.setImage(UIImage(named: "close_small"), for: .normal)
+        button.setImage(image, for: .normal)
+        button.tintColor = colorCustom.shared.greenBrandColor
         return button
     }()
     
@@ -50,11 +54,12 @@ class secondSectionCell: BaseCollectionViewCell {
        let view = UIView()
         view.layer.cornerRadius = 8
         view.layer.borderColor = colorCustom.shared.greenBrandColor.cgColor
+        view.layer.borderWidth = 1
         return view
     }()
     
     override func configure() {
-        contentView.addSubview(view)
+        self.addSubview(view)
         view.addSubview(stackView)
         [label, XButton].forEach {
             stackView.addSubview($0)
@@ -63,11 +68,11 @@ class secondSectionCell: BaseCollectionViewCell {
     
     override func setConstraints() {
         view.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.top.bottom.equalToSuperview()
+            make.edges.equalToSuperview()
         }
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.bottom.equalToSuperview().inset(5)
         }
         
         label.snp.makeConstraints { make in
