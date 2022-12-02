@@ -54,9 +54,62 @@ class MyPageAPIManager {
     }
 
     
+    func withDrawUser(query : String, completionHandler : @escaping completionHandler) {
+        
+        guard let url = URL(string: APIUrl.baseURL + APIUrl.withdrawURL) else { return }
+        let headers : HTTPHeaders = ["idtoken" : query, "Content-Type": "application/x-www-form-urlencoded" ]
+        
+        AF.request(url, method: .post,headers: headers)
+            .validate()
+            .responseData { Response in
+                guard let statusCode = Response.response?.statusCode else { return }
+                switch Response.result {
+                case .success(_) :
+                    
+                    print("WithDraw success")
+                    completionHandler(statusCode)
+                    
+                case .failure(let error):
+                    print("errorcode : \(error)")
+                    completionHandler(statusCode)
+               
+                }
+                
+            }
+        
+        
+        
+    }
     
-    
-    
+    func requestStudy(query : String, completionHandler : @escaping completionHandler) {
+        
+        guard let url = URL(string: APIUrl.baseURL + APIUrl.requestStudy) else { return }
+        let headers : HTTPHeaders = ["idtoken" : query, "Content-Type": "application/x-www-form-urlencoded" ]
+        let parameters : [String : Any] = [
+            "otheruid" : ""
+        ]
+        
+        AF.request(url, method: .post, parameters : parameters, headers: headers)
+            .validate()
+            .responseData { Response in
+                guard let statusCode = Response.response?.statusCode else { return }
+                switch Response.result {
+                case .success(_) :
+                    
+                    print("Request success")
+                    completionHandler(statusCode)
+                    
+                case .failure(let error):
+                    print("errorcode : \(error)")
+                    completionHandler(statusCode)
+               
+                }
+                
+            }
+        
+        
+        
+    }
     
     
     

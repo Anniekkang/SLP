@@ -23,7 +23,7 @@
 		9E619E922932DB3F001835C8 /* HomeTapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E912932DB3F001835C8 /* HomeTapData.swift */; };
 		9E619E942932DBD8001835C8 /* SearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E932932DBD8001835C8 /* SearchAPIManager.swift */; };
 		9E619E9629330F2F001835C8 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E9529330F2F001835C8 /* CustomAnnotationView.swift */; };
-		9E619E982933559D001835C8 /* AddStudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E972933559D001835C8 /* AddStudyCollectionViewCell.swift */; };
+		9E619E982933559D001835C8 /* firstSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E972933559D001835C8 /* firstSectionCell.swift */; };
 		9E619E9A29335918001835C8 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E9929335918001835C8 /* CollectionViewExtension.swift */; };
 		9E619E9C29338ACF001835C8 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E9B29338ACF001835C8 /* HeaderCollectionReusableView.swift */; };
 		9E619EC22934E1C9001835C8 /* MyPageAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619EC12934E1C9001835C8 /* MyPageAPIManager.swift */; };
@@ -51,6 +51,7 @@
 		9EC3594E291E526C001E69A4 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC3594D291E526C001E69A4 /* SplashView.swift */; };
 		9ECC6D082937EE91004A1587 /* myQueStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6D072937EE91004A1587 /* myQueStatus.swift */; };
 		9ECC6D0A29381A46004A1587 /* MyPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6D0929381A46004A1587 /* MyPageData.swift */; };
+		9ECC6D0C29382B01004A1587 /* secondSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6D0B29382B01004A1587 /* secondSectionCell.swift */; };
 		9ECC7C7C2922AA5800B3DC25 /* nickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C7B2922AA5800B3DC25 /* nickNameViewController.swift */; };
 		9ECC7C7E2922AA6600B3DC25 /* nickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C7D2922AA6600B3DC25 /* nickNameView.swift */; };
 		9ECC7C802922AEF500B3DC25 /* BirthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C7F2922AEF500B3DC25 /* BirthView.swift */; };
@@ -125,7 +126,7 @@
 		9E619E912932DB3F001835C8 /* HomeTapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTapData.swift; sourceTree = "<group>"; };
 		9E619E932932DBD8001835C8 /* SearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIManager.swift; sourceTree = "<group>"; };
 		9E619E9529330F2F001835C8 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
-		9E619E972933559D001835C8 /* AddStudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E619E972933559D001835C8 /* firstSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstSectionCell.swift; sourceTree = "<group>"; };
 		9E619E9929335918001835C8 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		9E619E9B29338ACF001835C8 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		9E619EC12934E1C9001835C8 /* MyPageAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPIManager.swift; sourceTree = "<group>"; };
@@ -148,6 +149,7 @@
 		9EC3594D291E526C001E69A4 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		9ECC6D072937EE91004A1587 /* myQueStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myQueStatus.swift; sourceTree = "<group>"; };
 		9ECC6D0929381A46004A1587 /* MyPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageData.swift; sourceTree = "<group>"; };
+		9ECC6D0B29382B01004A1587 /* secondSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondSectionCell.swift; sourceTree = "<group>"; };
 		9ECC7C7B2922AA5800B3DC25 /* nickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameViewController.swift; sourceTree = "<group>"; };
 		9ECC7C7D2922AA6600B3DC25 /* nickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameView.swift; sourceTree = "<group>"; };
 		9ECC7C7F2922AEF500B3DC25 /* BirthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthView.swift; sourceTree = "<group>"; };
@@ -227,7 +229,8 @@
 			children = (
 				9E619E7C292E765C001835C8 /* AddStudyViewController.swift */,
 				9E619E7A292E764F001835C8 /* AddStudyView.swift */,
-				9E619E972933559D001835C8 /* AddStudyCollectionViewCell.swift */,
+				9E619E972933559D001835C8 /* firstSectionCell.swift */,
+				9ECC6D0B29382B01004A1587 /* secondSectionCell.swift */,
 				9E619E9929335918001835C8 /* CollectionViewExtension.swift */,
 				9E619E9B29338ACF001835C8 /* HeaderCollectionReusableView.swift */,
 			);
@@ -693,6 +696,7 @@
 				9E619E7B292E764F001835C8 /* AddStudyView.swift in Sources */,
 				9EFDEB9529190566007743CE /* SceneDelegate.swift in Sources */,
 				9E619E812931D64F001835C8 /* getID.swift in Sources */,
+				9ECC6D0C29382B01004A1587 /* secondSectionCell.swift in Sources */,
 				9EC3594B291E5256001E69A4 /* SplashViewController.swift in Sources */,
 				9ECC7C9329230FDB00B3DC25 /* textField.swift in Sources */,
 				9EFDEBB029192A11007743CE /* BaseView.swift in Sources */,
@@ -724,7 +728,7 @@
 				9ECC7C7C2922AA5800B3DC25 /* nickNameViewController.swift in Sources */,
 				9E619E7D292E765C001835C8 /* AddStudyViewController.swift in Sources */,
 				9E876DC62920E5BB00BEBAE8 /* OnboardCollectionViewCell.swift in Sources */,
-				9E619E982933559D001835C8 /* AddStudyCollectionViewCell.swift in Sources */,
+				9E619E982933559D001835C8 /* firstSectionCell.swift in Sources */,
 				9ECC7CA1292566B000B3DC25 /* APIUrl.swift in Sources */,
 				9ECC7CBB29288D4300B3DC25 /* MyPageViewController.swift in Sources */,
 				9EFDEBB4291AA0BB007743CE /* loginViewController.swift in Sources */,

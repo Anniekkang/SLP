@@ -7,8 +7,8 @@
 
 import UIKit
 
-class AddStudyCollectionViewCell: BaseCollectionViewCell {
-    static var id = String(describing: AddStudyCollectionViewCell.self)
+class firstSectionCell: BaseCollectionViewCell {
+    static var id = String(describing: firstSectionCell.self)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

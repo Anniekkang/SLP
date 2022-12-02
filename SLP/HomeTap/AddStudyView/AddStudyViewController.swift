@@ -12,6 +12,8 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
 
     let mainView = AddStudyView()
     let searchBar = UISearchBar()
+    var studyName : [String] = []
+    var studyArray : [String] = []
     
     
     override func loadView() {
@@ -72,7 +74,8 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
         searchBar.delegate = self
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
-        mainView.collectionView.register(AddStudyCollectionViewCell.self, forCellWithReuseIdentifier: AddStudyCollectionViewCell.id)
+        mainView.collectionView.register(firstSectionCell.self, forCellWithReuseIdentifier: firstSectionCell.id)
+        mainView.collectionView.register(secondSectionCell.self, forCellWithReuseIdentifier: secondSectionCell.id)
         mainView.collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.id)
     }
     
@@ -156,24 +159,21 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
     
     @objc func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(#function)
-        
         guard let text = self.searchBar.text else { return }
-        let studyName = text.components(separatedBy: " ")
-      
-        if studyName.isEmpty == true || studyName.filter({ String in
-            String.count > 8
-        }).isEmpty == false {
+        studyName = text.components(separatedBy: " ")
+        
+        if studyName.filter({ String in String.count > 8 }).isEmpty == false || studyName.isEmpty == true {
             mainView.makeToast("최소 한 자 이상, 최대 8글자까지 작성 가능합니다", duration: 1.0, position: .center)
-            
-        } else {
-            //make cell in section2
-          
-            
-            
-            
-            
+            return
+
+        } else if studyName.last == "" {
+            studyName.removeLast()
             
         }
+        
+        studyArray.append(contentsOf: studyName)
+        print("studyArray========\(studyArray)")
+        print("studyName ========\(studyName)")
         
     }
 }
