@@ -27,7 +27,7 @@ class NameTableViewCell: BaseTableViewCell {
         let view = UIStackView()
         view.axis = .horizontal
         view.spacing = 8
-        view.distribution = .fillProportionally
+        view.distribution = .fill
         return view
     }()
     
@@ -72,15 +72,16 @@ class NameTableViewCell: BaseTableViewCell {
         }
         
         iconImage.snp.makeConstraints { make in
-            make.height.equalTo(stackView)
+            make.height.equalToSuperview()
             make.width.equalTo(iconImage.snp.height)
             make.leading.top.bottom.equalTo(stackView)
         }
         
         label.snp.makeConstraints { make in
-            make.height.equalTo(stackView)
+            make.height.equalToSuperview()
             make.leading.equalTo(iconImage.snp.trailing).offset(8)
-            make.trailing.top.bottom.equalTo(stackView)
+            make.trailing.equalToSuperview()
+            
         }
         
         button.snp.makeConstraints { make in

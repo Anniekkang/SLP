@@ -44,6 +44,8 @@ extension ManageMyInfoViewController : UITableViewDelegate, UITableViewDataSourc
             
             if isOpen == false {
                 cell.isHidden = true
+                
+                
     
             } else {
                 cell.isHidden = false
@@ -66,7 +68,7 @@ extension ManageMyInfoViewController : UITableViewDelegate, UITableViewDataSourc
             guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderCell") as? HeaderCell else { return UIView() }
            
             headerView.delegate = self
-            headerView.label.text = parameters().nick
+            headerView.label.text = parameters.shared.nick
             
             
             return headerView

@@ -61,8 +61,15 @@ extension AddStudyViewController : UICollectionViewDelegate, UICollectionViewDat
         let cellWidth = cell.view.frame.width
         return CGSize(width: cellWidth, height: 32)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            studyArray.remove(at: indexPath.item)
+            collectionView.reloadData()
+        }
+        
+    }
 }
-
 
 
 //class CustomViewFlowLayout: UICollectionViewFlowLayout {

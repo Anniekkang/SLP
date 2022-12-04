@@ -17,33 +17,12 @@ class MyPageViewController: BaseViewController {
         self.view = mainView
         
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-
-        self.navigationItem.title = "내정보"
-        configuration()
-       
-    }
- 
-    override func configuration() {
-        mainView.tableView.delegate = self
-        mainView.tableView.dataSource = self
-        mainView.tableView.register(MyPageTableViewCell.self, forCellReuseIdentifier: MyPageTableViewCell.id)
-        mainView.tableView.register(NameTableViewCell.self, forCellReuseIdentifier: NameTableViewCell.id)
-        mainView.backgroundColor = .white
-    }
     
-    
-    func buttonTapped(){
-         print(#function)
-        
+    override func viewWillAppear(_ animated: Bool) {
         AuthAPIManager.shared.fetchloginData(query: TokenID.tokenID) { statusCode in
             switch statusCode {
             case 200 :
                 print("login success")
-                print("----------------parameters.nick:\(parameters().nick)")
-                self.navigationController?.pushViewController(ManageMyInfoViewController(), animated: true)
             case 401 :
                 print("firebase token error")
                 getID.shared.getIDToken { idToken in
@@ -53,14 +32,12 @@ class MyPageViewController: BaseViewController {
                     switch statusCode {
                     case 200 :
                         print("Auth Success")
-                        self.navigationController?.pushViewController(TabBarController(), animated: true)
+                        
                     case 406 :
                         print("unregistered User")
                         print()
                         DispatchQueue.main.async {
                             print("dispatchqueue")
-                            
-                            self.navigationController?.pushViewController(nickNameViewController(), animated: true)
                         }
                         
                     default :
@@ -80,6 +57,33 @@ class MyPageViewController: BaseViewController {
             
         }
         
+        mainView.tableView.reloadData()
+    }
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+
+        self.navigationItem.title = "내정보"
+        configuration()
+        
+       
+    }
+ 
+    override func configuration() {
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
+        mainView.tableView.register(MyPageTableViewCell.self, forCellReuseIdentifier: MyPageTableViewCell.id)
+        mainView.tableView.register(NameTableViewCell.self, forCellReuseIdentifier: NameTableViewCell.id)
+        mainView.backgroundColor = .white
+    }
+    
+    
+    func buttonTapped(){
+         print(#function)
+        
+        self.navigationController?.pushViewController(ManageMyInfoViewController(), animated: true)
         
        
       

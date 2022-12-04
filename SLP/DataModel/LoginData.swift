@@ -19,6 +19,9 @@ struct requstBody : Codable {
 }
 
 struct parameters : Codable {
+    
+    static var shared = parameters()
+    
     var _id : String = ""
     var __v : Int = 0
     var uid : String = ""

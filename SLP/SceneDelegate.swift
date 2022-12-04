@@ -37,14 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
        
         window?.makeKeyAndVisible()
-        
-        func changeRootVC(_ vc:UIViewController, animated: Bool) {
-            guard let window = self.window else { return }
-            window.rootViewController = vc // 전환
-            
-           
-          }
-        
+     
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

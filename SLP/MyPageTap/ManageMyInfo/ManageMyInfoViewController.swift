@@ -54,6 +54,7 @@ class ManageMyInfoViewController: BaseViewController {
     }
     
     @objc func saveButtonTapped() {
+        
         MyPageAPIManager.shared.updateMyPage(query:TokenID.tokenID) { statusCode in
             switch statusCode {
             case 200 :

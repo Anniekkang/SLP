@@ -66,6 +66,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
         tabBarController?.tabBar.isHidden = true
         navDesign(searchBar: searchBar)
         searchBarDesign(searchBar: searchBar)
+        
     
         
     }
@@ -156,7 +157,8 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
     }
    
     
-    @objc func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    @objc @available(iOS 16.0, *)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(#function)
         guard var text = self.searchBar.text else { return }
         studyName = text.components(separatedBy: " ")
@@ -170,8 +172,13 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
             
         } else if  studyArray.count == 9  {
             mainView.makeToast("스터디를 더이상 추가할 수 없습니다", duration: 1.0, position: .center)
+            return
+        } else if studyArray.contains(studyName) {
+            mainView.makeToast("이미 등록된 스터디입니다", duration: 1.0, position: .center)
+            return
         }
         
+      
         studyArray.append(contentsOf: studyName)
         mainView.collectionView.reloadData()
         

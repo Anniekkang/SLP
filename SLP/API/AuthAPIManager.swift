@@ -32,7 +32,12 @@ class AuthAPIManager {
                     do {
                         //decode : JSON data -> struct data
                         let decodeData = try decoder.decode(parameters.self, from: data)
+                        
                         print("decodeData=========\(decodeData)")
+                        parameters.shared.sesac = decodeData.sesac
+                        parameters.shared.nick = decodeData.nick
+                        parameters.shared.reputation = decodeData.reputation
+                        print("parameters.shared.nick \(parameters.shared.nick)")
                         completionHandler(statusCode)
                         
                         

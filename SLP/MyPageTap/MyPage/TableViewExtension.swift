@@ -19,10 +19,14 @@ extension MyPageViewController : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        print(#function)
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: NameTableViewCell.id, for: indexPath) as? NameTableViewCell else { return UITableViewCell() }
+            var imageName = parameters.shared.sesac == 0 ? "sesac_face_1": ""
             cell.selectionStyle = .none
+            cell.label.text = parameters.shared.nick
+            print("parameters.shared.nick=======\(parameters.shared.nick)")
+            cell.iconImage.image = UIImage(named: imageName )
             return cell
             
         } else {

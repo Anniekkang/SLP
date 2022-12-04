@@ -23,8 +23,6 @@ class HomeView: BaseView {
     
     let map : MKMapView = {
         let map = MKMapView()
-        
-       
         map.setUserTrackingMode(.none, animated: true)
         map.isZoomEnabled = true
         return map

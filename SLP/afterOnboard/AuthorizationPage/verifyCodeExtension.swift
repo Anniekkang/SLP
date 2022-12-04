@@ -37,6 +37,7 @@ extension AuthorizationViewController {
                     case 200 :
                         print("Auth Success")
                         self.navigationController?.pushViewController(TabBarController(), animated: true)
+                        
                     case 401 :
                         print("Firebase TokenError")
                         getID.shared.getIDToken { idToken in
