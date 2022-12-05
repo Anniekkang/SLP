@@ -19,7 +19,7 @@
 		9E619E832931F2CC001835C8 /* verifyCodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E822931F2CC001835C8 /* verifyCodeExtension.swift */; };
 		9E619E8529321372001835C8 /* getFCMToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E8429321372001835C8 /* getFCMToken.swift */; };
 		9E619E8D2932A497001835C8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E8C2932A497001835C8 /* SearchViewController.swift */; };
-		9E619E8F2932A4A7001835C8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E8E2932A4A7001835C8 /* SearchView.swift */; };
+		9E619E8F2932A4A7001835C8 /* X.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E8E2932A4A7001835C8 /* X.swift */; };
 		9E619E922932DB3F001835C8 /* HomeTapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E912932DB3F001835C8 /* HomeTapData.swift */; };
 		9E619E942932DBD8001835C8 /* SearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E932932DBD8001835C8 /* SearchAPIManager.swift */; };
 		9E619E9629330F2F001835C8 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E619E9529330F2F001835C8 /* CustomAnnotationView.swift */; };
@@ -52,6 +52,9 @@
 		9ECC6D082937EE91004A1587 /* myQueStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6D072937EE91004A1587 /* myQueStatus.swift */; };
 		9ECC6D0A29381A46004A1587 /* MyPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6D0929381A46004A1587 /* MyPageData.swift */; };
 		9ECC6D0C29382B01004A1587 /* secondSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6D0B29382B01004A1587 /* secondSectionCell.swift */; };
+		9ECC6D16293E4FCE004A1587 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6D15293E4FCE004A1587 /* SearchView.swift */; };
+		9ECC6D18293E5201004A1587 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6D17293E5201004A1587 /* SearchCollectionViewCell.swift */; };
+		9ECC6D1A293E5212004A1587 /* SearchCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6D19293E5212004A1587 /* SearchCollectionViewExtension.swift */; };
 		9ECC7C7C2922AA5800B3DC25 /* nickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C7B2922AA5800B3DC25 /* nickNameViewController.swift */; };
 		9ECC7C7E2922AA6600B3DC25 /* nickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C7D2922AA6600B3DC25 /* nickNameView.swift */; };
 		9ECC7C802922AEF500B3DC25 /* BirthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC7C7F2922AEF500B3DC25 /* BirthView.swift */; };
@@ -122,7 +125,7 @@
 		9E619E822931F2CC001835C8 /* verifyCodeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyCodeExtension.swift; sourceTree = "<group>"; };
 		9E619E8429321372001835C8 /* getFCMToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getFCMToken.swift; sourceTree = "<group>"; };
 		9E619E8C2932A497001835C8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		9E619E8E2932A4A7001835C8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		9E619E8E2932A4A7001835C8 /* X.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = X.swift; sourceTree = "<group>"; };
 		9E619E912932DB3F001835C8 /* HomeTapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTapData.swift; sourceTree = "<group>"; };
 		9E619E932932DBD8001835C8 /* SearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIManager.swift; sourceTree = "<group>"; };
 		9E619E9529330F2F001835C8 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
@@ -150,6 +153,9 @@
 		9ECC6D072937EE91004A1587 /* myQueStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myQueStatus.swift; sourceTree = "<group>"; };
 		9ECC6D0929381A46004A1587 /* MyPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageData.swift; sourceTree = "<group>"; };
 		9ECC6D0B29382B01004A1587 /* secondSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondSectionCell.swift; sourceTree = "<group>"; };
+		9ECC6D15293E4FCE004A1587 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		9ECC6D17293E5201004A1587 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		9ECC6D19293E5212004A1587 /* SearchCollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewExtension.swift; sourceTree = "<group>"; };
 		9ECC7C7B2922AA5800B3DC25 /* nickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameViewController.swift; sourceTree = "<group>"; };
 		9ECC7C7D2922AA6600B3DC25 /* nickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nickNameView.swift; sourceTree = "<group>"; };
 		9ECC7C7F2922AEF500B3DC25 /* BirthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthView.swift; sourceTree = "<group>"; };
@@ -251,7 +257,10 @@
 			isa = PBXGroup;
 			children = (
 				9E619E8C2932A497001835C8 /* SearchViewController.swift */,
-				9E619E8E2932A4A7001835C8 /* SearchView.swift */,
+				9ECC6D15293E4FCE004A1587 /* SearchView.swift */,
+				9ECC6D17293E5201004A1587 /* SearchCollectionViewCell.swift */,
+				9ECC6D19293E5212004A1587 /* SearchCollectionViewExtension.swift */,
+				9E619E8E2932A4A7001835C8 /* X.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -665,6 +674,7 @@
 				9ECC7CB1292623AE00B3DC25 /* HomeViewController.swift in Sources */,
 				9EC35923291AC49E001E69A4 /* Font.swift in Sources */,
 				9EC35926291AE10E001E69A4 /* AuthorizationView.swift in Sources */,
+				9ECC6D16293E4FCE004A1587 /* SearchView.swift in Sources */,
 				9ECC7CBF2928921000B3DC25 /* MyPageTableViewCell.swift in Sources */,
 				9EFDEBB7291AA0D2007743CE /* loginView.swift in Sources */,
 				9E619E832931F2CC001835C8 /* verifyCodeExtension.swift in Sources */,
@@ -680,7 +690,7 @@
 				9ECC6D0A29381A46004A1587 /* MyPageData.swift in Sources */,
 				9EC35928291AE11D001E69A4 /* AuthorizationViewController.swift in Sources */,
 				9E29D9C7291FBCDD00BBE368 /* BaseCollectionViewCell.swift in Sources */,
-				9E619E8F2932A4A7001835C8 /* SearchView.swift in Sources */,
+				9E619E8F2932A4A7001835C8 /* X.swift in Sources */,
 				9E619EE42937048E001835C8 /* TokenID.swift in Sources */,
 				9ECC7CC12928925C00B3DC25 /* BaseTableViewCell.swift in Sources */,
 				9EE3C6BB292913BF00124D61 /* HeaderCell.swift in Sources */,
@@ -692,9 +702,11 @@
 				9EFDEB9329190566007743CE /* AppDelegate.swift in Sources */,
 				9EE3C6CC292C0A4800124D61 /* FriendViewController.swift in Sources */,
 				9E619E8529321372001835C8 /* getFCMToken.swift in Sources */,
+				9ECC6D18293E5201004A1587 /* SearchCollectionViewCell.swift in Sources */,
 				9EE3C6CE292C2FCF00124D61 /* BirthCustomItem.swift in Sources */,
 				9E619E7B292E764F001835C8 /* AddStudyView.swift in Sources */,
 				9EFDEB9529190566007743CE /* SceneDelegate.swift in Sources */,
+				9ECC6D1A293E5212004A1587 /* SearchCollectionViewExtension.swift in Sources */,
 				9E619E812931D64F001835C8 /* getID.swift in Sources */,
 				9ECC6D0C29382B01004A1587 /* secondSectionCell.swift in Sources */,
 				9EC3594B291E5256001E69A4 /* SplashViewController.swift in Sources */,

@@ -22,6 +22,8 @@ extension AddStudyViewController : UICollectionViewDelegate, UICollectionViewDat
         if indexPath.section == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: firstSectionCell.id, for: indexPath) as? firstSectionCell else { return UICollectionViewCell()}
             
+            print("recommend ========= \(sesecSearchData.shared.fromQueueDB)")
+            cell.button
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: secondSectionCell.id, for: indexPath) as? secondSectionCell else { return UICollectionViewCell()}

@@ -62,7 +62,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
 
     
         mainView.backgroundColor = colorCustom.shared.whiteColor
-        mainView.button.addTarget(self, action: #selector(stopFindButtonTapped), for: .touchUpInside)
+        mainView.button.addTarget(self, action: #selector(sesacFindButtonTapped), for: .touchUpInside)
         tabBarController?.tabBar.isHidden = true
         navDesign(searchBar: searchBar)
         searchBarDesign(searchBar: searchBar)
@@ -81,14 +81,26 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
        // mainView.collectionView.collectionViewLayout = columnLayout
     }
     
-    @objc func stopFindButtonTapped() {
+    @objc func sesacFindButtonTapped() {
         
         SearchAPIManager.shared.requestSesacFind(query : TokenID.tokenID, completionHandler: { statusCode in
             
             switch statusCode {
             case 200 :
                 print("success API")
-                self.mainView.collectionView.reloadData()
+                self.navigationController?.pushViewController(SearchViewController(), animated: true)
+            case 201 :
+                print("신고")
+                self.mainView.makeToast("신고가 누적되어 이용하실 수 없습니다", duration: 1.0, position: .center)
+            case 203 :
+                print("취소 패널티")
+                self.mainView.makeToast("스터디 취소 패널티로, 1분동안 이용하실 수 없습니다", duration: 1.0, position: .center)
+            case 204 :
+                print("취소패널티 2단계")
+                self.mainView.makeToast("스터디 취소 패널티로, 2분동안 이용하실 수 없습니다", duration: 1.0, position: .center)
+            case 205 :
+                print("취소패널티 3단계")
+                self.mainView.makeToast("스터디 취소 패널티로, 3분동안 이용하실 수 없습니다", duration: 1.0, position: .center)
             case 401 :
                 print("FIrebaseTokenError")
                 
@@ -99,7 +111,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
                     switch statusCode {
                     case 200 :
                         print("success API")
-                        self.mainView.collectionView.reloadData()
+                        self.navigationController?.pushViewController(SearchViewController(), animated: true)
                    
                     default :
                         print("error again : \(statusCode)")
@@ -115,8 +127,6 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
                 print("extra situation")
             }
     
-            
-            self.navigationController?.pushViewController(SearchViewController(), animated: true)
             
         })
                                                 

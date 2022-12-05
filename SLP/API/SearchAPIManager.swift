@@ -66,11 +66,15 @@ class SearchAPIManager {
                     
                     print("SearchAPI success")
                     print("data============\(data)")
-                    
+                
                     let decoder = JSONDecoder()
                     do {
-                        let decodeData = try decoder.decode(HomeTapData.sesecSearchData.self, from: data)
+                        let decodeData = try decoder.decode(sesecSearchData.self, from: data)
                         print("decodedata============\(decodeData)")
+                        
+                        sesecSearchData.shared.fromQueueDB = decodeData.fromQueueDB
+                        sesecSearchData.shared.fromRecommend = decodeData.fromRecommend
+                        
                     } catch {
                         print("decodeError====\(error)")
                     }
@@ -108,8 +112,9 @@ class SearchAPIManager {
                 switch Response.result {
                 case .success(let data) :
                     
-                    print("FindAPI success")
+                    print("sesacFind success")
                     print("data============\(data)")
+                    
                     
                     
                     completionHandler(statusCode)
@@ -183,7 +188,7 @@ class SearchAPIManager {
                     let decoder = JSONDecoder()
                     do {
                         //decode : JSON data -> struct data
-                        let decodeData = try decoder.decode(HomeTapData.myQueStatus.self, from: data)
+                        let decodeData = try decoder.decode(myQueStatus.self, from: data)
                         let matchingData = decodeData.matched
                         Repository.myStatus = matchingData
                         print("decodeData- Matching=========\(matchingData)")
