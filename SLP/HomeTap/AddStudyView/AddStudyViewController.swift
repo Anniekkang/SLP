@@ -115,6 +115,7 @@ class AddStudyViewController: BaseViewController, UISearchBarDelegate {
                    
                     default :
                         print("error again : \(statusCode)")
+                        self.mainView.makeToast("네트워크 통신이 원활하지 않습니다. 다시 한번 눌러주세요")
                     }
                 }
             case 406 :

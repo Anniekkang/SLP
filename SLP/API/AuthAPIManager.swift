@@ -37,6 +37,15 @@ class AuthAPIManager {
                         parameters.shared.sesac = decodeData.sesac
                         parameters.shared.nick = decodeData.nick
                         parameters.shared.reputation = decodeData.reputation
+                        parameters.shared.background = decodeData.background
+                        parameters.shared.sesac = decodeData.sesac
+                        parameters.shared.comment = decodeData.comment
+                        parameters.shared.gender = decodeData.gender
+                        parameters.shared.study = decodeData.study
+                        parameters.shared.searchable = decodeData.searchable
+                        parameters.shared.ageMin = decodeData.ageMin
+                        parameters.shared.ageMax = decodeData.ageMax
+                        
                         print("parameters.shared.nick \(parameters.shared.nick)")
                         completionHandler(statusCode)
                         

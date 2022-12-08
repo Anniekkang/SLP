@@ -49,6 +49,18 @@ extension ManageMyInfoViewController : UITableViewDelegate, UITableViewDataSourc
     
             } else {
                 cell.isHidden = false
+                
+               if parameters.shared.comment.isEmpty {
+                    cell.reviewTextview.text = "첫 리뷰를 기다리는 중이에요"
+                   cell.reviewTextview.textColor = colorCustom.shared.gray6
+               } else {
+                   let comment = parameters.shared.comment
+                   comment.forEach { String in
+                       cell.reviewTextview.text.append(String)
+                   }
+                   
+               }
+               
             }
             
             return cell
